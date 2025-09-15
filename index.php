@@ -33,28 +33,7 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-        /* .price-handwritten {
-  text-align: center;
-  font-family: 'Patrick Hand', cursive; 
-}
-
-.price-handwritten .old-price {
-  font-size: 2rem;
-  text-decoration: line-through;
-  color: #000;
-  transform: rotate(-5deg);
-  display: inline-block;
-  margin: 0;
-}
-
-.price-handwritten .new-price {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #d9534f;
-  transform: rotate(3deg);
-  display: inline-block;
-  margin: 0;
-} */
+    
   .price-box {
   text-align: center;
   margin: 10px 0;
@@ -312,7 +291,7 @@
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-      <h1 class="mb-5">Popular Courses</h1>
+      <h1 class="mb-5">Projects Price's</h1>
     </div>
 
     <!-- Row for 3 cards -->
@@ -322,7 +301,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/mini.jpg" alt="">
+            <img class="img-fluid" src="img/mini1.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
@@ -336,7 +315,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/major.jpg" alt="">
+            <img class="img-fluid" src="img/major1.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>

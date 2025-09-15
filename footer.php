@@ -25,10 +25,12 @@
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/major.jpg" alt="">
+                            <a href ="">
+                            <img class="img-fluid bg-light p-1" src="img/major1.jpg" alt="">
+                            </a>
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/mini.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/mini1.jpg" alt="">
                         </div>
                         <div class="col-4">
                             <img class="img-fluid bg-light p-1" src="img/sathInternshp.jpg" alt="">
@@ -40,7 +42,7 @@
                             <img class="img-fluid bg-light p-1" src="img/sathStructural.jpg" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/mini.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="img/mini1.jpg" alt="">
                         </div>
                     </div>
                 </div>
