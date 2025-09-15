@@ -32,7 +32,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-
     
 </head>
 
@@ -84,7 +83,7 @@
                                 <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
                         </div>
                     </div>
@@ -279,7 +278,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/mini.jpg" alt="">
+            <img class="img-fluid" src="img/mini1.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
@@ -293,7 +292,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/major.jpg" alt="">
+            <img class="img-fluid" src="img/major1.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
