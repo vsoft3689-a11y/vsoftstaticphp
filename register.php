@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VSOFT | Login</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<!-- Libraries Stylesheet -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VSOFT | Student Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
@@ -16,7 +17,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-  <!-- Navbar Start -->
+    <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VsoftSolutions</h2>
@@ -37,24 +38,48 @@
         </div>
     </nav>
     <!-- Navbar End -->
-  <div class="container d-flex justify-content-center align-items-center vh-100">
-    <div class="card p-4 shadow" style="width: 100%; max-width: 380px;">
-      <h4 class="text-center mb-4">Login to VSOFT</h4>
-      <form method="post" action="">
-        <div class="form-floating mb-3">
-          <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com" required>
-          <label for="email">Email address</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
-          <label for="password">Password</label>
-        </div>
-        <button type="button" class="btn btn-primary w-100 text-white"
-        onclick="window.location.href='./dashboard.php'">Login</button>
-      </form>
+  <div class="container py-5">
+    <div class="card shadow mx-auto" style="max-width: 500px;">
+      <div class="card-body">
+        <h4 class="card-title text-center mb-4">Student Registration</h4>
+        <?php if (!empty($error)): ?>
+          <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
+        <?php if (!empty($success)): ?>
+          <div class="alert alert-success"><?= htmlspecialchars($success) ?></div>
+        <?php endif; ?>
+        <form method="post" action="register.php">
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="name" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" name="password" class="form-control" required minlength="6">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input type="text" name="phone" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">College/University</label>
+            <input type="text" name="college" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Branch</label>
+            <input type="text" name="branch" class="form-control" required>
+          </div>
+          <button type="button" class="btn btn-primary w-100 text-white"
+        onclick="window.location.href='login.php'">Register</button>
+        </form>
+      </div>
     </div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -152,4 +177,4 @@
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-</html>
+</html><?php

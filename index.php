@@ -70,7 +70,7 @@
                 <!-- </div> -->
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="./register.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -89,7 +89,7 @@
                                 <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
                                 <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="./register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -105,7 +105,7 @@
                                 <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="./register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
