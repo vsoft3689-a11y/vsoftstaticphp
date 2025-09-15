@@ -107,9 +107,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown"> Cutting-edge Project Solutions</h5>
+                               <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
+                                <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
@@ -123,9 +123,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Transform Your Career</h5>
+                                <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
@@ -246,7 +246,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                         </div> -->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="./index.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -375,8 +375,8 @@
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
                 <h1 class="mb-5">Expert Instructors</h1>
-            </div>
-            <div class="row g-4">
+            </div> -->
+            <!-- <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
@@ -388,14 +388,14 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                        </div>
-                        <div class="text-center p-4">
+                        </div> -->
+                        <!-- <div class="text-center p-4">
                             <h5 class="mb-0">Ram</h5>
                             <small>Chairman</small>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-2.jpg" alt="">
@@ -406,8 +406,8 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                        </div>
-                        <div class="text-center p-4">
+                        </div> -->
+                        <!-- <div class="text-center p-4">
                             <h5 class="mb-0">seetha</h5>
                             <small>Principle</small>
                         </div>
@@ -417,8 +417,8 @@
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        </div> -->
+                        <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -429,8 +429,8 @@
                             <h5 class="mb-0">Laxman</h5>
                             <small>Vice Principle</small>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
@@ -441,8 +441,8 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div>
                         <div class="text-center p-4">
                             <h5 class="mb-0">Urmila</h5>
                             <small>Professor</small>
@@ -468,7 +468,7 @@
                     <h5 class="mb-0">Sathvika</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Nice</p>
+                    <p class="mb-0">⭐Professional team, real-time projects, and excellent guidance throughout.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
@@ -476,7 +476,7 @@
                     <h5 class="mb-0">mahesh</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Good</p>
+                    <p class="mb-0">⭐Great experience! The team was helpful, and the project was industry-relevant.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
@@ -484,15 +484,15 @@
                     <h5 class="mb-0">Bhagath</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Fabulous</p>
+                    <p class="mb-0"> ⭐As an MBA student, I found their domain-specific project support very useful.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Akshitha<h5>
+                    <h5 class="mb-0">Anu<h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Very Nice</p>
+                    <p class="mb-0">⭐I learned a lot through their internship program—highly recommended!</p>
                     </div>
                 </div>
             </div>
