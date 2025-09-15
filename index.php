@@ -58,7 +58,7 @@
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
                 <a href="#" class="nav-item nav-link">Projects</a>
-                <a href="./btech" class="nav-item nav-link">Internship</a>
+                <a href="./internship.php" class="nav-item nav-link">Internship</a>
 
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
@@ -162,6 +162,7 @@
                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
                             <h5 class="mb-3">Internship & coroporate</h5>
                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
+                            <a href="./internship.php" class="nav-item nav-link">click here</a>
                         </div>
                     </div>
                 </div>
@@ -201,7 +202,8 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p>
+                       <a href="./internship.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p></a>
+                            
                         </div>
                         <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
