@@ -42,9 +42,9 @@
     <!-- Spinner End -->
 
 
-<!-- Navbar Start -->
+    <!-- Navbar Start -->
       <?php include 'navbar.php'; ?>
-<!-- Navbar End -->
+    <!-- Navbar End -->
    
 
 
@@ -71,24 +71,24 @@
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="row g-2">
+            <div class="row g-2  justify-content-center align-items-stretch">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4"> 
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <i class="fa fa-3x bi-briefcase text-primary mb-4"></i>
                             <h5 class="mb-3">Corporate Training</h5>
-                            <p justify-content:flex-start; >Soft Skills & Communication, Data Analytics,<br> Leadership & Team Building, etc</p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./internship2.php">View</a>
+                            <p justify-content:flex-start; >Soft Skills & Communication, Data Analytics,<br> Leadership & Team Building.</p>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php">View</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <i class="fa fa-3x fa-laptop text-primary mb-4"></i>
                             <h5 class="mb-3">Internship Programing </h5>
                             <p>Web-developement, Python,<br>AI & ML, Mobile-developement, Java & Sringboot, etc                             </p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php">View</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./internship2.php">View</a>
                         </div>
                     </div>
                 </div>
