@@ -88,9 +88,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown"> Cutting-edge Project Solutions</h5>
+                               <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
+                                <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
@@ -104,9 +104,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Transform Your Career</h5>
+                                <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
