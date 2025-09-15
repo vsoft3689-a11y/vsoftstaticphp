@@ -70,7 +70,7 @@
                 <!-- </div> -->
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->

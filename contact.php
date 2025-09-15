@@ -54,7 +54,7 @@
                 <a href="./index.php" class="nav-item nav-link">Home</a>
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
-                <a href="" class="nav-item nav-link">Internship</a>
+                <a href="./internships.php" class="nav-item nav-link">Internship</a>
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu fade-down m-0">
@@ -65,7 +65,7 @@
                 <!-- </div> -->
                 <a href="./contact.php" class="nav-item nav-link active">Contact</a>
             </div>
-            <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
