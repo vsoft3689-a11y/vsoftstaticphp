@@ -101,9 +101,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
