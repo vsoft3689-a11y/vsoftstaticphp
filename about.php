@@ -51,7 +51,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-<<<<<<< HEAD
                 <a href="./index.php" class="nav-item nav-link active">Home</a>
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
@@ -60,27 +59,15 @@
 
                 <!--<div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-=======
-                <a href="./index.php" class="nav-item nav-link">Home</a>
-                <a href="./about.php" class="nav-item nav-link active">About</a>
-                <a href="./services.php" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
->>>>>>> 252285cd78c13cb0a03b3848e326c463835a4c60
                     <div class="dropdown-menu fade-down m-0">
-                        <a href="./team.php" class="dropdown-item">Our Team</a>
-                        <a href="./testimonial.php" class="dropdown-item">Testimonial</a>
-                        <a href="./404.php" class="dropdown-item">404 Page</a>
+                        <a href="team.html" class="dropdown-item">Our Team</a>
+                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
-<<<<<<< HEAD
                 </div>-->
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
-=======
-                </div>
-                <a href="./contact.php" class="nav-item nav-link">Contact</a>
->>>>>>> 252285cd78c13cb0a03b3848e326c463835a4c60
             </div>
-            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
