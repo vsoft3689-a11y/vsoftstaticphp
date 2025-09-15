@@ -43,9 +43,8 @@
 
 
 <!-- Navbar Start -->
-     <?php include 'navbar.php'; ?>
-
-     <!-- Navbar End -->
+      <?php include 'navbar.php'; ?>
+<!-- Navbar End -->
 
 
     <!-- Header Start -->
@@ -104,7 +103,7 @@
     
     <?php include 'footer.php'; ?>
 
-    <!-- Footer End -->
+ <!-- Footer End -->
 
 
     <!-- Back to Top -->

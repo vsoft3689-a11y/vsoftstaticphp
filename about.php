@@ -55,7 +55,7 @@
                 <a href="./about.php" class="nav-item nav-link active">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
                 <a href="#" class="nav-item nav-link">Projects</a>
-                <a href="./btech" class="nav-item nav-link">Internship</a>
+                <a href="./internship.php" class="nav-item nav-link">Internship</a>
 
                 <!--<div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
