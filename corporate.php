@@ -3,10 +3,16 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VsoftSolutions</title>
+    <title>Vsoft </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
+    <!-- <style>
+        .row g-2{
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+    </style> -->
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -42,100 +48,62 @@
 
 
     <!-- Navbar Start -->
-   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VsoftSolutions</h2>
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VSoft Solutions</h2>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-<<<<<<< HEAD
                 <a href="./index.php" class="nav-item nav-link active">Home</a>
                 <a href="./about.php" class="nav-item nav-link">About</a>
-                <a href="./services.php" class="nav-item nav-link">Services</a>
-                <a href="#" class="nav-item nav-link">Projects</a>
-                <a href="./btech" class="nav-item nav-link">Internship</a>
-
-                <!--<div class="nav-item dropdown">
+                <a href="./courses.php" class="nav-item nav-link">Services</a>
+                <a href="./courses.php" class="nav-item nav-link">Projects</a>
+                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-=======
-                <a href="./index.php" class="nav-item nav-link">Home</a>
-                <a href="./about.php" class="nav-item nav-link active">About</a>
-                <a href="./services.php" class="nav-item nav-link">Courses</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
->>>>>>> 252285cd78c13cb0a03b3848e326c463835a4c60
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="./team.php" class="dropdown-item">Our Team</a>
-                        <a href="./testimonial.php" class="dropdown-item">Testimonial</a>
-                        <a href="./404.php" class="dropdown-item">404 Page</a>
-                    </div>
-<<<<<<< HEAD
-                </div>-->
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-=======
-                </div>
+                    <div class="dropdown-menu fade-down m-0"> -->
+
+                <!-- <a href="team.html" class="dropdown-item">BTECH Projects</a>
+                        <a href="testimonial.html" class="dropdown-item">MTECH Projects</a>
+                        <a href="404.html" class="dropdown-item">MBA Projects</a>
+                        <a href="team.html" class="dropdown-item">MCA Projects</a> -->
+                        <!-- <a href="testimonial.html" class="dropdown-item">Internship & Corporate</a> -->
+                        
+                    <!-- </div>
+                </div> -->
+                <a href="./internship.php" class="nav-item nav-link">Internship</a>
+                <!-- <a href="./courses.php" class="nav-item nav-link">Internship & Corporate</a> -->
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
->>>>>>> 252285cd78c13cb0a03b3848e326c463835a4c60
             </div>
-            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
-<div class="container-fluid p-0 mb-5">
-    <div class="owl-carousel header-carousel position-relative">
-        
-        <!-- Carousel Item 1 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/aboutbg.jpg" alt="Background 1">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center">
-                            <h1 class="display-3 text-white animated slideInDown">About Us</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="Projects.php">Projects</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
+
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Corporate Training </h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Training</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
-
-        <!-- Carousel Item 2 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/aboutbg2.jpg" alt="Background 2">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center">
-                            <h1 class="display-3 text-white animated slideInDown">About Us</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="Projects.php">Projects</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-</div>
-
     <!-- Header End -->
 
 
-    <!-- Service Start 
+    <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
@@ -143,8 +111,9 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Skilled Instructors</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <h5 class="mb-3">Soft Skills & Communication</h5>
+                            <!-- <p>Soft Skills & commun ication</p> -->
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
                         </div>
                     </div>
                 </div>
@@ -152,8 +121,9 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5 class="mb-3">Online Classes</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <h5 class="mb-3">Excel & Data Analytics </h5>
+                            <p></p>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
                         </div>
                     </div>
                 </div>
@@ -161,8 +131,8 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-home text-primary mb-4"></i>
-                            <h5 class="mb-3">Home Projects</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <h5 class="mb-3">Leadership & Team Building</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
                         </div>
                     </div>
                 </div>
@@ -170,65 +140,65 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
-                            <h5 class="mb-3">Book Library</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <h5 class="mb-3">Business Etiquette</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php">Click here</a>
                         </div>
-                    </div>
+                
                 </div>
             </div>
         </div>
     </div>
-     Service End -->
+    <!-- Service End -->
 
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/about1.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/about.jpg" alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">Welcome to vsoftsolutions</h1>
-                    <p class="mb-4">Vsoft Solutions began with the mission of delivering advanced IT services to businesses around the globe. What started as a small venture has evolved into a reliable technology partner supporting organizations in diverse industries. Our commitment to innovation, excellence, and client satisfaction has been the foundation of our growth and will continue to guide us ahead.</p>
-                    <p class="mb-4">In addition, we specialize in offering academic as well as industrial project solutions, complemented with training and guidance to help learners and professionals achieve their goals.</p>
+                    <h1 class="mb-4">Welcome to eLEARNING</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>B.Tech Projects</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>M.Tech Projects</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA Projects</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MBA Projects</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Internships & Corporate training</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
                         </div>
-                       <!-- <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
-                        </div>-->
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                        </div>
                     </div>
                     <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- About End -->
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Team Members</h6>
-                <h1 class="mb-5"></h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+                <h1 class="mb-5">Expert Instructors</h1>
             </div>
             <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -244,8 +214,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Shekar</h5>
-                            <small>Frontend Developer</small>
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
                         </div>
                     </div>
                 </div>
@@ -262,8 +232,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Bhagath</h5>
-                            <small>Frontend Developer</small>
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
                         </div>
                     </div>
                 </div>
@@ -280,8 +250,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Pawan Kalyan</h5>
-                            <small>frontend Developer</small>
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
                         </div>
                     </div>
                 </div>
@@ -298,14 +268,14 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Sathvika</h5>
-                            <small>Frontend Developer</small>
+                            <h5 class="mb-0">Instructor Name</h5>
+                            <small>Designation</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
         
 
@@ -315,16 +285,17 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="about.php">About Us</a>
-                    <a class="btn btn-link" href="contact.php">Contact Us</a>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
                     <a class="btn btn-link" href="">Privacy Policy</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">FAQs & Help</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Survey No.64,Madhapur,Hyderabad</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9441927859</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Survey No. 64, Unit No.12, Plot No 35 & 36, Hi-Tech City Layout, Jubilee Enclave, Madhapur,
+                            Telangana 500081</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>91-9676190678</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@vsoftssolutions.in</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -357,8 +328,8 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Stay Updated</h4>
-                    <p>Subscribe to receive the latest updates on projects, internships, and training programs.</p>
+                    <h4 class="text-white mb-3">Newsletter</h4>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -370,19 +341,19 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">VsoftSolutions</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">WesTechnologies</a><br><br>
-                       <!-- Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>-->
-                    </div>
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">WesTechnologies</a>
+                        <!-- Distributed To <a class="border-bottom" href="https://themewagon.com">Vsoft Solutions</a>
+                    </div> -->
                     <div class="col-md-6 text-center text-md-end">
-                        <!--<div class="footer-menu">
+                        <div class="footer-menu">
                             <a href="">Home</a>
-                            <a href="">Cookies</a>
+                            <!-- <a href="">Cookies</a> -->
                             <a href="">Help</a>
                             <a href="">FQAs</a>
-                        </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
