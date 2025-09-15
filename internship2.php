@@ -60,7 +60,7 @@
                 <a href="./index.php" class="nav-item nav-link active">Home</a>
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./courses.php" class="nav-item nav-link">Services</a>
-                <a href="./courses.php" class="nav-item nav-link">Projects</a>
+                <a href="./projects.php" class="nav-item nav-link">Projects</a>
                  <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
                     <div class="dropdown-menu fade-down m-0"> -->
