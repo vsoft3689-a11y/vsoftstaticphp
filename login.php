@@ -29,7 +29,7 @@
                 <a href="./index.php" class="nav-item nav-link active">Home</a>
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
-                <a href="#" class="nav-item nav-link">Projects</a>
+                <a href="./projects.php" class="nav-item nav-link">Projects</a>
                 <a href="./btech" class="nav-item nav-link">Internship</a>
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
             </div>

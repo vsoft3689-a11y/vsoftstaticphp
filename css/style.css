@@ -197,7 +197,11 @@
 }
 
 .page-header {
+<<<<<<< HEAD
     background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/internship_b.jpg);
+=======
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/contact1.jpg);
+>>>>>>> 9a0ed7182c1d565ad0d34c1c5b502dcb10200c7f
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -431,3 +435,24 @@
     padding-right: 0;
     border-right: none;
 }
+
+
+       .price-box {
+  text-align: center;
+  margin: 10px 0;
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+.old-price {
+  font-size: 1.5rem;
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.new-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e63946; /* Red for discount */
+}
+
