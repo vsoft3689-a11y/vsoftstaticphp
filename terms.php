@@ -30,71 +30,63 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      padding: 40px;
-      color: #333;
-    }
-    h1, h2 {
-      color: #004080;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    ul {
-      padding-left: 20px;
-    }
-  </style>
+    <link href="css/terms.css" rel="stylesheet">
+ 
+   
 </head>
 <body>
+    <!-- Navbar Start -->
+     <?php include 'navbar.php'; ?>
+
+     <!-- Navbar End -->
+
     
    
   <div class="container">
-    <h1>Terms and Conditions</h1>
+    <h4 class="text text-primary">Terms and Conditions</h4>
     <p>Last Updated: September 15, 2025</p>
 
     <p>Welcome to VSoft! By accessing our website, products, or services, you agree to the following terms and conditions. Please read them carefully.</p>
 
-    <h2>1. Acceptance of Terms</h2>
+    <h5 class="text text-primary">1. Acceptance of Terms</h5>
     <p>By using our services, you agree to be bound by these Terms and Conditions and all applicable laws and regulations. If you do not agree, you are prohibited from using or accessing this site.</p>
 
-    <h2>2. Services Offered</h2>
+    <h5 class="text text-primary">2. Services Offered</h5>
     <p>VSoft provides academic project guidance, online learning, and training programs for students in various branches like CSE, ECE, EEE, Civil, and Mechanical Engineering.</p>
 
-    <h2>3. User Responsibilities</h2>
+    <h5  class="text text-primary">3. User Responsibilities</h5>
     <ul>
       <li>You must provide accurate and current information during registration.</li>
       <li>You are responsible for maintaining the confidentiality of your account and password.</li>
       <li>Do not misuse our services or use them for any illegal activity.</li>
     </ul>
 
-    <h2>4. Intellectual Property</h2>
+    <h5 class="text text-primary">4. Intellectual Property</h5>
     <p>All content provided on our website (including text, images, videos, and materials) is the intellectual property of VSoft or its licensors. Unauthorized use, reproduction, or distribution is strictly prohibited.</p>
 
-    <h2>5. Payments and Refunds</h2>
+    <h5 class="text text-primary">5. Payments and Refunds</h5>
     <p>All payments made for services or courses are final unless otherwise specified. Refunds are only provided under specific conditions outlined in our refund policy.</p>
 
-    <h2>6. Limitation of Liability</h2>
+    <h5 class="text text-primary">6. Limitation of Liability</h5>
     <p>VSoft is not liable for any direct, indirect, or incidental damages arising out of the use or inability to use our services. All services are provided "as is" without warranties of any kind.</p>
 
-    <h2>7. Termination</h2>
+    <h5 class="text text-primary">7. Termination</h5>
     <p>We reserve the right to terminate or suspend your access to our platform if you violate these Terms or engage in harmful behavior.</p>
 
-    <h2>8. Modifications</h2>
+    <h5 class="text text-primary">8. Modifications</h5>
     <p>We may update these Terms and Conditions at any time without notice. It is your responsibility to review this page periodically for any changes.</p>
 
-    <h2>9. Contact Us</h2>
+    <h5 class="text text-primary">9. Contact Us</h5>
     <p>If you have any questions about these Terms, please contact us at: <strong>support@vsoftprojects.com</strong></p>
 
     <p>By continuing to use our services, you acknowledge that you have read and agree to the Terms and Conditions above.</p>
   </div>
+   <!-- Footer Start -->
+    
+    <?php include 'footer.php'; ?>
+
+    <!-- Footer End -->
+
+
 </body>
 </html>

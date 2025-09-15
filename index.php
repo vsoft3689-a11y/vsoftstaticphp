@@ -227,7 +227,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                         </div> -->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="./index.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -301,13 +301,13 @@
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
                 <h1 class="mb-5">Expert Instructors</h1>
-            </div>
-            <div class="row g-4">
+            </div> -->
+            <!-- <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
@@ -319,14 +319,14 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                        </div>
-                        <div class="text-center p-4">
+                        </div> -->
+                        <!-- <div class="text-center p-4">
                             <h5 class="mb-0">Ram</h5>
                             <small>Chairman</small>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-2.jpg" alt="">
@@ -337,8 +337,8 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                        </div>
-                        <div class="text-center p-4">
+                        </div> -->
+                        <!-- <div class="text-center p-4">
                             <h5 class="mb-0">seetha</h5>
                             <small>Principle</small>
                         </div>
@@ -348,8 +348,8 @@
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        </div> -->
+                        <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -360,8 +360,8 @@
                             <h5 class="mb-0">Laxman</h5>
                             <small>Vice Principle</small>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
@@ -372,8 +372,8 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div>
                         <div class="text-center p-4">
                             <h5 class="mb-0">Urmila</h5>
                             <small>Professor</small>
@@ -382,7 +382,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
 
 
@@ -399,7 +399,7 @@
                     <h5 class="mb-0">Sathvika</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Nice</p>
+                    <p class="mb-0">⭐Professional team, real-time projects, and excellent guidance throughout.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
@@ -407,7 +407,7 @@
                     <h5 class="mb-0">mahesh</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Good</p>
+                    <p class="mb-0">⭐Great experience! The team was helpful, and the project was industry-relevant.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
@@ -415,15 +415,15 @@
                     <h5 class="mb-0">Bhagath</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Fabulous</p>
+                    <p class="mb-0"> ⭐As an MBA student, I found their domain-specific project support very useful.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Akshitha<h5>
+                    <h5 class="mb-0">Anu<h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Very Nice</p>
+                    <p class="mb-0">⭐I learned a lot through their internship program—highly recommended!</p>
                     </div>
                 </div>
             </div>
