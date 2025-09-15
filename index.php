@@ -32,30 +32,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <style>
-    
-  .price-box {
-  text-align: center;
-  margin: 10px 0;
-  font-family: Arial, sans-serif; /* Clean font */
-}
 
-.old-price {
-  font-size: 1.5rem;
-  color: #888;
-  text-decoration: line-through;
-  margin-right: 10px;
-}
-
-.new-price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e63946; /* Red for discount */
-}
-
-
-    </style>
-    
     
 </head>
 
@@ -68,30 +45,13 @@
     </div>
     <!-- Spinner End -->
 
-
-    <!-- Navbar Start -->
+<!-- Navbar Start -->
      <?php include 'navbar.php'; ?>
 
-<<<<<<< HEAD
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-                    <div class="dropdown-menu fade-down m-0"> -->
-                        <!-- <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                <a href="./contact.php" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="./register.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
-=======
      <!-- Navbar End -->
 
     
->>>>>>> 4a82294aa950859140327cf8bc2c02eaf971c3dc
+    
 
 
     <!-- Carousel Start -->
@@ -107,7 +67,7 @@
                                <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
                                 <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="./register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -122,8 +82,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Transform Your Career</h5>
                                 <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="./register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -308,7 +267,7 @@
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-      <h1 class="mb-5">Projects Price's</h1>
+      <h1 class="mb-5">Project Prices</h1>
     </div>
 
     <!-- Row for 3 cards -->
@@ -318,7 +277,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/mini1.jpg" alt="">
+            <img class="img-fluid" src="img/mini.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
@@ -332,7 +291,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/major1.jpg" alt="">
+            <img class="img-fluid" src="img/major.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
