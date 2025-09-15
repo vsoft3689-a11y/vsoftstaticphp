@@ -287,7 +287,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹14999.00</h3>
+                            <h3 class="mb-0">₹13999.00</h3>
                             <div class="mb-3">
                                 <!-- <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -315,7 +315,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹14999.00</h3>
+                            <h3 class="mb-0">₹16999.00</h3>
                             <div class="mb-3">
                                 <!-- <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -343,7 +343,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹14999.00</h3>
+                            <h3 class="mb-0">₹17999.00</h3>
                             <div class="mb-3">
                                 <!-- <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
