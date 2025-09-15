@@ -80,7 +80,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 ">
+    <div class="container-fluid bg-primary py-5 mb-5 internship-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
