@@ -143,8 +143,8 @@
                        <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
                         </div>-->
-                    </div><a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Read More</a>
-                    
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -181,80 +181,91 @@
     <!-- Company History, Mission & Vision End -->
 
 
-    <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-      <h1>Our Students Say!</h1>
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Team Members</h6>
+                <h1 class="mb-5"></h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Shekar</h5>
+                            <small>Frontend Developer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Bhagath</h5>
+                            <small>Frontend Developer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Pawan Kalyan</h5>
+                            <small>frontend Developer</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Sathvika</h5>
+                            <small>Frontend Developer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="owl-carousel testimonial-carousel position-relative">
-
-      <!-- Testimonial 1 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Sathvika</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
-        <div class="text-warning mb-1">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
-        <div class="text-muted mb-2">Rating: <strong>4.5 / 5</strong></div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
-        </div>
-      </div>
-
-      <!-- Testimonial 2 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Mahesh</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
-        <div class="text-warning mb-1">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <div class="text-muted mb-2">Rating: <strong>4.0 / 5</strong></div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
-        </div>
-      </div>
-
-      <!-- Testimonial 3 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Bhagath</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
-        <div class="text-warning mb-1">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-        </div>
-        <div class="text-muted mb-2">Rating: <strong>3.5 / 5</strong></div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">Good experience, I understood my domain better.</p>
-        </div>
-      </div>
-
-      <!-- Testimonial 4 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Anu</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
-        <div class="text-warning mb-1">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <div class="text-muted mb-2">Rating: <strong>5.0 / 5</strong></div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">I got real-time exposure and learned a lot practically.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!-- Testimonial End -->
-
+    <!-- Team End -->
+        
 
     <!-- Footer Start -->
     
