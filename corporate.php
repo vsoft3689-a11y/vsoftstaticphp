@@ -7,12 +7,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
-    <!-- <style>
-        .row g-2{
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-    </style> -->
+    
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -48,38 +43,7 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VSoft Solutions</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./index.php" class="nav-item nav-link active">Home</a>
-                <a href="./about.php" class="nav-item nav-link">About</a>
-                <a href="./courses.php" class="nav-item nav-link">Services</a>
-                <a href="./courses.php" class="nav-item nav-link">Projects</a>
-                 <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-                    <div class="dropdown-menu fade-down m-0"> -->
-
-                <!-- <a href="team.html" class="dropdown-item">BTECH Projects</a>
-                        <a href="testimonial.html" class="dropdown-item">MTECH Projects</a>
-                        <a href="404.html" class="dropdown-item">MBA Projects</a>
-                        <a href="team.html" class="dropdown-item">MCA Projects</a> -->
-                        <!-- <a href="testimonial.html" class="dropdown-item">Internship & Corporate</a> -->
-                        
-                    <!-- </div>
-                </div> -->
-                <a href="./internship.php" class="nav-item nav-link">Internship</a>
-                <!-- <a href="./courses.php" class="nav-item nav-link">Internship & Corporate</a> -->
-                <a href="./contact.php" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
+      <?php include 'navbar.php'; ?>
     <!-- Navbar End -->
 
 
@@ -120,7 +84,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <i class="fa fa-3x fa fa-table text-primary mb-4"></i>
                             <h5 class="mb-3">Excel & Data Analytics </h5>
                             <p></p>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
@@ -130,7 +94,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                            <i class="fa fa-3x fa fa-flag text-primary mb-4"></i>
                             <h5 class="mb-3">Leadership & Team Building</h5>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
                         </div>
@@ -139,7 +103,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                            <i class="fa fa-3x fa fa-handshake text-primary mb-4"></i>
                             <h5 class="mb-3">Business Etiquette</h5>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php">Click here</a>
                         </div>

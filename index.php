@@ -32,6 +32,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -43,69 +44,46 @@
     </div>
     <!-- Spinner End -->
 
+<!-- Navbar Start -->
+     <?php include 'navbar.php'; ?>
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VsoftSolutions</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./index.php" class="nav-item nav-link active">Home</a>
-                <a href="./about.php" class="nav-item nav-link">About</a>
-                <a href="./services.php" class="nav-item nav-link">Services</a>
-                <a href="#" class="nav-item nav-link">Projects</a>
-                <a href="./btech" class="nav-item nav-link">Internship</a>
+     <!-- Navbar End -->
 
-                <!-- <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-                    <div class="dropdown-menu fade-down m-0"> -->
-                        <!-- <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-                <a href="./contact.php" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+    
+    
 
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/background1.jpg" alt="">
+                <img class="img-fluid" src="img/civil.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown"> Cutting-edge Project Solutions</h5>
+                               <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
+                                <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/background 2.jpg" alt="">
+                <img class="img-fluid" src="img/ece.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Transform Your Career</h5>
+                                <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
                         </div>
                     </div>
@@ -122,12 +100,12 @@
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                     <div class="p-4">
+                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 class="mb-3">B.TECH Projects</h5>
-                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software, and civil design.</p>
-                        </div>
-                    </div>
+                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software,and civil desig</p>
+                        </div> 
+                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
@@ -147,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa-solid fa-laptop-code fa-3x text-info mb-4"></i>
@@ -155,22 +133,34 @@
                             <p>Offers practical training in software development, IT services, or application design.</p>
                         </div>
                     </div>
+                </div> 
+                 <div class="row g-4 mt-3 justify-content-center align-items-stretch">
+                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
+                        <div class="service-item text-center pt-3">
+                           <div class="p-4">
+                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
+                             <h5 class="mb-3">Internship & Corporate</h5>
+                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
+                             <a href="./internship.php" class="nav-item nav-link">Click Here</a>
+                           </div>
+                        </div>
+                     </div>
                 </div>
-                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                 
+                 <!-- <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
-                            <h5 class="mb-3">Internship & coroporate</h5>
+                            <h5 class="col-mb-3">Internship & coroporate</h5>
                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div> -->
+             </div>
         </div>
-    </div>
+    </div> -
     <!-- Service End -->
-
-
+     
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -207,7 +197,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                         </div> -->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="./index.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -227,7 +217,7 @@
                     <div class="row g-3">
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
                             <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/sathArtifial.jpg" alt="">
+                                <img class="img-fluid" src="img/ai.jpg" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0">Artificial Intelligence</h5>
                                     <!-- <small class="text-primary">49 Courses</small> -->
@@ -256,7 +246,7 @@
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
                     <a class="position-relative d-block h-100 overflow-hidden" href="">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/sathvikamarketing.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="img/marketing.jpg" alt="" style="object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
                             <h5 class="m-0">Marketing</h5>
                             <!-- <small class="text-primary">49 Courses</small> -->
@@ -269,112 +259,75 @@
     <!-- Categories Start -->
 
 
-    <!-- Courses Start -->
     <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Popular Courses</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/mini.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <!-- <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a> -->
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹149.00</h3>
-                            <div class="mb-3">
-                                <!-- <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small> -->
-                                <!-- <small>(123)</small> -->
-                            </div>
-                            <h5 class="mb-4">Mini Projects</h5>
-                        </div>
-                        <!-- <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/major.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <!-- <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a> -->
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹149.00</h3>
-                            <div class="mb-3">
-                                <!-- <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small> -->
-                            </div>
-                            <h5 class="mb-4">Major Projects</h5>
-                        </div>
-                        <!-- <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div> -->
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="img/sathInternshp.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <!-- <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a> -->
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹149.00</h3>
-                            <div class="mb-3">
-                                <!-- <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small> -->
-                            </div>
-                            <h5 class="mb-4">Internship & Corporate</h5>
-                        </div>
-                        <!-- <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+      <h1 class="mb-5">Project Prices</h1>
     </div>
+
+    <!-- Row for 3 cards -->
+    <div class="row g-4">
+      
+      <!-- Mini Projects -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/mini1.jpg" alt="">
+          </div>
+          <div class="price-box text-center mt-3">
+            <span class="old-price">₹1999.00</span>
+            <span class="new-price">₹1599.00</span>
+          </div>
+          <h5 class="text-center mb-4">Mini Projects</h5>
+        </div>
+      </div>
+
+      <!-- Major Projects -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/major1.jpg" alt="">
+          </div>
+          <div class="price-box text-center mt-3">
+            <span class="old-price">₹1999.00</span>
+            <span class="new-price">₹1599.00</span>
+          </div>
+          <h5 class="text-center mb-4">Major Projects</h5>
+        </div>
+      </div>
+
+      <!-- Internship & Corporate -->
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+        <div class="course-item bg-light">
+          <div class="position-relative overflow-hidden">
+            <img class="img-fluid" src="img/sathInternshp.jpg" alt="">
+          </div>
+          <div class="price-box text-center mt-3">
+            <span class="old-price">₹1999.00</span>
+            <span class="new-price">₹1599.00</span>
+          </div>
+          <h5 class="text-center mb-4">Internship & Corporate</h5>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    
     <!-- Courses End -->
 
 
     <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
                 <h1 class="mb-5">Expert Instructors</h1>
-            </div>
-            <div class="row g-4">
+            </div> -->
+            <!-- <div class="row g-4">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
@@ -386,14 +339,14 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                        </div>
-                        <div class="text-center p-4">
+                        </div> -->
+                        <!-- <div class="text-center p-4">
                             <h5 class="mb-0">Ram</h5>
                             <small>Chairman</small>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                </div> -->
+                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-2.jpg" alt="">
@@ -404,8 +357,8 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
                             </div>
-                        </div>
-                        <div class="text-center p-4">
+                        </div> -->
+                        <!-- <div class="text-center p-4">
                             <h5 class="mb-0">seetha</h5>
                             <small>Principle</small>
                         </div>
@@ -415,8 +368,8 @@
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        </div> -->
+                        <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -427,8 +380,8 @@
                             <h5 class="mb-0">Laxman</h5>
                             <small>Vice Principle</small>
                         </div>
-                    </div>
-                </div>
+                    </div> -->
+                <!-- </div>
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
@@ -439,8 +392,8 @@
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
+                            </div> -->
+                        <!-- </div>
                         <div class="text-center p-4">
                             <h5 class="mb-0">Urmila</h5>
                             <small>Professor</small>
@@ -449,7 +402,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Team End -->
 
 
@@ -466,7 +419,7 @@
                     <h5 class="mb-0">Sathvika</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Nice</p>
+                    <p class="mb-0">⭐Professional team, real-time projects, and excellent guidance throughout.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
@@ -474,7 +427,7 @@
                     <h5 class="mb-0">mahesh</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Good</p>
+                    <p class="mb-0">⭐Great experience! The team was helpful, and the project was industry-relevant.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
@@ -482,15 +435,15 @@
                     <h5 class="mb-0">Bhagath</h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Fabulous</p>
+                    <p class="mb-0"> ⭐As an MBA student, I found their domain-specific project support very useful.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
                     <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Akshitha<h5>
+                    <h5 class="mb-0">Anu<h5>
                     <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Very Nice</p>
+                    <p class="mb-0">⭐I learned a lot through their internship program—highly recommended!</p>
                     </div>
                 </div>
             </div>
@@ -500,84 +453,9 @@
         
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="./about.php">About Us</a>
-                    <a class="btn btn-link" href="./contact.php">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Survey No. 64, Madhapur,</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9441927859</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@vsoftssolutions.in</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/major.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/mini.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/sathInternshp.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/sathvikacyber.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/sathStructural.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/mini.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+    
+    <?php include 'footer.php'; ?>
 
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="./">WesTechnologies.in</a><br><br>
-                        <!-- Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <div class="footer-menu">
-                            <a href="">Home</a>
-                            <!-- <a href="">Cookies</a> -->
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Footer End -->
 
 

@@ -201,7 +201,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-      min-height: 6000px;
+      min-height: 600px;
 }
 
 .page-header-inner {
@@ -437,3 +437,26 @@
     padding-right: 0;
     border-right: none;
 }
+
+
+       .price-box {
+  text-align: center;
+  margin: 10px 0;
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+.old-price {
+  font-size: 1.5rem;
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 10px;
+}
+
+.new-price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e63946; /* Red for discount */
+}
+
+
+

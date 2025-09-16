@@ -1,0 +1,26 @@
+body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      /* padding: 40px; */
+      color: #333;
+    }
+    h1, h2 {
+      color: #004080;
+    }
+     /* .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top:20px;
+    }  */
+    ul {
+      padding-left: 20px;
+    }
+h5,h4{
+    color:#0875e1;
+    margin-top:20px;
+}
