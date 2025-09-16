@@ -56,7 +56,7 @@ body {
             background: #007BFF;
             color: white;
         }
-        @media (max-width: 768px) {
+         @media (max-width: 768px) {
             form {
                 flex-direction: column;
                 align-items: stretch;
@@ -64,4 +64,4 @@ body {
             select, button {
                 width: 100%;
             }
-        }
+        } 
