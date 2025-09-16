@@ -460,3 +460,42 @@
 
 
 
+
+  
+
+
+
+
+ .bulk-offer summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #007bff;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.bulk-offer summary::-webkit-details-marker {
+  display: none; /* removes default arrow */
+}
+
+
+  .bulk-offer summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;  /* make text bold */
+  color: black;     /* blue color */
+  text-decoration: line; /* remove underline */
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.bulk-offer .offers h6 {
+  margin-top: 0;
+  color: #e63946;
+  font-size: 15px;
+}
+
+
+
