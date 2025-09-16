@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VsoftSolutions</title>
+    <title>VsoftsSolutions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -43,9 +43,10 @@
 
     <!-- Navbar Start -->
    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VsoftSolutions</h2>
-        </a>
+        <a href="navbarP.html" class="navbar-logo">
+      <img src="./img/logo-3.webp"
+        alt="VSoft Solutions Pvt Ltd Logo" style="height:48px; width:auto; display:block; object-fit:contain;" />
+    </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -54,7 +55,7 @@
                 <a href="./index.php" class="nav-item nav-link active">Home</a>
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
-                <a href="#" class="nav-item nav-link">Projects</a>
+                <a href="./Projects.php" class="nav-item nav-link">Projects</a>
                 <a href="./btech" class="nav-item nav-link">Internship</a>
 
                 <!--<div class="nav-item dropdown">
@@ -65,59 +66,28 @@
                         <a href="404.html" class="dropdown-item">404 Page</a>
                     </div>
                 </div>-->
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="contact.php"class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="login.php"class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
-<div class="container-fluid p-0 mb-5">
-    <div class="owl-carousel header-carousel position-relative">
-        
-        <!-- Carousel Item 1 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/aboutbg.jpg" alt="Background 1">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center">
-                            <h1 class="display-3 text-white animated slideInDown">About Us</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="Projects.php">Projects</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown" style = "padding:80px;">About us</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">about us</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
-
-        <!-- Carousel Item 2 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/aboutbg2.jpg" alt="Background 2">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center">
-                            <h1 class="display-3 text-white animated slideInDown">About Us</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="Projects.php">Projects</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-</div>
+
 
     <!-- Header End -->
 
@@ -202,12 +172,41 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
                         </div>-->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="Project.php">Read More</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
+    <!-- Company History, Mission & Vision Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Company History -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our History</h6>
+                    <h2 class="mb-3">How We Started</h2>
+                    <p>V SOFTS SOLUTIONS established in 2003 with the vision to give best-in-class programming improvement and quality confirmation administrations to a various arrangement of clients. In today's market, Companies who depend on seaward improvement as major to their business achievement must secure the correct blend of mastery and experience from its accomplices.</p>
+                </div>
+
+                <!-- Mission -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our Mission</h6>
+                    <h2 class="mb-3">What Drives Us</h2>
+                    <p>We are committed to providing outstanding software solutions tailored to our clients' specific needs. Our goal is to help them excel in a competitive market and reach their strategic goals. By understanding their unique challenges, we deliver innovative and effective solutions. We prioritize quality, efficiency, and client satisfaction in every project. Partner with us to stay ahead and succeed.</p>
+                </div>
+
+                <!-- Vision -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our Vision</h6>
+                    <h2 class="mb-3">Looking Ahead</h2>
+                    <p>Our mission is to revolutionize industries with disruptive software technologies. We aim to redefine possibilities and inspire innovation, driving forward the future of digital transformation. By pushing the boundaries, we create solutions that set new standards. Our commitment is to lead the way in technological advancements. Join us in shaping the future.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Company History, Mission & Vision End -->
 
 
     <!-- Team Start -->
@@ -310,7 +309,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Survey No.64,Madhapur,Hyderabad</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Survey No.64,Madhapur</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9441927859</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@vsoftssolutions.in</p>
                     <div class="d-flex pt-2">

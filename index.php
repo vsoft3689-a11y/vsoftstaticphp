@@ -58,7 +58,7 @@
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
                 <a href="#" class="nav-item nav-link">Projects</a>
-                <a href="./internship.php" class="nav-item nav-link">Internship</a>
+                <a href="./btech" class="nav-item nav-link">Internship</a>
 
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
@@ -70,7 +70,7 @@
                 <!-- </div> -->
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->
@@ -89,7 +89,7 @@
                                 <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
                                 <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -101,11 +101,11 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advanced Skill Development</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Unlock Your Potential with Expert-Led Online Learning</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> Empower yourself with flexible, industry-relevant courses designed to boost your skills and career growth. Join thousands of learners transforming their futures today.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Courses</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -162,7 +162,6 @@
                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
                             <h5 class="mb-3">Internship & coroporate</h5>
                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
-                            <a href="./internship.php" class="nav-item nav-link">click here</a>
                         </div>
                     </div>
                 </div>
@@ -202,8 +201,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p>
                         </div>
                         <div class="col-sm-6">
-                       <a href="./internship.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p></a>
-                            
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p>
                         </div>
                         <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
@@ -289,7 +287,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹13999.00</h3>
+                            <h3 class="mb-0">₹149.00</h3>
                             <div class="mb-3">
                                 <!-- <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -317,7 +315,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹16999.00</h3>
+                            <h3 class="mb-0">₹149.00</h3>
                             <div class="mb-3">
                                 <!-- <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
@@ -345,7 +343,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">₹17999.00</h3>
+                            <h3 class="mb-0">₹149.00</h3>
                             <div class="mb-3">
                                 <!-- <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
