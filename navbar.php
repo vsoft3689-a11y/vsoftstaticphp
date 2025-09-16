@@ -17,7 +17,7 @@
                 <a href="./about.php" class="nav-item nav-link">About</a>
                 <a href="./services.php" class="nav-item nav-link">Services</a>
                 <a href="./projects.php" class="nav-item nav-link">Projects</a>
-                <a href="./internship.php" class="nav-item nav-link">Internship</a>
+                <a href="./internship.php" class="nav-item nav-link ">Internship</a>
 
                 <!-- <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
@@ -29,6 +29,6 @@
                 <!-- </div> -->
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="./register.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>

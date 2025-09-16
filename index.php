@@ -66,7 +66,7 @@
                                <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
                                 <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                                 <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
                         </div>
@@ -100,12 +100,12 @@
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                     <div class="p-4">
+                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 class="mb-3">B.TECH Projects</h5>
-                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software, and civil design.</p>
-                        </div>
-                    </div>
+                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software,and civil desig</p>
+                        </div> 
+                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
@@ -125,7 +125,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa-solid fa-laptop-code fa-3x text-info mb-4"></i>
@@ -133,8 +133,8 @@
                             <p>Offers practical training in software development, IT services, or application design.</p>
                         </div>
                     </div>
-                </div>
-                <div class="row g-4 mt-3 justify-content-center align-items-stretch">
+                </div> 
+                 <div class="row g-4 mt-3 justify-content-center align-items-stretch">
                      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
                         <div class="service-item text-center pt-3">
                            <div class="p-4">
@@ -146,25 +146,21 @@
                         </div>
                      </div>
                 </div>
-                
-
-                
+                 
                  <!-- <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
                             <h5 class="col-mb-3">Internship & coroporate</h5>
                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
-                            <a href="./internship.php" class="nav-item nav-link">click here</a>
                         </div>
                     </div>
                 </div> -->
-            </div>
+             </div>
         </div>
-    </div>
+    </div> -
     <!-- Service End -->
-
-
+     
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -195,8 +191,7 @@
                            <a href="./projects.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                       <a href="./internship.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p></a>
-                            
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p>
                         </div>
                         <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
