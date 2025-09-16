@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/about.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -44,21 +46,17 @@
       <?php include 'navbar.php'; ?>
     <!-- Navbar End -->
    
-  <<div class="container-fluid bg-primary py-5 mb-5 page-header">
-    <div class="container py-5 text-center">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <h1 class="display-3 text-white animated slideInDown mb-3">About us</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item">
-                            <a class="text-white" href="index.php">Home</a>
-                        </li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">about us</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
+  <div class="container-fluid bg-primary mb-5 about-header d-flex align-items-center" style="min-height: 60vh;">
+    <div class="container text-center">
+        <h1 class="display-3 text-white animated slideInDown mb-3">About Us</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item">
+                    <a class="text-white" href="index.php">Home</a>
+                </li>
+                <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
+            </ol>
+        </nav>
     </div>
 </div>
 
@@ -128,25 +126,25 @@
                     <p class="mb-4">In addition, we specialize in offering academic as well as industrial project solutions, complemented with training and guidance to help learners and professionals achieve their goals.</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>B.Tech Projects</p>
+                      <a href="./projects.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>BTECH PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>M.Tech Projects</p>
+                            <a href="./projects.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MTECH PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA Projects</p>
+                            <a href="./projects.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MBA PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MBA Projects</p>
+                           <a href="./projects.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Internships & Corporate training</p>
+                            <a href="./projects.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p>
                         </div>
                        <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
                         </div>-->
-                    </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="Project.php">Read More</a>
+                    </div><a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Read More</a>
+                    
                 </div>
             </div>
         </div>
