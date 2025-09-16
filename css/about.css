@@ -1,0 +1,74 @@
+.about-header{
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/about6.avif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200;
+    
+}
+.services-header{
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/services1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+ 
+        /* Service card styling */
+        /* .service-item {
+            background: #fff;
+            border-radius: 10px;
+            transition: all 0.3s ease-in-out;
+            color: #000; /* default black text 
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-item .p-4 {
+            flex: 1; /* content expands
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-item p,
+        .service-item h5 {
+            color: #000;
+        }
+
+        /* Hover effect 
+        .service-item:hover {
+            background: var(--primary);
+            color: #fff !important;
+        }
+
+        .service-item:hover h5,
+        .service-item:hover p,
+        .service-item:hover i {
+            color: #fff !important;
+        }
+
+        /* Button styling 
+        .service-btn {
+            margin-top: auto; /* push button to bottom 
+            display: inline-block;
+            padding: 8px 18px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 25px;
+            font-size: 14px;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .service-btn:hover {
+            background: #fff;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .service-item:hover .service-btn {
+            background: #fff;
+            color: var(--primary);
+        } */
