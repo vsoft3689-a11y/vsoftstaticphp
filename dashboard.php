@@ -83,24 +83,24 @@
                         <div class="col-md-4">
                             <div class="card text-white bg-primary ">
                                 <div class="card-body">
-                                    <h4 class="card-title text-white">Custom Requirements</h4>
-                                    <h5 class="card-text text-white">5</h5>
+                                    <h4 class="card-title text-white mb-3 mt-2">Submit Custom Requirements</h4>
+                                    <h5 class="card-text text-white mb-2">5</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card text-white bg-primary">
                                 <div class="card-body">
-                                    <h4 class="card-title text-white">Under Review</h4>
-                                    <h5 class="card-text text-white">2</h5>
+                                    <h4 class="card-title text-white mt-1 mb-5">Under Review</h4>
+                                    <h5 class="card-text text-white mt-2 mb-2">2</h5>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card text-white bg-primary">
                                 <div class="card-body">
-                                    <h4 class="card-title text-white">Approved / Rejected</h4>
-                                    <h5 class="card-text text-white">3</h5>
+                                    <h4 class="card-title text-white mt-1 mb-5">Approved / Rejected</h4>
+                                    <h5 class="card-text text-white mt-2 mb-2">3</h5>
                                 </div>
                             </div>
                         </div>
