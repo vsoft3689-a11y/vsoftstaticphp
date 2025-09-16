@@ -184,16 +184,16 @@
 
 
     <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
   <div class="container">
     <div class="text-center mb-5">
       <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
       <h1>Our Students Say!</h1>
     </div>
-    <div class="owl-carousel testimonial-carousel position-relative">
+    <div class="owl-carousel testimonial-carousel position-relative"> -->
 
       <!-- Testimonial 1 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Sathvika</h5>
         <p class="text-muted mb-1">Student</p>
@@ -205,10 +205,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 2 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Mahesh</h5>
         <p class="text-muted mb-1">Student</p>
@@ -220,10 +220,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 3 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Bhagath</h5>
         <p class="text-muted mb-1">Student</p>
@@ -235,10 +235,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Good experience, I understood my domain better.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 4 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Anu</h5>
         <p class="text-muted mb-1">Student</p>
@@ -250,12 +250,99 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">I got real-time exposure and learned a lot practically.</p>
         </div>
-      </div>
+      </div> -->
 
-    </div>
+    <!-- </div>
   </div>
-</div>
+</div> -->
 <!-- Testimonial End -->
+ <!-- Team Start -->
+     <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
+                <h1 class="mb-5">Team Members</h1>
+            </div> 
+            < <div class="row g-4">
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div> 
+                         <div class="text-center p-4">
+                            <h5 class="mb-0">Ram</h5>
+                            <small>Chairman</small>
+                        </div>
+                    </div>
+                </div> 
+                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                         <div class="text-center p-4">
+                            <h5 class="mb-0">seetha</h5>
+                            <small>Principle</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                        </div> 
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Laxman</h5>
+                            <small>Vice Principle</small>
+                        </div>
+                    </div> 
+                </div>
+                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="team-item bg-light">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                        </div>
+                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-0">Urmila</h5>
+                            <small>Professor</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- Team End --->
+
+
+    
 
 
     <!-- Footer Start -->
