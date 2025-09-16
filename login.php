@@ -72,6 +72,7 @@
         </div>
         <button type="button" class="btn btn-primary w-100 text-white"
         onclick="window.location.href='./dashboard.php'">Login</button>
+        <p class="text-center mt-3">Don't have an account? <a href="./register.php" class="link-primary">Register here</a></p>
       </form>
     </div>
   </div>
