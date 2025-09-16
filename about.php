@@ -44,21 +44,23 @@
       <?php include 'navbar.php'; ?>
     <!-- Navbar End -->
    
-<div class="container-fluid bg-primary py-5 mb-5 page-header">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 text-center">
-                    <h1 class="display-3 text-white animated slideInDown" style = "padding:80px;">About us</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">about us</li>
-                        </ol>
-                    </nav>
-                </div>
+  <<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="display-3 text-white animated slideInDown mb-3">About us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item">
+                            <a class="text-white" href="index.php">Home</a>
+                        </li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">about us</li>
+                    </ol>
+                </nav>
             </div>
         </div>
     </div>
+</div>
 
 
     <!-- Header End -->
@@ -269,9 +271,9 @@
 
     <!-- Footer Start -->
     
-        <?php include 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
 
-    <!-- Footer End -->    
+     <!-- Footer End -->    
 
 
     <!-- Back to Top -->
