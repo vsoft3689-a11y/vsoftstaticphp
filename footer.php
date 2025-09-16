@@ -25,30 +25,40 @@
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
-                            <a href ="">
+                        <a href ="img/major1.jpg">
                             <img class="img-fluid bg-light p-1" src="img/major1.jpg" alt="">
-                            </a>
+                        </a>
                         </div>
                         <div class="col-4">
+                        <a href ="img/mini1.jpg">
                             <img class="img-fluid bg-light p-1" src="img/mini1.jpg" alt="">
+                        </a>
                         </div>
                         <div class="col-4">
+                        <a href ="img/sathInternshp.jpg">    
                             <img class="img-fluid bg-light p-1" src="img/sathInternshp.jpg" alt="">
+                        </a>    
                         </div>
                         <div class="col-4">
+                        <a href ="img/sathvikacyber.jpg">    
                             <img class="img-fluid bg-light p-1" src="img/sathvikacyber.jpg" alt="">
+                        </a>
                         </div>
                         <div class="col-4">
+                        <a href ="img/sathStructural.jpg">
                             <img class="img-fluid bg-light p-1" src="img/sathStructural.jpg" alt="">
+                        </a>    
                         </div>
                         <div class="col-4">
+                        <a href ="img/mini1.jpg">
                             <img class="img-fluid bg-light p-1" src="img/mini1.jpg" alt="">
+                        </a>    
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Subscribe to our Newsletter for Updates</h4>
-                    <p>Stay connected! Get course updates and career tips delivered to your email.</p>
+                    <p></p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
                         <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
@@ -60,10 +70,10 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">VsoftSolutions</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="#">Vsofts Solutions</a>, All Right Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="./">WesTechnologies.in</a><br><br>
+                        Designed By <a class="border-bottom" href="./">westechnologies.in</a><br><br>
                         <!-- Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
                     </div>
                     <div class="col-md-6 text-center text-md-end">
