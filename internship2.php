@@ -74,7 +74,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
                             <h5 class="mb-3">Web Development</h5>
                             <!-- <p>Soft Skills & commun ication</p> -->
                             <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
@@ -84,7 +84,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
+                            <i class="fa fa-3x fa-leaf text-primary mb-4"></i>
                             <h5 class="mb-3">Python with Django </h5>
                             <p></p>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
@@ -94,7 +94,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-home text-primary mb-4"></i>
+                            <i class="fa fa-3x fa-robot text-primary mb-4"></i>
                             <h5 class="mb-3">AI & Machine Learning</h5>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
                         </div>
@@ -103,7 +103,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
+                            <i class="fa fa-3x bi-phone text-primary mb-4"></i>
                             <h5 class="mb-3">Mobile App Development</h5>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="./internship2.php">Click here</a>
                         </div>

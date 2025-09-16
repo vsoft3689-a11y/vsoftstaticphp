@@ -161,7 +161,7 @@
     .header-carousel .owl-carousel-item img {
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: 50%;
         object-fit: cover;
     }
 }
@@ -197,14 +197,11 @@
 }
 
 .page-header {
-<<<<<<< HEAD
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/internship_b.jpg);
-=======
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/contact1.jpg);
->>>>>>> 9a0ed7182c1d565ad0d34c1c5b502dcb10200c7f
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/carousel-4.avif);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+      min-height: 600px;
 }
 
 .page-header-inner {
@@ -261,6 +258,10 @@
     background: var(--light);
     transition: .5s;
 }
+.service-item p {
+    text-align: left;
+    line-height: 1.6;   /* better spacing between lines */
+}
 
 .service-item:hover {
     margin-top: -10px;
@@ -274,6 +275,7 @@
 .service-item:hover * {
     color: var(--light) !important;
 }
+
 
 /*** Categories & Courses ***/
 .category img,
@@ -455,4 +457,45 @@
   font-weight: bold;
   color: #e63946; /* Red for discount */
 }
+
+
+
+
+  
+
+
+
+
+ .bulk-offer summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  color: #007bff;
+  text-decoration: underline;
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.bulk-offer summary::-webkit-details-marker {
+  display: none; /* removes default arrow */
+}
+
+
+  .bulk-offer summary {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;  /* make text bold */
+  color: black;     /* blue color */
+  text-decoration: line; /* remove underline */
+  margin-bottom: 5px;
+  list-style: none;
+}
+
+.bulk-offer .offers h6 {
+  margin-top: 0;
+  color: #e63946;
+  font-size: 15px;
+}
+
+
 

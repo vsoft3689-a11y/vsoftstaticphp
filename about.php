@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>VsoftSolutions</title>
+    <title>VsoftsSolutions</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -40,89 +40,28 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
-   <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>VsoftSolutions</h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./index.php" class="nav-item nav-link">Home</a>
-                <a href="./about.php" class="nav-item nav-link active">About</a>
-                <a href="./services.php" class="nav-item nav-link">Services</a>
-<<<<<<< HEAD
-                <a href="#" class="nav-item nav-link">Projects</a>
-                <a href="./internship.php" class="nav-item nav-link">Internship</a>
-=======
-                <a href="./projects.php" class="nav-item nav-link">Projects</a>
-                <a href="./btech" class="nav-item nav-link">Internship</a>
->>>>>>> 9a0ed7182c1d565ad0d34c1c5b502dcb10200c7f
-
-                <!--<div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
-                    <div class="dropdown-menu fade-down m-0">
-                        <a href="team.html" class="dropdown-item">Our Team</a>
-                        <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="404.html" class="dropdown-item">404 Page</a>
-                    </div>
-                </div>-->
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
+      <?php include 'navbar.php'; ?>
     <!-- Navbar End -->
-<div class="container-fluid p-0 mb-5">
-    <div class="owl-carousel header-carousel position-relative">
-        
-        <!-- Carousel Item 1 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/aboutbg.jpg" alt="Background 1">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center">
-                            <h1 class="display-3 text-white animated slideInDown">About Us</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="Projects.php">Projects</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
+   
+  <<div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container py-5 text-center">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <h1 class="display-3 text-white animated slideInDown mb-3">About us</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item">
+                            <a class="text-white" href="index.php">Home</a>
+                        </li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">about us</li>
+                    </ol>
+                </nav>
             </div>
         </div>
-
-        <!-- Carousel Item 2 -->
-        <div class="owl-carousel-item position-relative">
-            <img class="img-fluid" src="img/aboutbg2.jpg" alt="Background 2">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center">
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-10 text-center">
-                            <h1 class="display-3 text-white animated slideInDown">About Us</h1>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb justify-content-center">
-                                    <li class="breadcrumb-item"><a class="text-white" href="index.php">Home</a></li>
-                                    <li class="breadcrumb-item"><a class="text-white" href="Projects.php">Projects</a></li>
-                                    <li class="breadcrumb-item text-white active" aria-current="page">About</li>
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
+
 
     <!-- Header End -->
 
@@ -207,180 +146,123 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
                         </div>-->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="Project.php">Read More</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
-
-
-    <!-- Team Start -->
+    <!-- Company History, Mission & Vision Start -->
     <div class="container-xxl py-5">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Team Members</h6>
-                <h1 class="mb-5"></h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Shekar</h5>
-                            <small>Frontend Developer</small>
-                        </div>
-                    </div>
+            <div class="row g-5">
+                <!-- Company History -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our History</h6>
+                    <h2 class="mb-3">How We Started</h2>
+                    <p>V SOFTS SOLUTIONS established in 2003 with the vision to give best-in-class programming improvement and quality confirmation administrations to a various arrangement of clients. In today's market, Companies who depend on seaward improvement as major to their business achievement must secure the correct blend of mastery and experience from its accomplices.</p>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Bhagath</h5>
-                            <small>Frontend Developer</small>
-                        </div>
-                    </div>
+
+                <!-- Mission -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our Mission</h6>
+                    <h2 class="mb-3">What Drives Us</h2>
+                    <p>We are committed to providing outstanding software solutions tailored to our clients' specific needs. Our goal is to help them excel in a competitive market and reach their strategic goals. By understanding their unique challenges, we deliver innovative and effective solutions. We prioritize quality, efficiency, and client satisfaction in every project. Partner with us to stay ahead and succeed.</p>
                 </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Pawan Kalyan</h5>
-                            <small>frontend Developer</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Sathvika</h5>
-                            <small>Frontend Developer</small>
-                        </div>
-                    </div>
+
+                <!-- Vision -->
+                <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                    <h6 class="section-title bg-white text-start text-primary pe-3">Our Vision</h6>
+                    <h2 class="mb-3">Looking Ahead</h2>
+                    <p>Our mission is to revolutionize industries with disruptive software technologies. We aim to redefine possibilities and inspire innovation, driving forward the future of digital transformation. By pushing the boundaries, we create solutions that set new standards. Our commitment is to lead the way in technological advancements. Join us in shaping the future.</p>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- Team End -->
-        
+    <!-- Company History, Mission & Vision End -->
+
+
+    <!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+      <h1>Our Students Say!</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel position-relative">
+
+      <!-- Testimonial 1 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Sathvika</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
+        <div class="text-warning mb-1">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="text-muted mb-2">Rating: <strong>4.5 / 5</strong></div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Mahesh</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
+        <div class="text-warning mb-1">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <div class="text-muted mb-2">Rating: <strong>4.0 / 5</strong></div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Bhagath</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
+        <div class="text-warning mb-1">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <div class="text-muted mb-2">Rating: <strong>3.5 / 5</strong></div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">Good experience, I understood my domain better.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Anu</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-2">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
+        <div class="text-warning mb-1">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="text-muted mb-2">Rating: <strong>5.0 / 5</strong></div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">I got real-time exposure and learned a lot practically.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Quick Link</h4>
-                    <a class="btn btn-link" href="about.php">About Us</a>
-                    <a class="btn btn-link" href="contact.php">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">FAQs & Help</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Survey No.64,Madhapur,Hyderabad</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91-9441927859</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@vsoftssolutions.in</p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Gallery</h4>
-                    <div class="row g-2 pt-2">
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
-                        </div>
-                        <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-3">Stay Updated</h4>
-                    <p>Subscribe to receive the latest updates on projects, internships, and training programs.</p>
-                    <div class="position-relative mx-auto" style="max-width: 400px;">
-                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.php">VsoftSolutions</a>, All Right Reserved.
+    
+    <?php include 'footer.php'; ?>
 
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">WesTechnologies</a><br><br>
-                       <!-- Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>-->
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--<div class="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+     <!-- Footer End -->    
 
 
     <!-- Back to Top -->

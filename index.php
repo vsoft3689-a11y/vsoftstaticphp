@@ -32,6 +32,11 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/zoom.css" rel="stylesheet">
+    <style>
+ 
+    </style>
+    
     
 </head>
 
@@ -57,7 +62,7 @@
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/civil.jpg" alt="">
+                <img class="img-fluid" src="img/background.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
@@ -73,7 +78,7 @@
                 </div>
             </div>
             <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/ece.jpg" alt="">
+                <img class="img-fluid" src="img/iot.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
                     <div class="container">
                         <div class="row justify-content-start">
@@ -95,17 +100,17 @@
 
 
     <!-- Service Start -->
-    <div class="container-xxl py-5">
+     <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                     <div class="p-4">
+                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 class="mb-3">B.TECH Projects</h5>
-                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software, and civil design.</p>
-                        </div>
-                    </div>
+                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software,and civil desig</p>
+                        </div> 
+                 </div>
                 </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
@@ -125,7 +130,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa-solid fa-laptop-code fa-3x text-info mb-4"></i>
@@ -133,6 +138,18 @@
                             <p>Offers practical training in software development, IT services, or application design.</p>
                         </div>
                     </div>
+                </div> 
+                 <div class="row g-4 mt-3 justify-content-center align-items-stretch">
+                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
+                        <div class="service-item text-center pt-3">
+                           <div class="p-4">
+                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
+                             <h5 class="mb-3">Internship & Corporate</h5>
+                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
+                             <a href="./internship.php" class="nav-item nav-link">Click Here</a>
+                           </div>
+                        </div>
+                     </div>
                 </div>
                 <div class="row g-4 mt-3 justify-content-center align-items-stretch">
                      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
@@ -146,25 +163,107 @@
                         </div>
                      </div>
                 </div>
-                
 
-                
-                 <!-- <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
-                            <h5 class="col-mb-3">Internship & coroporate</h5>
-                            <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
-                            <a href="./internship.php" class="nav-item nav-link">click here</a>
-                        </div>
+                 
+
+             </div>
+        </div>
+    </div>   -->
+
+
+    <div class="container-xxl py-5">
+    <div class="container">
+
+        <!-- First Row -->
+        <div class="row g-4">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item text-center pt-3 h-100">
+                    <div class="p-4 h-100 d-flex flex-column">
+                        <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                        <h5 class="mb-3">B.TECH Projects</h5>
+                        <p>B.Tech projects showcase practical applications of engineering concepts in fields like software, civil, mechanical, and electronics engineering.</p>
+                        <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                                              
+
+
+                    </div> 
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item text-center pt-3 h-100">
+                    <div class="p-4 h-100 d-flex flex-column">
+                        <i class="fa-solid fa-microchip fa-3x text-primary mb-4"></i>
+                        <h5 class="mb-3">M.TECH Projects</h5>
+                        <p>M.Tech projects provide students with in-depth research or industry exposure in specialized engineering fields such as computer science, electronics and etc.</p>
+                        <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
                     </div>
-                </div> -->
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item text-center pt-3 h-100">
+                    <div class="p-4 h-100 d-flex flex-column">
+                        <i class="fa-solid fa-briefcase fa-3x text-info mb-4"></i>
+                        <h5 class="mb-3">MBA Projects</h5>
+                        <p>MBA projects focus on providing students with real-world business experience in areas such as management, finance, marketing and operations.</p>
+                        <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Second Row -->
+        <div class="row g-4 mt-3">
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="service-item text-center pt-3 h-100">
+                    <div class="p-4 h-100 d-flex flex-column">
+                        <i class="fa-solid fa-laptop-code fa-3x text-info mb-4"></i>
+                        <h5 class="mb-3">MCA Projects</h5>
+                        <p>MCA projects provide practical exposure to software development, IT services, and application design, helping students build technical expertise and industry-ready.</p>
+                        <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
+                <div class="service-item text-center pt-3 h-100">
+                    <div class="p-4 h-100 d-flex flex-column">
+                        <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
+                        <h5 class="mb-3">Internship</h5>
+                        <p>Internships provide students with hands-on industry exposure, allowing them to apply academic knowledge in practical situations and gain professional experience.</p>
+                        <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
+                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="1.1s">
+                <div class="service-item text-center pt-3 h-100">
+                    <div class="p-4 h-100 d-flex flex-column">
+                        <i class="fa-solid fa-users fa-3x text-info mb-4"></i>
+                        <!-- <i class="fa-solid fa-users fa-3x text-warning mb-4"></i> -->
+                        <h5 class="mb-3">Corporate</h5>
+                        <p>Corporate training equips employees and graduates with the latest industry skills, bridging the gap between education and real-world professional demands.</p>
+                        <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
+                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+
+
+
+    
+
     <!-- Service End -->
-
-
+     
     <!-- About Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -183,26 +282,25 @@
                     </p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>BTECH PROJECTS</p>
+                            <a href="./projects.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>BTECH PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MTECH PROJECTS</p>
+                            <a href="./projects.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MTECH PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MBA PROJECTS</p>
+                            <a href="./projects.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MBA PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p>
+                           <a href="./projects.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                       <a href="./internship.php" ><p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p></a>
-                            
+                            <a href="./internship.php"> <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p></a>
                         </div>
                         <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
                         </div> -->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="./index.php">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="./about.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -211,7 +309,7 @@
 
 
     <!-- Categories Start -->
-    <div class="container-xxl py-5 category">
+    <!-- <div class="container-xxl py-5 category">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
@@ -221,46 +319,91 @@
                 <div class="col-lg-7 col-md-6">
                     <div class="row g-3">
                         <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="">
+                            <a class="position-relative d-block overflow-hidden" href="./projects.php">
                                 <img class="img-fluid" src="img/ai.jpg" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0">Artificial Intelligence</h5>
-                                    <!-- <small class="text-primary">49 Courses</small> -->
+                                    
                                 </div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="">
+                            <a class="position-relative d-block overflow-hidden" href="./projects.php">
                                 <img class="img-fluid" src="img/sathvikacyber.jpg" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0">Cyber Security</h5>
-                                    <!-- <small class="text-primary">49 Courses</small> -->
+                                    
                                 </div>
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="">
+                            <a class="position-relative d-block overflow-hidden" href="./projects.php">
                                 <img class="img-fluid" src="img/sathStructural.jpg" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0">Structural Engineering</h5>
-                                    <!-- <small class="text-primary">49 Courses</small> -->
+                                    
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="">
+                    <a class="position-relative d-block h-100 overflow-hidden" href="./projects.php">
                         <img class="img-fluid position-absolute w-100 h-100" src="img/marketing.jpg" alt="" style="object-fit: cover;">
                         <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
                             <h5 class="m-0">Marketing</h5>
-                            <!-- <small class="text-primary">49 Courses</small> -->
+                            
                         </div>
                     </a>
                 </div>
             </div>
         </div>
+    </div> -->
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
+      <h1 class="mb-5">Courses Categories</h1>
     </div>
+
+    <!-- First row (2 images) -->
+    <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
+      <a href="./projects.php" class="zoom-img">
+        <img src="./img/ai1.jpg" class="img-fluid rounded " alt="Artificial Intelligence">
+      </a>
+      <h5>Artificial Intelligence</h5>
+    </div>
+
+    <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
+      <a href="./projects.php" class="zoom-img">
+        <img src="img/sathvikacyber.jpg" class="img-fluid rounded" alt="Cyber Security">
+      </a>
+      <h5>Cyber Security</h5>
+    </div>
+  </div>
+
+  <!-- Second row (2 images) -->
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
+      <a href="./projects.php" class="zoom-img">
+        <img src="img/sathStructural.jpg" class="img-fluid rounded" alt="Structural Engineering">
+      </a>
+      <h5>Structural Engineering</h5>
+    </div>
+
+    <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
+      <a href="./projects.php" class="zoom-img">
+        <img src="img/marketing3.jpg" class="img-fluid rounded" alt="Digital Marketing">
+      </a>
+      <h5>Marketing</h5>
+    </div>
+  </div>
+</div>
+
+
+
+
+
     <!-- Categories Start -->
 
 
@@ -282,9 +425,22 @@
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
-            <span class="new-price">₹1599.00</span>
+            <span class="discount">20% OFF</span>
+           <br> <span class="new-price">₹1599.00</span>
+           <details class="bulk-offer">
+    <summary>Offers🎉</summary>
+    <div class="offers">
+      <h6>🎉Tiered Bulk Offers</h6>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
+        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
+        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
+        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      </ul>
+    </div>
+  </details>
           </div>
-          <h5 class="text-center mb-4">Mini Projects</h5>
+          <h5 class="text-center mb-4">Mini Project</h5>
         </div>
       </div>
 
@@ -295,10 +451,24 @@
             <img class="img-fluid" src="img/major1.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
-            <span class="old-price">₹1999.00</span>
-            <span class="new-price">₹1599.00</span>
+               <span class="old-price">₹1999.00</span>
+               <span class="discount">20% OFF</span>
+           <br><span class="new-price">₹1599.00</span>
+               
+               <details class="bulk-offer">
+    <summary>Offers🎉</summary>
+    <div class="offers">
+      <h6>🎉Tiered Bulk Offers</h6>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
+        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
+        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
+        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      </ul>
+    </div>
+  </details>
           </div>
-          <h5 class="text-center mb-4">Major Projects</h5>
+          <h5 class="text-center mb-4">Major Project</h5>
         </div>
       </div>
 
@@ -310,7 +480,21 @@
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
-            <span class="new-price">₹1599.00</span>
+            <span class="discount">20% OFF</span>
+        <br><span class="new-price">₹1599.00</span>
+            
+            <details class="bulk-offer">
+    <summary>Offers🎉</summary>
+    <div class="offers">
+      <h6>🎉Tiered Bulk Offers</h6>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
+        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
+        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
+        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      </ul>
+    </div>
+  </details>
           </div>
           <h5 class="text-center mb-4">Internship & Corporate</h5>
         </div>
@@ -411,7 +595,7 @@
     <!-- Team End -->
 
 
-    <!-- Testimonial Start -->
+    <!-- Testimonial Start
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
@@ -453,8 +637,79 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Testimonial End -->
+    
+         <!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+      <h1>Our Students Say!</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel position-relative">
+
+      <!-- Testimonial 1 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Sathvika</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Mahesh</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Bhagath</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">Good experience, I understood my domain better.</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Anu</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic">
+          <p class="mb-0">I got real-time exposure and learned a lot practically.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+
         
 
     <!-- Footer Start -->
