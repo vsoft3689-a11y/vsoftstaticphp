@@ -498,4 +498,30 @@
 }
 
 
+.testimonial-item {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
+  .review-box {
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    scrollbar-width: thin;
+  }
+
+  .review-box::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .review-box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  .review-box p {
+    margin: 0;
+  }
