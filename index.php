@@ -33,10 +33,14 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/zoom.css" rel="stylesheet">
+    <link href="css/offer.css" rel="stylesheet">
     <style>
- 
-    </style>
+  
+</style>
     
+
+
+ 
     
 </head>
 
@@ -70,7 +74,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advance with Machine Learning</h5>
                                <h1 class="display-3 text-white animated slideInDown">Build Smart Systems with Real Data</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Master Machine Learning through hands-on projects, predictive modeling, and practical algorithm design tailored for real-world applications.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
@@ -86,7 +90,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore the World of IoT</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Connect Devices, Create the Future</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
-                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
@@ -369,16 +373,16 @@
     <!-- First row (2 images) -->
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
-        <img src="./img/ai1.jpg" class="img-fluid rounded " alt="Artificial Intelligence">
+        <img src="./img/ai1.jpg" class="img-fluid rounded" alt="Artificial Intelligence">
       </a>
-      <h5>Artificial Intelligence</h5>
+      <h5 class="mt-3">Artificial Intelligence</h5>
     </div>
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
         <img src="img/sathvikacyber.jpg" class="img-fluid rounded" alt="Cyber Security">
       </a>
-      <h5>Cyber Security</h5>
+      <h5 class="mt-3">Cyber Security</h5>
     </div>
   </div>
 
@@ -388,14 +392,14 @@
       <a href="./projects.php" class="zoom-img">
         <img src="img/sathStructural.jpg" class="img-fluid rounded" alt="Structural Engineering">
       </a>
-      <h5>Structural Engineering</h5>
+      <h5 class="mt-3">Structural Engineering</h5>
     </div>
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
         <img src="img/marketing3.jpg" class="img-fluid rounded" alt="Digital Marketing">
       </a>
-      <h5>Marketing</h5>
+      <h5 class="mt-3">Marketing</h5>
     </div>
   </div>
 </div>
@@ -428,14 +432,14 @@
             <span class="discount">20% OFF</span>
            <br> <span class="new-price">₹1599.00</span>
            <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -456,14 +460,14 @@
            <br><span class="new-price">₹1599.00</span>
                
                <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -484,14 +488,14 @@
         <br><span class="new-price">₹1599.00</span>
             
             <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -507,10 +511,91 @@
 
     
     <!-- Courses End -->
+     <!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+      <h1>Our Students Say!</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel position-relative">
+
+      <!-- Testimonial 1 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Sathvika</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            Project support was amazing, everything was explained clearly. The team was always available to clarify doubts, and we got exposure to real-time tools and platforms.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Mahesh</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            Very helpful team and good guidance throughout the course. I was able to complete my final year project with confidence. Highly recommend VSoft for academic projects!
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Bhagath</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            Good experience overall. As an MBA student, I was concerned about project relevance, but they delivered exactly what I needed for my specialization. The documentation was neat too.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Anu</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            I got real-time exposure and learned a lot practically. The internship was well-structured, and I even added the experience to my resume. Thank you to the entire team!
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+
+
+
+
 
 
     
-            <div class="text-center">
+            <!-- <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
                 <h1 class="mb-5">Our Students Say!</h1>
             </div>
@@ -549,20 +634,20 @@
                 </div>
             </div>
         </div>
-    </div> 
+    </div>  -->
     <!-- Testimonial End -->
     
          <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
   <div class="container">
     <div class="text-center mb-5">
       <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
       <h1>Our Students Say!</h1>
     </div>
-    <div class="owl-carousel testimonial-carousel position-relative">
+    <div class="owl-carousel testimonial-carousel position-relative"> -->
 
       <!-- Testimonial 1 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Sathvika</h5>
         <p class="text-muted mb-1">Student</p>
@@ -573,10 +658,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 2 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Mahesh</h5>
         <p class="text-muted mb-1">Student</p>
@@ -587,10 +672,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 3 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Bhagath</h5>
         <p class="text-muted mb-1">Student</p>
@@ -601,10 +686,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Good experience, I understood my domain better.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 4 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Anu</h5>
         <p class="text-muted mb-1">Student</p>
@@ -619,8 +704,10 @@
 
     </div>
   </div>
-</div>
+</div> -->
 <!-- Testimonial End -->
+
+
 
         
 

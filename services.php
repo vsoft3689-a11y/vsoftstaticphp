@@ -62,7 +62,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
                                 <h5 class="mb-3">B.Tech Projects</h5>
-                                <p class="text-white">
+                                <p>
                                  B.Tech projects enable students to apply engineering concepts to real-world challenges, fostering innovation and technical expertise.
                                 They build problem-solving,teamwork,and research skills essential for professional growth.
                                 These projects serve as a bridge between academic learning and industry readiness.
@@ -80,7 +80,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-microchip text-primary mb-4"></i>
                                 <h5 class="mb-3">M.Tech Projects</h5>
-                                <p class="text-white">
+                                <p>
                                     M.Tech projects focus on advanced research and specialized technical problem-solving in chosen domains.They enhance innovation,critical analysis,and deep subject expertise.
 These projects prepare students for careers in R&D,academia,or leadership roles in industry.
                                 </p>
@@ -96,7 +96,7 @@ These projects prepare students for careers in R&D,academia,or leadership roles 
                             <div class="p-4">
                                 <i class="fa fa-3x fa-briefcase text-primary mb-4"></i>
                                 <h5 class="mb-3">MBA Projects</h5>
-                                <p class="text-white">
+                                <p>
                                    MBA projects provide practical exposure to business management,finance,marketing.They develop leadership,analytical,and decision-making skills through industry-based case studies.These projects prepare students for strategic roles and entrepreneurial ventures.
                                 </p>
                             </div>
@@ -111,7 +111,7 @@ These projects prepare students for careers in R&D,academia,or leadership roles 
                             <div class="p-4">
                                 <i class="fa fa-3x fa-desktop text-primary mb-4"></i>
                                 <h5 class="mb-3">MCA Projects</h5>
-                                <p class="text-white">
+                                <p>
                                     MCA projects focus on software development, application design, and IT solutions. They enhance programming, database, system integration, problem-solving, and adaptability skills, fostering innovation, creativity, efficiency, and technology expertise for a smooth transition into the IT industry.
                               </p>
 
@@ -127,7 +127,7 @@ These projects prepare students for careers in R&D,academia,or leadership roles 
                             <div class="p-4">
                                 <i class="fa fa-3x fa-users text-primary mb-4"></i>
                                 <h5 class="mb-3">Internship Programs</h5>
-                                <p class="text-white">
+                                <p>
                                     Summer,Winter,and Virtual Internships offer hands-on industry experience under expert guidance.
                                    They help students apply academic learning to practical scenarios and build professional networks.
                                     Internships improve employability and prepare candidates for corporate environments.
@@ -144,7 +144,7 @@ These projects prepare students for careers in R&D,academia,or leadership roles 
                             <div class="p-4">
                                 <i class="fa fa-3x fa-chalkboard-teacher text-primary mb-4"></i>
                                 <h5 class="mb-3">Corporate Training</h5>
-                                <p class="text-white">
+                                <p>
                                     Customized Corporate training programs are designed to upskill professionals with the latest technologies and strategies.
 They enhance productivity, leadership,and problem-solving abilities within organizations.
 These programs bridge skill gaps and drive sustainable business growth.

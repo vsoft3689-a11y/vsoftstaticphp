@@ -187,7 +187,7 @@
     background: transparent;
     border: 1px solid #FFFFFF;
     font-size: 22px;
-    transition: .5s;
+    transition: .10s;
 }
 
 .header-carousel .owl-nav .owl-prev:hover,
@@ -470,7 +470,7 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  color: #007bff;
+  color: #007bff; 
   text-decoration: underline;
   margin-bottom: 5px;
   list-style: none;
@@ -496,6 +496,40 @@
   color: #e63946;
   font-size: 15px;
 }
+.bulk-offer summary:hover {
+  color:var(--primary);   /* changes text color on hover */
+  transform: scale(1.05); /* slight zoom */
+  text-decoration: underline; /* underline on hover */
+}
+ 
 
 
 
+
+.testimonial-item {
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .review-box {
+    max-height: 120px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    scrollbar-width: thin;
+  }
+
+  .review-box::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .review-box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+  }
+
+  .review-box p {
+    margin: 0;
+  }
