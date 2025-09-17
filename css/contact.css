@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 .contact-header{ 
-    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/internship23.jpg);
-=======
-.contact-header {
     background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/contact3.jpg);
->>>>>>> da0888e1df6a30ecccdeaf10e512f64e1db053d3
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

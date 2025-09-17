@@ -8,12 +8,10 @@
   <meta name="description" content="Privacy Policy of Vsofts Solutions - We value your trust and are committed to protecting your personal information.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/privacy.css" rel="stylesheet">
-    
+
 </head>
 
 <body>
-    
- 
 
   <!-- Header -->
   <div class="page-header">

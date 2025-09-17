@@ -34,6 +34,9 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/zoom.css" rel="stylesheet">
     <link href="css/offer.css" rel="stylesheet">
+    <style>
+  
+</style>
     
 
 
@@ -433,10 +436,10 @@
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
       <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -461,10 +464,10 @@
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
       <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -489,10 +492,10 @@
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
       <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>

@@ -470,7 +470,7 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  color: #007bff;
+  color: #007bff; 
   text-decoration: underline;
   margin-bottom: 5px;
   list-style: none;
@@ -496,7 +496,11 @@
   color: #e63946;
   font-size: 15px;
 }
-
+.bulk-offer summary:hover {
+  color:var(--primary);   /* changes text color on hover */
+  transform: scale(1.05); /* slight zoom */
+  text-decoration: underline; /* underline on hover */
+}
  
 
 
