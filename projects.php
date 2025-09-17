@@ -31,6 +31,10 @@
 </head>
 <body>
 
+<!-- Navbar Start -->
+      <?php include 'navbar.php'; ?>
+    <!-- Navbar End -->
+
   <!-- Header Start -->
   <div class="container-fluid bg-primary py-5 mb-5 projects-header">
     <div class="container py-5">
@@ -105,7 +109,7 @@
           <td>Project for $degree - $branch in $domain</td>
           <td>PHP, MySQL, HTML, CSS</td>
           <td>
-            <a href='https://youtu.be/2voCBpYfFI4?si=qWb8K--dHTi0Kty2' target='_blank' class='youtube-link'>
+            <a href='https://www.youtube.com/watch?v=YOUR_VIDEO_ID' target='_blank' class='youtube-link'>
               <i class='fab fa-youtube'></i> YouTube Link
             </a>
           </td>
