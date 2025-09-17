@@ -67,11 +67,11 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown"> Cutting-edge Project Solutions</h5>
-                               <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advance with Machine Learning</h5>
+                               <h1 class="display-3 text-white animated slideInDown">Build Smart Systems with Real Data</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Master Machine Learning through hands-on projects, predictive modeling, and practical algorithm design tailored for real-world applications.</p>
                                 <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -83,11 +83,11 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Transform Your Career</h5>
-                                <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore the World of IoT</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Connect Devices, Create the Future</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
                                 <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="register.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
                         </div>
@@ -182,7 +182,7 @@
                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                         <h5 class="mb-3">B.TECH Projects</h5>
                         <p>B.Tech projects showcase practical applications of engineering concepts in fields like software, civil, mechanical, and electronics engineering.</p>
-                        <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                        <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                                               
 
 
@@ -197,7 +197,7 @@
                         <h5 class="mb-3">M.TECH Projects</h5>
                         <p>M.Tech projects provide students with in-depth research or industry exposure in specialized engineering fields such as computer science, electronics and etc.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                         <h5 class="mb-3">MBA Projects</h5>
                         <p>MBA projects focus on providing students with real-world business experience in areas such as management, finance, marketing and operations.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                         <h5 class="mb-3">MCA Projects</h5>
                         <p>MCA projects provide practical exposure to software development, IT services, and application design, helping students build technical expertise and industry-ready.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -236,7 +236,7 @@
                         <h5 class="mb-3">Internship</h5>
                         <p>Internships provide students with hands-on industry exposure, allowing them to apply academic knowledge in practical situations and gain professional experience.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -249,7 +249,7 @@
                         <h5 class="mb-3">Corporate</h5>
                         <p>Corporate training equips employees and graduates with the latest industry skills, bridging the gap between education and real-world professional demands.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -507,98 +507,91 @@
 
     
     <!-- Courses End -->
+     <!-- Testimonial Start -->
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+      <h1>Our Students Say!</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel position-relative">
 
-
-    <!-- Team Start -->
-    <!-- <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
-                <h1 class="mb-5">Expert Instructors</h1>
-            </div> -->
-            <!-- <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div> -->
-                        <!-- <div class="text-center p-4">
-                            <h5 class="mb-0">Ram</h5>
-                            <small>Chairman</small>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div> -->
-                        <!-- <div class="text-center p-4">
-                            <h5 class="mb-0">seetha</h5>
-                            <small>Principle</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
-                        </div> -->
-                        <!-- <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Laxman</h5>
-                            <small>Vice Principle</small>
-                        </div>
-                    </div> -->
-                <!-- </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item bg-light">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
-                            <div class="bg-light d-flex justify-content-center pt-2 px-1">
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div> -->
-                        <!-- </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Urmila</h5>
-                            <small>Professor</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Testimonial 1 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Sathvika</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
         </div>
-    </div> -->
-    <!-- Team End -->
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            Project support was amazing, everything was explained clearly. The team was always available to clarify doubts, and we got exposure to real-time tools and platforms.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Mahesh</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            Very helpful team and good guidance throughout the course. I was able to complete my final year project with confidence. Highly recommend VSoft for academic projects!
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Bhagath</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            Good experience overall. As an MBA student, I was concerned about project relevance, but they delivered exactly what I needed for my specialization. The documentation was neat too.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial-item text-center">
+        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
+        <h5 class="mb-1">Anu</h5>
+        <p class="text-muted mb-1">Student</p>
+        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
+        <div class="text-warning mb-2">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
+          <p class="mb-0">
+            I got real-time exposure and learned a lot practically. The internship was well-structured, and I even added the experience to my resume. Thank you to the entire team!
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Testimonial End -->
 
 
-    <!-- Testimonial Start
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
+
+
+
+
+    
+            <!-- <div class="text-center">
                 <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
                 <h1 class="mb-5">Our Students Say!</h1>
             </div>
@@ -637,20 +630,20 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>  -->
     <!-- Testimonial End -->
     
          <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
   <div class="container">
     <div class="text-center mb-5">
       <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
       <h1>Our Students Say!</h1>
     </div>
-    <div class="owl-carousel testimonial-carousel position-relative">
+    <div class="owl-carousel testimonial-carousel position-relative"> -->
 
       <!-- Testimonial 1 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Sathvika</h5>
         <p class="text-muted mb-1">Student</p>
@@ -661,10 +654,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 2 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Mahesh</h5>
         <p class="text-muted mb-1">Student</p>
@@ -675,10 +668,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 3 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Bhagath</h5>
         <p class="text-muted mb-1">Student</p>
@@ -689,10 +682,10 @@
         <div class="testimonial-text bg-light p-4 rounded fst-italic">
           <p class="mb-0">Good experience, I understood my domain better.</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- Testimonial 4 -->
-      <div class="testimonial-item text-center">
+      <!-- <div class="testimonial-item text-center">
         <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
         <h5 class="mb-1">Anu</h5>
         <p class="text-muted mb-1">Student</p>
@@ -707,8 +700,10 @@
 
     </div>
   </div>
-</div>
+</div> -->
 <!-- Testimonial End -->
+
+
 
         
 
