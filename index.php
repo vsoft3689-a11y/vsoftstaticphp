@@ -369,16 +369,16 @@
     <!-- First row (2 images) -->
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
-        <img src="./img/ai1.jpg" class="img-fluid rounded " alt="Artificial Intelligence">
+        <img src="./img/ai1.jpg" class="img-fluid rounded" alt="Artificial Intelligence">
       </a>
-      <h5>Artificial Intelligence</h5>
+      <h5 class="mt-3">Artificial Intelligence</h5>
     </div>
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
         <img src="img/sathvikacyber.jpg" class="img-fluid rounded" alt="Cyber Security">
       </a>
-      <h5>Cyber Security</h5>
+      <h5 class="mt-3">Cyber Security</h5>
     </div>
   </div>
 
@@ -388,14 +388,14 @@
       <a href="./projects.php" class="zoom-img">
         <img src="img/sathStructural.jpg" class="img-fluid rounded" alt="Structural Engineering">
       </a>
-      <h5>Structural Engineering</h5>
+      <h5 class="mt-3">Structural Engineering</h5>
     </div>
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
         <img src="img/marketing3.jpg" class="img-fluid rounded" alt="Digital Marketing">
       </a>
-      <h5>Marketing</h5>
+      <h5 class="mt-3">Marketing</h5>
     </div>
   </div>
 </div>

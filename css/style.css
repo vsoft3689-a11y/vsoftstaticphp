@@ -187,7 +187,7 @@
     background: transparent;
     border: 1px solid #FFFFFF;
     font-size: 22px;
-    transition: .5s;
+    transition: .10s;
 }
 
 .header-carousel .owl-nav .owl-prev:hover,
