@@ -59,9 +59,9 @@
                     <h1 class="display-3 text-white animated slideInDown">Internship & Corporate</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">Training</li>
+                            <li class="breadcrumb-item"><a class="text-white" href="./index.php">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="./about.php">About</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="./internship.php">Training</li>
                         </ol>
                     </nav>
                 </div>
@@ -80,7 +80,7 @@
                         <div class="p-4"> 
                             <i class="fa fa-3x bi-briefcase text-primary mb-4"></i>
                             <h5 class="mb-3">Corporate Training</h5>
-                            <p justify-content:flex-start; >Soft Skills & Communication, Data Analytics,<br> Leadership & Team Building.</p>
+                            <p justify-content:flex-start; >Soft Skills & Communication, Excel & Data Analytics,<br> Leadership & Team Building.</p>
                             <a class="btn btn-primary py-3 px-5 mt-2" href="#corporate">View</a>
                         </div>
                     </div>
@@ -104,7 +104,7 @@
 
     <!-- Corporate Page -->
     
-    <h4 class="display-3 text-black text-center animated slideInDown" id="corporate">Corporate Training </h4>
+    <h1 class="text-black text-center animated slideInDown" id="corporate">Corporate Training </h1>
                 
     <div class="container-xxl py-5">
         <div class="container">
@@ -152,8 +152,8 @@
     </div>
     <!-- Internship Page Start -->
 
-     <h4 class="display-3 text-black text-center animated slideInDown" id="internship" style= "margin-top : 100px";>
-        Internship Programmings</h4>
+     <h1 class=" text-black text-center animated slideInDown" id="internship" style= "margin-top : 100px " ; >
+        Internship Programmings</h1>
     
      <div class="container-xxl py-5">
         <div class="container">
