@@ -67,9 +67,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown"> Cutting-edge Project Solutions</h5>
-                               <h1 class="display-3 text-white animated slideInDown"> Build Real Projects with VSoft Experts</h1>
-                                <p class="fs-5 text-white mb-4 pb-2"> From B.Tech to MBA, get hands‑on guidance, practical training, and live projects to boost your skills and break into the industry.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advance with Machine Learning</h5>
+                               <h1 class="display-3 text-white animated slideInDown">Build Smart Systems with Real Data</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Master Machine Learning through hands-on projects, predictive modeling, and practical algorithm design tailored for real-world applications.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
@@ -83,9 +83,9 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Transform Your Career</h5>
-                                <h1 class="display-3 text-white animated slideInDown"> Where Projects Meet Professional Growth</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">  Take your knowledge further with domains like AI, Web Dev, ECE & more, and get internship support to power your future.</p>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore the World of IoT</h5>
+                                <h1 class="display-3 text-white animated slideInDown">Connect Devices, Create the Future</h1>
+                                <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
@@ -182,7 +182,7 @@
                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                         <h5 class="mb-3">B.TECH Projects</h5>
                         <p>B.Tech projects showcase practical applications of engineering concepts in fields like software, civil, mechanical, and electronics engineering.</p>
-                        <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                        <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                                               
 
 
@@ -197,7 +197,7 @@
                         <h5 class="mb-3">M.TECH Projects</h5>
                         <p>M.Tech projects provide students with in-depth research or industry exposure in specialized engineering fields such as computer science, electronics and etc.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -209,7 +209,7 @@
                         <h5 class="mb-3">MBA Projects</h5>
                         <p>MBA projects focus on providing students with real-world business experience in areas such as management, finance, marketing and operations.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
                         <h5 class="mb-3">MCA Projects</h5>
                         <p>MCA projects provide practical exposure to software development, IT services, and application design, helping students build technical expertise and industry-ready.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./projects.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -236,7 +236,7 @@
                         <h5 class="mb-3">Internship</h5>
                         <p>Internships provide students with hands-on industry exposure, allowing them to apply academic knowledge in practical situations and gain professional experience.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
@@ -249,7 +249,7 @@
                         <h5 class="mb-3">Corporate</h5>
                         <p>Corporate training equips employees and graduates with the latest industry skills, bridging the gap between education and real-world professional demands.</p>
                         <!-- <a href="./internship.php" class="btn btn-primary mt-auto">Click Here</a> -->
-                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Click</a>
+                         <a href="./internship.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Know More</a>
                     </div>
                 </div>
             </div>
