@@ -5,7 +5,7 @@
                     <h4 class="text-white mb-3">Quick Link</h4>
                     <a class="btn btn-link" href="./about.php">About Us</a>
                     <a class="btn btn-link" href="./contact.php">Contact Us</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="./privacypolicy.php">Privacy Policy</a>
                     <a class="btn btn-link" href="./terms.php">Terms & Condition</a>
                     <a class="btn btn-link" href="./faq.php">FAQs & Help</a>
                 </div>
