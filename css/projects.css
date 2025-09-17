@@ -1,72 +1,75 @@
-/* body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      margin: 0;
-    } */
-.projects-header{
+.project-selection form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-selection select,
+.project-selection button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.project-selection button {
+  background: #0d6efd;
+  color: #fff;
+  border: none;
+}
+
+.project-selection table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.project-selection table,
+.project-selection th,
+.project-selection td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.project-selection th {
+  background: #f5f5f5;
+}
+
+.download-link {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 4px 10px;
+  background: #198754;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.download-link:hover {
+  background: #157347;
+  text-decoration: none;
+  color: #fff;
+}
+/* .projects-header{
     background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/projects\ image.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     
+} */
+
+.projects-header{
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/projects\ image.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* min-height: 200px; */
+    
 }
+
 
 .project-selection{
     display:inline;
 }
-/* .page-header-inner {
-    background: rgba(15, 23, 43, .7);
-}         */
-    
-    /* .container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-      width: 90%;
-      max-width: 1000px;
-    } */
-    /* h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .form-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0px;
-      gap: 10px;
-    }
-    select, button {
-      padding: 8px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      min-width: 160px;
-      transition: 0.3s;
-    }
-    button {
-      background: #007bff;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    button:hover {
-      background: #0056b3;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: center;
-    }
-    th {
-      background: #007bff;
-      color: white;
-    } */

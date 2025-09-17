@@ -29,53 +29,6 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="css/projects.css" rel="stylesheet">
 
-  <style>
-    .project-selection form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      align-items: center;
-      justify-content: center;
-    }
-    .project-selection select,
-    .project-selection button {
-      padding: 8px 12px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    .project-selection button {
-      background: #0d6efd;
-      color: #fff;
-      border: none;
-    }
-    .project-selection table {
-      margin-top: 20px;
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .project-selection table, .project-selection th, .project-selection td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: center;
-    }
-    .project-selection th {
-      background: #f5f5f5;
-    }
-    .download-link {
-      display: inline-block;
-      margin-left: 10px;
-      padding: 4px 10px;
-      background: #198754;
-      color: white;
-      border-radius: 4px;
-      text-decoration: none;
-    }
-    .download-link:hover {
-      background: #157347;
-      text-decoration: none;
-      color: #fff;
-    }
-  </style>
 </head>
 <body>
   <!-- Navbar Start -->
@@ -90,9 +43,9 @@
           <h1 class="display-3 text-white animated slideInDown">OUR PROJECTS</h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
-              <li class="breadcrumb-item"><a class="text-white" href="./navbar.php">Home</a></li>
+              <li class="breadcrumb-item"><a class="text-white" href="./index.php">Home</a></li>
               <li class="breadcrumb-item"><a class="text-white" href="./about.php">Pages</a></li>
-              <li class="breadcrumb-item text-white active" aria-current="./projects.php">projects</li>
+              <li class="breadcrumb-item text-white active" aria-current="./projects.php">Projects</li>
             </ol>
           </nav>
         </div>
@@ -139,17 +92,18 @@
       $projectType = $_POST['project_type'] ?? 'N/A';
 
       // Example file path (replace with your actual project files)
-      $filePath = "projects/$degree/$branch/$domain/sample.pdf";
+      // $filePath = "projects/$degree/$branch/$domain/sample.pdf"; $filePath
 
       echo "<table>
-              <tr><th>Title</th><th>Description</th><th>Technologies</th><th>File Path</th></tr>
+              <tr><th>Title</th><th>Description</th><th>Technologies</th><th>Watch Here</th><th>Abstarct-File</th></tr>
               <tr>
                 <td>$degree Project</td>
                 <td>Project for $degree - $branch in $domain</td>
                 <td>PHP, MySQL, HTML, CSS</td>
+                <td><a href='#' </a>Youtube link </td>
                 <td>
-                  $filePath
-                  <a href='$filePath' download class='download-link'>Download</a>
+                  
+                  <a href='#' download class='download-link'>Download</a>
                 </td>
               </tr>
             </table>";
@@ -179,7 +133,7 @@
       } else if (degree === "MCA") {
         branch.innerHTML = "<option value='MCA'>MCA</option>";
         projectTypeDiv.style.display = "none";
-        ["Web Development", "AI/ML", "Database Systems", "Mobile Applications"].forEach(d => {
+        ["Database Systems", "Web delevelopment", "AI/ML", "Mobile Applications"].forEach(d => {
           domain.innerHTML += `<option value="${d}">${d}</option>`;
         });
       } else if (degree === "MBA") {
@@ -216,13 +170,13 @@
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "Mech") {
-          ["Thermal Engineering", "Automobile", "Manufacturing", "Robotics"].forEach(d => {
+          ["Thermal Engineering", "Automobile", "Manufacturing", "Mechatronics"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         }
       } else if (degree === "MTech") {
         if (branch === "CSE") {
-          ["Data Science", "AI/ML", "Advanced Networks"].forEach(d => {
+          ["Data Mining", "Block Chain", "Network Security"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "ECE") {
@@ -230,11 +184,11 @@
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "Power Systems") {
-          ["Smart Grids", "Power Electronics", "Renewable Systems"].forEach(d => {
+          ["Facts", "Smart energy system", "Load flow studies"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "Structural Engineering") {
-          ["Earthquake Engineering", "Concrete Technology", "Bridge Design"].forEach(d => {
+          ["Finite element", "Concrete Technology", "Seismic Design"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         }
