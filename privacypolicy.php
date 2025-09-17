@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <!-- Navbar Start -->
+      <?php include 'navbar.php'; ?>
+    <!-- Navbar End -->
 
   <!-- Header -->
   <div class="page-header">
@@ -52,6 +55,11 @@
         <strong>Phone:</strong> +91-9441927859</p>
     </div>
   </div>
+  <!-- Footer Start -->
+    
+    <?php include 'footer.php'; ?>
+
+ <!-- Footer End -->
 
   <!-- Footer
   <footer>
