@@ -8,14 +8,12 @@
   <meta name="description" content="Privacy Policy of Vsofts Solutions - We value your trust and are committed to protecting your personal information.">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/privacy.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    
 </head>
 
 <body>
-
- <?php include 'navbar.php'; ?>
+    
+ 
 
   <!-- Header -->
   <div class="page-header">
@@ -57,10 +55,10 @@
     </div>
   </div>
 
-  
-   
-
-  
+  <!-- Footer
+  <footer>
+    <p>&copy; 2025 Vsofts Solutions. All Rights Reserved. | <a href="index.html">Home</a></p>
+  </footer> -->
 
 </body>
 </html>

@@ -31,9 +31,7 @@
 
 </head>
 <body>
-  <!-- Navbar Start -->
-  <?php include 'navbar.php'; ?>
-  <!-- Navbar End -->
+  
 
   <!-- Header Start -->
   <div class="container-fluid bg-primary py-5 mb-5 projects-header">
