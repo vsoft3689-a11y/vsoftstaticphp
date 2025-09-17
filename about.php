@@ -144,7 +144,7 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
                         </div>-->
                     </div>
-                    <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Read More</a>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="services.php">Read More</a>
                 </div>
             </div>
         </div>
@@ -179,9 +179,59 @@
         </div>
     </div>
     <!-- Company History, Mission & Vision End -->
+       <!-- Achievements Start -->
+<!-- Achievements Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            
+            <!-- Left Side: Text Content -->
+            <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                <h6 class="section-title bg-white text-start text-primary pe-3">Our Achievements</h6>
+                <h2 class="mb-3">Milestones We Are Proud Of</h2>
+                <p class="mb-4">
+                    At Vsofts Solutions, we take pride in the accomplishments we’ve achieved over the years. 
+                    Each milestone reflects our dedication to innovation, quality, and client success. 
+                    These achievements strengthen our vision to keep growing and delivering value to our partners worldwide.
+                </p>
+
+                <div class="row gy-3">
+                    <div class="col-12">
+                        <p class="mb-0 text-nowrap"><i class="fa fa-check-circle text-primary me-2"></i> Successfully completed <b>1500+ academic & industrial projects</b> across multiple domains.</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-0 text-nowrap"><i class="fa fa-check-circle text-primary me-2"></i> Trusted by <b>200+ corporate clients</b> for IT solutions and services.</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-0 text-nowrap"><i class="fa fa-check-circle text-primary me-2"></i> Trained and guided <b>5000+ students & professionals</b> in advanced technologies.</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-0 text-nowrap"><i class="fa fa-check-circle text-primary me-2"></i> Delivered <b>20+ years</b> of consistent excellence since our establishment in 2003.</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-0 text-nowrap"><i class="fa fa-check-circle text-primary me-2"></i> Recognized for <b>cutting-edge solutions</b> in AI, IoT, Cloud, and Enterprise Software.</p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-0 text-nowrap"><i class="fa fa-check-circle text-primary me-2"></i> Expanded presence with <b>global clients</b> in education, healthcare, finance, and IT sectors.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Image -->
+            <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="position-relative h-100">
+                    <img class="img-fluid rounded shadow" src="img/achivements.jpg.jpg" alt="Achievements" style="object-fit: cover; width:100%;minimum-hight:200px;">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Achievements End -->
 
 
-    <!-- Team Start -->
+
+<!-- Team Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -198,11 +248,10 @@
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
-                            </div>
+                                <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>                            </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Shekar</h5>
+                            <h5 class="mb-0">Raju</h5>
                             <small>Frontend Developer</small>
                         </div>
                     </div>
@@ -220,7 +269,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Bhagath</h5>
+                            <h5 class="mb-0">Rani</h5>
                             <small>Frontend Developer</small>
                         </div>
                     </div>
@@ -238,7 +287,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Pawan Kalyan</h5>
+                            <h5 class="mb-0">Ram</h5>
                             <small>frontend Developer</small>
                         </div>
                     </div>
@@ -256,7 +305,7 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Sathvika</h5>
+                            <h5 class="mb-0">Sita</h5>
                             <small>Frontend Developer</small>
                         </div>
                     </div>
@@ -265,7 +314,9 @@
         </div>
     </div>
     <!-- Team End -->
-        
+
+ 
+
 
     <!-- Footer Start -->
     
