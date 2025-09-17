@@ -33,10 +33,11 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/zoom.css" rel="stylesheet">
-    <style>
- 
-    </style>
+    <link href="css/offer.css" rel="stylesheet">
     
+
+
+ 
     
 </head>
 
@@ -70,7 +71,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advance with Machine Learning</h5>
                                <h1 class="display-3 text-white animated slideInDown">Build Smart Systems with Real Data</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Master Machine Learning through hands-on projects, predictive modeling, and practical algorithm design tailored for real-world applications.</p>
-                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
@@ -86,7 +87,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore the World of IoT</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Connect Devices, Create the Future</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
-                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
@@ -428,10 +429,10 @@
             <span class="discount">20% OFF</span>
            <br> <span class="new-price">₹1599.00</span>
            <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
         <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
         <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
         <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
@@ -456,10 +457,10 @@
            <br><span class="new-price">₹1599.00</span>
                
                <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
         <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
         <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
         <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
@@ -484,10 +485,10 @@
         <br><span class="new-price">₹1599.00</span>
             
             <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
         <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
         <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
         <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
