@@ -138,7 +138,7 @@
                            <a href="./projects.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>MCA PROJECTS</p></a>
                         </div>
                         <div class="col-sm-6">
-                            <a href="./projects.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p>
+                            <a href="./internship.php" > <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>INTERNSHIP & CORPORATE</p>
                         </div>
                        <!-- <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i></p>
