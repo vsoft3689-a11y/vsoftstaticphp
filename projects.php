@@ -16,7 +16,6 @@
   <!-- Icon Font Stylesheet -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <!-- Libraries Stylesheet -->
   <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -28,7 +27,7 @@
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
   <link href="css/projects.css" rel="stylesheet">
-
+    
 </head>
 <body>
   <!-- Navbar Start -->
@@ -40,11 +39,11 @@
     <div class="container py-5">
       <div class="row justify-content-center">
         <div class="col-lg-10 text-center">
-          <h1 class="display-3 text-white animated slideInDown">OUR PROJECTS</h1>
+          <h1 class="display-3 text-white">OUR PROJECTS</h1>
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb justify-content-center">
               <li class="breadcrumb-item"><a class="text-white" href="./index.php">Home</a></li>
-              <li class="breadcrumb-item"><a class="text-white" href="./about.php">Pages</a></li>
+              <li class="breadcrumb-item"><a class="text-white" href="./about.php">About</a></li>
               <li class="breadcrumb-item text-white active" aria-current="./projects.php">Projects</li>
             </ol>
           </nav>
@@ -55,7 +54,9 @@
   <!-- Header End -->
 
   <div class="container project-selection">
-    <h2 class="text-center mb-4">Project Selection</h2>
+    <div class="text-center">
+      <h2>Project Selection</h2>
+    </div>
     <form method="POST">
       <select name="degree" id="degree" required onchange="updateBranches()">
         <option value="">Select Degree</option>
@@ -91,22 +92,38 @@
       $domain = $_POST['domain'];
       $projectType = $_POST['project_type'] ?? 'N/A';
 
-      // Example file path (replace with your actual project files)
-      // $filePath = "projects/$degree/$branch/$domain/sample.pdf"; $filePath
 
-      echo "<table>
-              <tr><th>Title</th><th>Description</th><th>Technologies</th><th>Watch Here</th><th>Abstarct-File</th></tr>
-              <tr>
-                <td>$degree Project</td>
-                <td>Project for $degree - $branch in $domain</td>
-                <td>PHP, MySQL, HTML, CSS</td>
-                <td><a href='#' </a>Youtube link </td>
-                <td>
-                  
-                  <a href='#' download class='download-link'>Download</a>
-                </td>
-              </tr>
-            </table>";
+
+     echo "<table>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Technologies</th>
+          <th>Demo Video</th>
+          <th>Abstract File</th>
+          <th>Base Paper</th>
+        </tr>
+        <tr>
+          <td>$degree Project</td>
+          <td>Project for $degree - $branch in $domain</td>
+          <td>PHP, MySQL, HTML, CSS</td>
+          <td>
+            <a href='https://youtu.be/2voCBpYfFI4?si=qWb8K--dHTi0Kty2' target='_blank' class='youtube-link'>
+              <i class='fab fa-youtube'></i> YouTube Link
+            </a>
+          </td>
+          <td>
+            <a href='#' download class='download-link'>
+              <i class='fa fa-download'></i> Download
+            </a>
+          </td>
+          <td>
+            <a href='#' download class='download-link'>
+              <i class='fa fa-download'></i> Download
+            </a>
+          </td>
+        </tr>
+      </table>";
     }
     ?>
   </div>
@@ -133,7 +150,7 @@
       } else if (degree === "MCA") {
         branch.innerHTML = "<option value='MCA'>MCA</option>";
         projectTypeDiv.style.display = "none";
-        ["Database Systems", "Web delevelopment", "AI/ML", "Mobile Applications"].forEach(d => {
+        ["Database Systems", "Web Development", "AI/ML", "Mobile Applications"].forEach(d => {
           domain.innerHTML += `<option value="${d}">${d}</option>`;
         });
       } else if (degree === "MBA") {
@@ -176,7 +193,7 @@
         }
       } else if (degree === "MTech") {
         if (branch === "CSE") {
-          ["Data Mining", "Block Chain", "Network Security"].forEach(d => {
+          ["Data Mining", "Blockchain", "Network Security"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "ECE") {
@@ -184,11 +201,11 @@
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "Power Systems") {
-          ["Facts", "Smart energy system", "Load flow studies"].forEach(d => {
+          ["FACTS", "Smart Energy System", "Load Flow Studies"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         } else if (branch === "Structural Engineering") {
-          ["Finite element", "Concrete Technology", "Seismic Design"].forEach(d => {
+          ["Finite Element", "Concrete Technology", "Seismic Design"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         }
