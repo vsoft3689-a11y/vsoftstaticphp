@@ -80,7 +80,7 @@
   <div class="container terms-container">
     <h4>Privacy Policy</h4>
 
-    <p><strong>About Us:</strong> Vsofts Solutions – Delivering Innovative IT & Project Solutions.</p>
+    <!-- <p><strong>About Us:</strong> Vsofts Solutions – Delivering Innovative IT & Project Solutions.</p> -->
 
     <p>
       At <strong>Vsofts Solutions</strong>, we are committed to protecting your privacy and ensuring 
