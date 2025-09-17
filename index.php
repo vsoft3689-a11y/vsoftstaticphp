@@ -33,10 +33,14 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/zoom.css" rel="stylesheet">
+    <link href="css/offer.css" rel="stylesheet">
     <style>
- 
-    </style>
+  
+</style>
     
+
+
+ 
     
 </head>
 
@@ -70,7 +74,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advance with Machine Learning</h5>
                                <h1 class="display-3 text-white animated slideInDown">Build Smart Systems with Real Data</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Master Machine Learning through hands-on projects, predictive modeling, and practical algorithm design tailored for real-world applications.</p>
-                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
@@ -86,7 +90,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore the World of IoT</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Connect Devices, Create the Future</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
-                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                                 <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
                             </div>
@@ -369,16 +373,16 @@
     <!-- First row (2 images) -->
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
-        <img src="./img/ai1.jpg" class="img-fluid rounded " alt="Artificial Intelligence">
+        <img src="./img/ai1.jpg" class="img-fluid rounded" alt="Artificial Intelligence">
       </a>
-      <h5>Artificial Intelligence</h5>
+      <h5 class="mt-3">Artificial Intelligence</h5>
     </div>
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
         <img src="img/sathvikacyber.jpg" class="img-fluid rounded" alt="Cyber Security">
       </a>
-      <h5>Cyber Security</h5>
+      <h5 class="mt-3">Cyber Security</h5>
     </div>
   </div>
 
@@ -388,14 +392,14 @@
       <a href="./projects.php" class="zoom-img">
         <img src="img/sathStructural.jpg" class="img-fluid rounded" alt="Structural Engineering">
       </a>
-      <h5>Structural Engineering</h5>
+      <h5 class="mt-3">Structural Engineering</h5>
     </div>
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
         <img src="img/marketing3.jpg" class="img-fluid rounded" alt="Digital Marketing">
       </a>
-      <h5>Marketing</h5>
+      <h5 class="mt-3">Marketing</h5>
     </div>
   </div>
 </div>
@@ -428,14 +432,14 @@
             <span class="discount">20% OFF</span>
            <br> <span class="new-price">₹1599.00</span>
            <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -456,14 +460,14 @@
            <br><span class="new-price">₹1599.00</span>
                
                <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
@@ -484,14 +488,14 @@
         <br><span class="new-price">₹1599.00</span>
             
             <details class="bulk-offer">
-    <summary>Offers🎉</summary>
+    <summary>View Offers🎉</summary>
     <div class="offers">
       <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;">
-        <li>✅ Buy <b>10+</b> projects → ₹1499 per project</li>
-        <li>✅ Buy <b>50+</b> projects → ₹1399 per project</li>
-        <li>✅ Buy <b>100+</b> projects → ₹1199 per project</li>
-        <li>✅ Buy <b>200+</b> projects → ₹999 per project</li>
+      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
       </ul>
     </div>
   </details>
