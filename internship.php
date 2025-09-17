@@ -70,7 +70,7 @@
     <!-- Header End -->
 
 
-    <!-- Service Start -->
+    <!-- Intern Main Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-2  justify-content-center align-items-stretch">
@@ -80,7 +80,7 @@
                             <i class="fa fa-3x bi-briefcase text-primary mb-4"></i>
                             <h5 class="mb-3">Corporate Training</h5>
                             <p justify-content:flex-start; >Soft Skills & Communication, Data Analytics,<br> Leadership & Team Building.</p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php">View</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate">View</a>
                         </div>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
                             <i class="fa fa-3x fa-laptop text-primary mb-4"></i>
                             <h5 class="mb-3">Internship Programing </h5>
                             <p>Web-developement, Python,<br>AI & ML, Mobile-developement, Java & Sringboot, etc                             </p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./internship2.php">View</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">View</a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,106 @@
             </div>
         </div>
     </div>
-    <!-- Service End -->
+    <!-- Intern Main End -->
+
+    <!-- Corporate Page -->
+    <div> <a href="./internship"></a> </div>
+    <h1 class="display-3 text-white animated slideInDown">Corporate Training </h1>            
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <h5 class="mb-3">Soft Skills & Communication</h5>
+                            <!-- <p>Soft Skills & commun ication</p> -->
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa fa-table text-primary mb-4"></i>
+                            <h5 class="mb-3">Excel & Data Analytics </h5>
+                            <p></p>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa fa-flag text-primary mb-4"></i>
+                            <h5 class="mb-3">Leadership & Team Building</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa fa-handshake text-primary mb-4"></i>
+                            <h5 class="mb-3">Business Etiquette</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Internship Page Start -->
+    <h1 class="display-3 text-white animated slideInDown">Intership Programmings</h1>
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
+                            <h5 class="mb-3">Web Development</h5>
+                            <!-- <p>Soft Skills & commun ication</p> -->
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-leaf text-primary mb-4"></i>
+                            <h5 class="mb-3">Python with Django </h5>
+                            <p></p>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-robot text-primary mb-4"></i>
+                            <h5 class="mb-3">AI & Machine Learning</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x bi-phone text-primary mb-4"></i>
+                            <h5 class="mb-3">Mobile App Development</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- internship End -->    
+
+     
+
+
 
 
  <!-- Footer Start -->

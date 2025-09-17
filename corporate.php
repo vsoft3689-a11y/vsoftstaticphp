@@ -30,6 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/internship.css" rel="stylesheet">
 </head>
 
 <body>
@@ -48,7 +49,7 @@
 
 
     <!-- Header Start -->
-    <div class="container-fluid bg-primary py-5 mb-5 page-header">
+    <div class="container-fluid bg-primary py-5 mb-5 coporate-header">
         <div class="container py-5">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
@@ -77,7 +78,7 @@
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
                             <h5 class="mb-3">Soft Skills & Communication</h5>
                             <!-- <p>Soft Skills & commun ication</p> -->
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@
                             <i class="fa fa-3x fa fa-table text-primary mb-4"></i>
                             <h5 class="mb-3">Excel & Data Analytics </h5>
                             <p></p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +97,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa fa-flag text-primary mb-4"></i>
                             <h5 class="mb-3">Leadership & Team Building</h5>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="">Click here</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
                         </div>
                     </div>
                 </div>
@@ -105,7 +106,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa fa-handshake text-primary mb-4"></i>
                             <h5 class="mb-3">Business Etiquette</h5>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php">Click here</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#">Click here</a>
                         </div>
                 
                 </div>
