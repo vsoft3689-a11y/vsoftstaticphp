@@ -274,7 +274,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/sathvikaabout.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="./img/index_about.jpg" alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -380,7 +380,7 @@
 
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
-        <img src="img/sathvikacyber.jpg" class="img-fluid rounded" alt="Cyber Security">
+        <img src="img/cyber.jpg" class="img-fluid rounded" alt="Cyber Security">
       </a>
       <h5 class="mt-3">Cyber Security</h5>
     </div>
@@ -390,7 +390,7 @@
   <div class="row justify-content-center mt-4">
     <div class="col-md-4 wow zoomIn" data-wow-delay="0.7s">
       <a href="./projects.php" class="zoom-img">
-        <img src="img/sathStructural.jpg" class="img-fluid rounded" alt="Structural Engineering">
+        <img src="img/structural.jpg" class="img-fluid rounded" alt="Structural Engineering">
       </a>
       <h5 class="mt-3">Structural Engineering</h5>
     </div>
@@ -480,7 +480,7 @@
       <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
         <div class="course-item bg-light">
           <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/sathInternshp.jpg" alt="">
+            <img class="img-fluid" src="img/internship.jpg" alt="">
           </div>
           <div class="price-box text-center mt-3">
             <span class="old-price">₹1999.00</span>
