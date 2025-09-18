@@ -1,7 +1,7 @@
 
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="navbarP.html" class="navbar-logo">
+        <a href="index.php" class="navbar-logo">
       <img src="./img/logo.webp"
         alt="VSoft Solutions Pvt Ltd Logo" style="height:48px; width:auto; display:block; object-fit:contain;" />
     </a>

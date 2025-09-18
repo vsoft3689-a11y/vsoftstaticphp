@@ -35,17 +35,17 @@
                         </a>
                         </div>
                         <div class="col-4">
-                        <a href ="img/sathInternshp.jpg">    
+                        <a href ="img/internship.jpg">    
                             <img class="img-fluid bg-light p-1" src="img/internship.jpg" alt="">
                         </a>    
                         </div>
                         <div class="col-4">
-                        <a href ="img/sathvikacyber.jpg">    
+                        <a href ="img/cyber.jpg">    
                             <img class="img-fluid bg-light p-1" src="img/cyber.jpg" alt="">
                         </a>
                         </div>
                         <div class="col-4">
-                        <a href ="img/sathStructural.jpg">
+                        <a href ="img/structural.jpg">
                             <img class="img-fluid bg-light p-1" src="img/structural.jpg" alt="">
                         </a>    
                         </div>
