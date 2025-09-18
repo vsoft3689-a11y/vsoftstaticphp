@@ -133,7 +133,7 @@ These projects prepare students for careers in R&D,academia,or leadership roles 
                                     Internships improve employability and prepare candidates for corporate environments.
                                 </p>
                             </div>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="internship.php">Know More</a>
                         </div>
                     </a>
                 </div>
@@ -150,7 +150,7 @@ They enhance productivity, leadership,and problem-solving abilities within organ
 These programs bridge skill gaps and drive sustainable business growth.
                                 </p>
                             </div>
-                 <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
+                 <a class="btn btn-primary py-3 px-5 mt-2" href="internship.php">Know More</a>
 
                         </div>
                     </a>
