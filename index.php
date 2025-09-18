@@ -1,3 +1,24 @@
+<?php include './config/database.php';
+
+ 
+$conn = (new Database())->connect();
+
+if ($conn->connect_error) {
+    die(json_encode(["status" => "error", "message" => $conn->connect_error]));
+}
+$sql = "SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC";
+$result = $conn->query($sql);
+
+
+$result = $conn->query("SELECT * FROM pricing_packages ORDER BY created_at DESC");
+$packages = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
+
+
+$result = $conn->query("SELECT * FROM testimonals WHERE is_approved = 1 ORDER BY display_order ASC");
+$testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,9 +55,10 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/zoom.css" rel="stylesheet">
     <link href="css/offer.css" rel="stylesheet">
-    <style>
+    
   
-</style>
+
+
     
 
 
@@ -63,7 +85,79 @@
 
 
     <!-- Carousel Start -->
+
     <div class="container-fluid p-0 mb-5">
+    <div class="owl-carousel header-carousel position-relative">
+        <?php if ($result && $result->num_rows > 0): ?>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <div class="owl-carousel-item position-relative">
+                    <!-- Banner Image -->
+                    <img class="img-fluid w-100" src="<?php echo $row['image_path']; ?>" alt="Banner" style="object-fit: cover; height: 600px;">
+
+                    <!-- Dark Overlay -->
+                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(24, 29, 56, .6);">
+                        <!-- Centered Text -->
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <div class="container text-center">
+                                
+                                  <div class="row justify-content-left">
+                                    <div class="col-sm-10 col-lg-10">
+
+                                        <!-- Tagline -->
+                                        <?php if (!empty($row['tagline'])): ?>
+                                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown text-start" style="font-size: 22px; letter-spacing: 2px;">
+                                                <?php echo $row['tagline']; ?>
+                                            </h5>
+                                        <?php endif; ?>
+
+                                        <!-- Main Subject -->
+                                        <?php if (!empty($row['sub_text'])): ?>
+                                            <h1 class="text-white fw-bold animated slideInDown text-start" 
+                                                style="font-size: 40px; line-height: 1.2;">
+                                                <?php echo $row['sub_text']; ?>
+                                            </h1>
+                                        <?php endif; ?>
+
+
+                                        <?php if (!empty($row['cta_button_text']) && !empty($row['cta_button_link'])): ?>
+                                          <div class="text-start">
+                                        <a href="<?php echo $row['cta_button_link']; ?>"
+                                            class="btn btn-primary py-md-3 px-md-5 me-3 mt-3 animated slideInLeft ">
+                                            <?php echo $row['cta_button_text']; ?>
+                                        </a>
+                                        </div>
+                                    <?php endif; ?>
+
+                                    <?php if (!empty($row['button2_text']) && !empty($row['button2_link'])): ?>
+                                        <a href="<?php echo $row['button2_link']; ?>"
+                                            class="btn btn-light py-md-3 px-md-5 animated slideInRight">
+                                            <?php echo $row['button2_text']; ?>
+                                        </a>
+                                    <?php endif; ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <p class="text-center text-white bg-dark py-5">No banners found!</p>
+        <?php endif; ?>
+    </div>
+</div>
+
+<?php $conn->close(); ?>
+
+
+
+
+
+
+
+    
+    <!-- <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/background.jpg" alt="">
@@ -92,14 +186,14 @@
                                 <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
                                 <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                                 <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
-                                <!-- <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a> -->
+                                 
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Carousel End -->
 
 
@@ -418,92 +512,55 @@
       <h1 class="mb-5">Project Prices</h1>
     </div>
 
-    <!-- Row for 3 cards -->
     <div class="row g-4">
-      
-      <!-- Mini Projects -->
-      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="course-item bg-light">
-          <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/mini1.jpg" alt="">
-          </div>
-          <div class="price-box text-center mt-3">
-            <span class="old-price">₹1999.00</span>
-            <span class="discount">20% OFF</span>
-           <br> <span class="new-price">₹1599.00</span>
-           <details class="bulk-offer">
-    <summary>View Offers🎉</summary>
-    <div class="offers">
-      <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
-      </ul>
-    </div>
-  </details>
-          </div>
-          <h5 class="text-center mb-4">Mini Project</h5>
-        </div>
-      </div>
+      <?php foreach ($packages as $package): ?>
+        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="course-item bg-light">
+            <div class="position-relative overflow-hidden">
+              <!-- Image based on service type -->
+              <?php if ($package['service_type'] === 'project'): ?>
+                <img class="img-fluid" src="img/mini1.jpg" alt="">
+              <?php elseif ($package['service_type'] === 'internship'): ?>
+                <img class="img-fluid" src="img/internship.jpg" alt="">
+              <?php else: ?>
+                <img class="img-fluid" src="img/major1.jpg" alt="">
+              <?php endif; ?>
+            </div>
 
-      <!-- Major Projects -->
-      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="course-item bg-light">
-          <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/major1.jpg" alt="">
-          </div>
-          <div class="price-box text-center mt-3">
-               <span class="old-price">₹1999.00</span>
-               <span class="discount">20% OFF</span>
-           <br><span class="new-price">₹1599.00</span>
-               
-               <details class="bulk-offer">
-    <summary>View Offers🎉</summary>
-    <div class="offers">
-      <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
-        <li><a href="./projects.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
-      </ul>
-    </div>
-  </details>
-          </div>
-          <h5 class="text-center mb-4">Major Project</h5>
-        </div>
-      </div>
+            <div class="price-box text-center mt-3">
+              <span class="old-price">₹<?php echo number_format($package['original_price'], 2); ?></span>
+              <?php if (!empty($package['discounted_price'])): ?>
+                <span class="discount">
+                  <?php
+                  $discountPercent = round((($package['original_price'] - $package['discounted_price']) / $package['original_price']) * 100);
+                  echo $discountPercent . "% OFF";
+                  ?>
+                </span>
+                <br>
+                <span class="new-price">₹<?php echo number_format($package['discounted_price'], 2); ?></span>
+              <?php endif; ?>
 
-      <!-- Internship & Corporate -->
-      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-        <div class="course-item bg-light">
-          <div class="position-relative overflow-hidden">
-            <img class="img-fluid" src="img/internship.jpg" alt="">
-          </div>
-          <div class="price-box text-center mt-3">
-            <span class="old-price">₹1999.00</span>
-            <span class="discount">20% OFF</span>
-        <br><span class="new-price">₹1599.00</span>
-            
-            <details class="bulk-offer">
-    <summary>View Offers🎉</summary>
-    <div class="offers">
-      <h6>🎉Tiered Bulk Offers</h6>
-      <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
-        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
-        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
-        <li><a href="./internship.php" style="color:black;" class="zoom-link">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
-      </ul>
-    </div>
-  </details>
-          </div>
-          <h5 class="text-center mb-4">Internship & Corporate</h5>
-        </div>
-      </div>
+              <details class="bulk-offer mt-2">
+                <summary>View Offers 🎉</summary>
+                <div class="offers">
+                  <h6>🎉 Tiered Bulk Offers</h6>
+                  <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
+                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
+                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
+                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
+                  </ul>
+                </div>
+              </details>
+            </div>
 
+            <h5 class="text-center mb-4">
+              <?php echo ucfirst($package['package_name']); ?> 
+              (<?php echo ucfirst($package['service_type']); ?>)
+            </h5>
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
   </div>
 </div>
@@ -512,81 +569,54 @@
     
     <!-- Courses End -->
      <!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+
+     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
   <div class="container">
     <div class="text-center mb-5">
-      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-      <h1>Our Students Say!</h1>
+      <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
+      <h1>What Our Students Say</h1>
     </div>
+    
     <div class="owl-carousel testimonial-carousel position-relative">
 
-      <!-- Testimonial 1 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Sathvika</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
-          <p class="mb-0">
-            Project support was amazing, everything was explained clearly. The team was always available to clarify doubts, and we got exposure to real-time tools and platforms.
-          </p>
-        </div>
-      </div>
+      <?php if (!empty($testimonials)): ?>
+        <?php foreach ($testimonials as $row): ?>
+          <div class="testimonial-item text-center">
 
-      <!-- Testimonial 2 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Mahesh</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
-          <p class="mb-0">
-            Very helpful team and good guidance throughout the course. I was able to complete my final year project with confidence. Highly recommend VSoft for academic projects!
-          </p>
-        </div>
-      </div>
+            <!-- Student Photo -->
+            <img class="border rounded-circle p-2 mx-auto mb-3" 
+                 src="<?php echo htmlspecialchars($row['customer_photo_path'] ?: 'img/default-user.png'); ?>" 
+                 alt="<?php echo htmlspecialchars($row['customer_name']); ?>" 
+                 style="width: 80px; height: 80px; object-fit: cover;">
 
-      <!-- Testimonial 3 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Bhagath</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
-          <p class="mb-0">
-            Good experience overall. As an MBA student, I was concerned about project relevance, but they delivered exactly what I needed for my specialization. The documentation was neat too.
-          </p>
-        </div>
-      </div>
+            <!-- Student Name -->
+            <h5 class="mb-1"><?php echo htmlspecialchars($row['customer_name']); ?></h5>
+            
+            <!-- College / Designation (optional) -->
+            <?php if (!empty($row['designation'])): ?>
+              <p class="text-muted small"><?php echo htmlspecialchars($row['designation']); ?></p>
+            <?php else: ?>
+              <p class="text-muted small">Final Year Student</p>
+            <?php endif; ?>
 
-      <!-- Testimonial 4 -->
-      <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Anu</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic review-box">
-          <p class="mb-0">
-            I got real-time exposure and learned a lot practically. The internship was well-structured, and I even added the experience to my resume. Thank you to the entire team!
-          </p>
-        </div>
-      </div>
+            <!-- Review -->
+            <div class="testimonial-text bg-light p-4 rounded review-box">
+              <p class="mb-0">
+                <?php echo htmlspecialchars($row['review_text']); ?>
+              </p>
+            </div>
+
+          </div>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <p class="text-center text-muted">No student reviews available yet.</p>
+      <?php endif; ?>
 
     </div>
   </div>
 </div>
+
+
 <!-- Testimonial End -->
 
 
