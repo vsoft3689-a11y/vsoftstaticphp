@@ -3,7 +3,7 @@ class Database {
     private $host = "localhost";
     private $user = "root";
     private $pass = "";
-    private $db   = "projectdb";
+    private $db   = "vsoftdb";
     public $conn;
 
     public function connect() {
