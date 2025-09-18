@@ -1,3 +1,20 @@
+
+<?php include './config/database.php';
+
+ 
+$conn = (new Database())->connect();
+
+if ($conn->connect_error) {
+    die(json_encode(["status" => "error", "message" => $conn->connect_error]));
+}
+$sql = "SELECT * FROM team_members WHERE is_active = 1 ORDER BY display_order ASC";
+$result = $conn->query($sql);
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -234,17 +251,57 @@
 </div>
 <!-- Achievements End -->
 
+<!-- team Start-->
+
+       <div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-4">
+
+      <?php
+      if ($result->num_rows > 0) {
+          while ($row = $result->fetch_assoc()) {
+      ?>
+          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="team-item bg-light">
+                  <div class="overflow-hidden">
+                      <img class="img-fluid" src="<?php echo htmlspecialchars($row['profile_picture_path']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>">
+                  </div>
+                  <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                      <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                          <?php if (!empty($row['social_facebook'])) { ?>
+                              <a class="btn btn-sm-square btn-primary mx-1" href="<?php echo $row['social_facebook']; ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                          <?php } ?>
+                          <?php if (!empty($row['social_twitter'])) { ?>
+                              <a class="btn btn-sm-square btn-primary mx-1" href="<?php echo $row['social_twitter']; ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                          <?php } ?>
+                          <?php if (!empty($row['social_linkedin'])) { ?>
+                              <a class="btn btn-sm-square btn-primary mx-1" href="<?php echo $row['social_linkedin']; ?>" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                          <?php } ?>
+                      </div>
+                  </div>
+                  <div class="text-center p-4">
+                      <h5 class="mb-0"><?php echo htmlspecialchars($row['name']); ?></h5>
+                      <small><?php echo htmlspecialchars($row['designation']); ?></small>
+                  </div>
+              </div>
+          </div>
+      <?php
+          }
+      } else {
+          echo "<p>No team members found.</p>";
+      }
+      ?>
+
+    </div>
+  </div>
+</div>
+<!-- Team Section End -->
+<!-- team end -->
 
 
-<!-- Team Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Team Members</h6>
-                <h1 class="mb-5"></h1>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+
+                 <!-- <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
                             <img class="img-fluid" src="img/team-1.jpg" alt="">
@@ -317,7 +374,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  -->
     <!-- Team End -->
 
  
