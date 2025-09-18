@@ -61,7 +61,8 @@
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="./index.php">Home</a></li>
                             <li class="breadcrumb-item"><a class="text-white" href="./about.php">About</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="./internship.php">Training</li>
+                            <li class="breadcrumb-item"><a class="text-white" href="./internship.php">Internship</a></li>
+                            
                         </ol>
                     </nav>
                 </div>
@@ -75,16 +76,6 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-2  justify-content-center align-items-stretch">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4"> 
-                            <i class="fa fa-3x bi-briefcase text-primary mb-4"></i>
-                            <h5 class="mb-3">Corporate Training</h5>
-                            <p justify-content:flex-start; >Soft Skills & Communication, Excel & Data Analytics,<br> Leadership & Team Building.</p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="#corporate">View</a>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
@@ -94,65 +85,27 @@
                             <a class="btn btn-primary py-3 px-5 mt-2" href="#internship">View</a>
                         </div>
                     </div>
-                </div>
-                
+                </div>                
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4"> 
+                            <i class="fa fa-3x bi-briefcase text-primary mb-4"></i>
+                            <h5 class="mb-3">Corporate Training</h5>
+                            <p justify-content:flex-start; >Soft Skills & Communication, Excel & Data Analytics,<br> Leadership & Team Building.</p>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="#corporate">View</a>
+                        </div>
+                    </div>
+                </div>                
                 </div>
             </div>
         </div>
     </div>
     <!-- Intern Main End -->
 
-    <!-- Corporate Page -->
-    
-    <h1 class="text-black text-center animated slideInDown" id="corporate">Corporate Training </h1>
-                
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Soft Skills & Communication</h5>
-                            
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./soft_skils.php">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa fa-table text-primary mb-4"></i>
-                            <h5 class="mb-3">Excel & Data <br>Analytics </h5>
-                            <p></p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./excel.php">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa fa-flag text-primary mb-4"></i>
-                            <h5 class="mb-3">Leadership & <br>Team Building</h5>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./leadership.php">Know More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa fa-handshake text-primary mb-4"></i>
-                            <h5 class="mb-3">Business <br>Etiquette </h5>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./business.php">Know More</a>
-                        </div>
-                
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Internship Page Start -->
 
-     <h1 class=" text-black text-center animated slideInDown" id="internship" style= "margin-top : 100px " ; >
+    <!-- Internship content Page Start -->
+
+     <h1 class=" text-black text-center animated slideInDown" id="internship">
         Internship Programmings</h1>
     
      <div class="container-xxl py-5">
@@ -164,7 +117,7 @@
                             <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
                             <h5 class="mb-3">Web <br>Development</h5>
                          
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./web_development.php">Know More</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#web_development">Know More</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +127,7 @@
                             <i class="fa fa-3x fa-leaf text-primary mb-4"></i>
                             <h5 class="mb-3">Python <br>with Django </h5>
                             <p></p>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./python.php">Know More</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#python-django">Know More</a>
                         </div>
                     </div>
                 </div>
@@ -183,7 +136,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-robot text-primary mb-4"></i>
                             <h5 class="mb-3">AI & <br>Machine Learning</h5>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./ai_ml.php">Know More</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#ai-machine-learning">Know More</a>
                         </div>
                     </div>
                 </div>
@@ -192,14 +145,62 @@
                         <div class="p-4">
                             <i class="fa fa-3x bi-phone text-primary mb-4"></i>
                             <h5 class="mb-3">Mobile App Development</h5>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="./mobile.php">Know More</a>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#mobile-app-development">Know More</a>
                         </div>
                 
                 </div>
             </div>
         </div>
     </div>
-    <!-- internship End -->    
+    <!-- internship content End --> 
+    <!-- Corporate content Page -->
+    
+    <h1 class="text-black text-center animated slideInDown" id="corporate" style= "margin-top : 50px ";>Corporate Training </h1>
+                
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
+                            <h5 class="mb-3">Soft Skills & Communication</h5>
+                            
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#soft_skils">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa fa-table text-primary mb-4"></i>
+                            <h5 class="mb-3">Excel & Data <br>Analytics </h5>
+                            <p></p>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#excel-data-analytics">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa fa-flag text-primary mb-4"></i>
+                            <h5 class="mb-3">Leadership & <br>Team Building</h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#leadership-team-building">Know More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="fa fa-3x fa fa-handshake text-primary mb-4"></i>
+                            <h5 class="mb-3">Business <br>Etiquette </h5>
+                            <a class="btn btn-primary py-3 px-5 mt-2" href="./corporate.php#business-etiquette">Know More</a>
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+    </div>   
 
  
  <!-- Footer Start -->
