@@ -1,3 +1,15 @@
+<?php include './config/database.php';
+
+ 
+$conn = (new Database())->connect();
+
+if ($conn->connect_error) {
+    die(json_encode(["status" => "error", "message" => $conn->connect_error]));
+}
+$sql = "SELECT * FROM team_members WHERE is_active = 1 ORDER BY display_order ASC";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
