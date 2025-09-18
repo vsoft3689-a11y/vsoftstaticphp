@@ -54,7 +54,12 @@
                 <li class="breadcrumb-item">
                     <a class="text-white" href="index.php">Home</a>
                 </li>
-                <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
+                    <li class="breadcrumb-item">
+                    <a class="text-white" href="about.php">about</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a class="text-white" href="services.php">Services</a>
+                </li>
             </ol>
         </nav>
     </div>

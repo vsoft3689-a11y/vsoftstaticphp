@@ -64,7 +64,8 @@
                         <ol class="breadcrumb justify-content-center">
                             <li class="breadcrumb-item"><a class="text-white" href="./index.php">Home</a></li>
                             <li class="breadcrumb-item"><a class="text-white" href="./about.php">About</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="#">Contact</li>
+                            <li class="breadcrumb-item"><a class="text-white" href="./contact.php">Contact</a></li>
+                            
                         </ol>
                     </nav>
                 </div>
@@ -84,8 +85,8 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h5>Get In Touch</h5>
-                    <p class="mb-4">Have questions about academic projects, internships, or training programs?
-                         VSoft Solutions is here to help!  Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries.  
+                    <p class="mb-4">Have questions about academic projects, internships, or training programs? <br>
+                         VSoft Solutions is here to help!  Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries. 
                          Our team will get back to you shortly.<a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
                     <div class="d-flex align-items-center mb-3">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
