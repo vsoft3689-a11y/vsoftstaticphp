@@ -1,10 +1,36 @@
+<?php
+session_start();
+
+// header("Cache-Control: no-cache, no-store, must-revalidate");
+// header("Pragma: no-cache");
+// header("Expires: 0");
+
+// Prevent viewing cached page after logout
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+header('Expires: 0');
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: index.php');
+    exit();
+}
+// if (!isset($_SESSION['user_id'])) {
+//     header("Location: login.php");
+//     exit();
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terms and Conditions | VSoft</title>
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -29,227 +55,90 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <!-- <link href="css/terms.css" rel="stylesheet"> -->
- 
-   
 </head>
-
 <body class="bg-light">
     <!-- Navbar Start -->
- <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="navbarP.html" class="navbar-logo">
-      <img src="./img/logo.webp"
-        alt="VSoft Solutions Pvt Ltd Logo" style="height:48px; width:auto; display:block; object-fit:contain;" />
-    </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./index.php" class="nav-item nav-link active">Home</a>
-                <a href="./about.php" class="nav-item nav-link">About</a>
-                <a href="./services.php" class="nav-item nav-link">Services</a>
-                <a href="./projects.php" class="nav-item nav-link">Projects</a>
-                <a href="./internship.php" class="nav-item nav-link">Internship</a>
-                <a href="./contact.php" class="nav-item nav-link">Contact</a>
-            </div>
-            <a href="./index.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout<i class="fa fa-arrow-right ms-3"></i></a>
-        </div>
-    </nav>
+     <?php include 'dashboard_nav.php'; ?>
 
      <!-- Navbar End -->
 
-    <div class="container-fluid mt-4">
+    <div class="container mt-4">
+        <!-- <h2 class="mb-4">Welcome to Your Dashboard</h2> -->
+         <h2>Welcome, <?= htmlspecialchars($_SESSION['user_name']); ?></h2>
+    <p>This is your dashboard page.</p>
         <div class="row">
 
-            <!-- Sidebar -->
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a href="#overview" class="list-group-item list-group-item-action active">Dashboard Overview</a>
-                    <a href="#profile-edit" class="list-group-item list-group-item-action">View / Edit Profile</a>
-                    <a href="#custom-requirement" class="list-group-item list-group-item-action">Custom Requirement</a>
-                    <a href="#requirement-status" class="list-group-item list-group-item-action">My Requiremen Status</a>
-                    <a href="#interested-projects" class="list-group-item list-group-item-action">Interested Projects</a>
+            <!-- FR25: Profile -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-person-circle display-4 text-primary"></i>
+                        <h5 class="card-title mt-3">My Profile</h5>
+                        <p class="card-text">View and update your personal details.</p>
+                        <a href="profile.php" class="btn btn-outline-primary btn-sm">Go to Profile</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9">
-
-                <!-- FR24: Dashboard overview -->
-                <section id="overview" class="mb-5">
-                    <h3>Dashboard Overview</h3>
-                    <div class="row gy-3">
-                        <div class="col-md-4">
-                            <div class="card text-white bg-primary ">
-                                <div class="card-body">
-                                    <h4 class="card-title text-white mb-3 mt-2">Submit Custom Requirements</h4>
-                                    <h5 class="card-text text-white mb-2">5</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card text-white bg-primary">
-                                <div class="card-body">
-                                    <h4 class="card-title text-white mt-1 mb-5">Under Review</h4>
-                                    <h5 class="card-text text-white mt-2 mb-2">2</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card text-white bg-primary">
-                                <div class="card-body">
-                                    <h4 class="card-title text-white mt-1 mb-5">Approved / Rejected</h4>
-                                    <h5 class="card-text text-white mt-2 mb-2">3</h5>
-                                </div>
-                            </div>
-                        </div>
+            <!-- FR26: Submit Requirement -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-file-earmark-plus display-4 text-success"></i>
+                        <h5 class="card-title mt-3">Submit Requirement</h5>
+                        <p class="card-text">Submit your custom project requirement form.</p>
+                        <a href="customreq.php" class="btn btn-outline-success btn-sm">Submit</a>
                     </div>
-                </section>
+                </div>
+            </div>
 
-                <!-- FR25: View & Edit Profile -->
-                <section id="profile-edit" class="mb-5">
-                    <h3>My Profile</h3>
-                    <form method="post" action="profile_update.php">
-                        <div class="mb-3">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" name="name" class="form-control" value="Surya Vardhan" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Email</label>
-                            <input type="email" name="email" class="form-control" value="suryavardhan@gmail.com" disabled>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Phone</label>
-                            <input type="text" name="phone" class="form-control" value="9908887766">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">College / University</label>
-                            <input type="text" name="college" class="form-control" value="Osmania University">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Branch</label>
-                            <input type="text" name="branch" class="form-control" value="Computer Science">
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Year of Study</label>
-                            <select name="year" class="form-select">
-                                <option value="1">First Year</option>
-                                <option value="2" selected>Second Year</option>
-                                <option value="3">Third Year</option>
-                                <option value="4">Fourth Year</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Save Profile</button>
-                    </form>
-                </section>
+            <!-- FR27: Requirement Status -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-clipboard-check display-4 text-warning"></i>
+                        <h5 class="card-title mt-3">Requirement Status</h5>
+                        <p class="card-text">Track the status of your submitted requirements.</p>
+                        <a href="reqstatus.php" class="btn btn-outline-warning btn-sm">View Status</a>
+                    </div>
+                </div>
+            </div>
 
-                <!-- FR26: Submit Custom Requirement Form -->
-                <section id="custom-requirement" class="mb-5">
-                    <h3>Submit Custom Requirement</h3>
-                    <form method="post" action="submit_requirement.php" enctype="multipart/form-data">
-                        <div class="mb-3">
-                            <label class="form-label">Project Title</label>
-                            <input type="text" name="project_title" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Description</label>
-                            <textarea name="description" class="form-control" rows="4" required></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Required Technologies</label>
-                            <input type="text" name="technologies" class="form-control"
-                                placeholder="e.g. PHP, React, MySQL" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Branch</label>
-                            <input type="text" name="branch" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Deadline</label>
-                            <input type="date" name="deadline" class="form-control" required>
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Upload Reference Documents</label>
-                            <input type="file" name="reference_docs[]" class="form-control" multiple>
-                        </div>
-                        <button type="submit" class="btn btn-primary text-white">Submit Requirement</button>
-                    </form>
-                </section>
-
-                <!-- FR27: View status of submitted requirements -->
-                <section id="requirement-status" class="mb-5">
-                    <h3>My Requirement Status</h3>
-                    <table class="table table-bordered">
-                        <thead class="table-light">
-                            <tr>
-                                <th>#</th>
-                                <th>Project Title</th>
-                                <th>Submitted On</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Web App Design</td>
-                                <td>2025-09-01</td>
-                                <td><span class="badge bg-primary">Under Review</span></td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Mobile App</td>
-                                <td>2025-08-15</td>
-                                <td><span class="badge bg-primary">Approved</span></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>E-commerce Portal</td>
-                                <td>2025-07-20</td>
-                                <td><span class="badge bg-primary">Rejected</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <!-- FR28: History of projects shown interest in -->
-                <section id="interested-projects" class="mb-5">
-                    <h3>Interested Projects</h3>
-                    <table class="table table-hover">
-                        <thead class="table-light">
-                            <tr>
-                                <th>#</th>
-                                <th>Project Name</th>
-                                <th>Date of Interest</th>
-                                <th>Status / Notes</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>AI Chatbot</td>
-                                <td>2025-06-30</td>
-                                <td>Pending Owner Response</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Data Analytics Dashboard</td>
-                                <td>2025-05-12</td>
-                                <td>Interview Scheduled</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
+            <!-- FR28: Project History -->
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-clock-history display-4 text-danger"></i>
+                        <h5 class="card-title mt-3">Project History</h5>
+                        <p class="card-text">View all the projects you have shown interest in.</p>
+                        <a href="projhistory.php" class="btn btn-outline-danger btn-sm">View History</a>
+                    </div>
+                </div>
             </div>
 
         </div>
     </div>
+    <script>
+    window.addEventListener('pageshow', function(event) {
+      if (event.persisted || window.performance.navigation.type === 2) {
+        // if page loaded from cache via back or forward
+        window.location.href = 'index.php'; // or login page
+      }
+    });
+  </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Back to Top
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up style=color: white;"></i></a>
- -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Footer Start -->
+    
+    <?php include 'footer.php'; ?>
+
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -261,11 +150,5 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    <!-- Footer Start -->
-    
-    <?php include 'footer.php'; ?>
-
-    <!-- Footer End -->
 </body>
-
 </html>

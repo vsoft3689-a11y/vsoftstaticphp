@@ -6,7 +6,7 @@ $email = $_SESSION['registered_email'] ?? '';
 $success_msg = $_SESSION['success_msg'] ?? '';
 $login_error = '';
 
-// Clear session flash after reading
+// Clear session after reading
 unset($_SESSION['registered_email'], $_SESSION['registered_pass'], $_SESSION['success_msg']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -40,12 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Login | VSoft</title>
-
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet"> 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
 
@@ -57,7 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -66,66 +67,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
-
-    <!-- Page theme overrides -->
+    <!-- Page theme overrides (match register1.php) -->
     <style>
-
+        :root { --primary: #06bbcc; }
+        .login-form h2 { color: var(--primary); }
+        .login-form .form-control:focus { box-shadow: 0 0 10px rgba(6, 187, 204, 0.25); border-color: var(--primary); }
+        .login-form label { color: #06bbcc; }
+        .login-form .btn-primary { background-color: #06bbcc; border-color: #06bbcc; }
+        .login-form .btn-primary:hover { background-color: #05a4b3; border-color: #05a4b3; }
+        .login-form a { color: #06bbcc; }
+        .login-form a:hover { color: #05a4b3; }
     </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
 </head>
-<body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Navbar Start -->
+    <body>
     <?php include 'navbar.php'; ?>
-    <!-- Navbar End -->
 
     <div class="login-wrapper">
-        <div class="login-form">
-            <h2 class="text-center">Login to Vsofts</h2>
+    <div class="login-form">
+        <h2>Login</h2>
 
-            <?php if ($success_msg): ?>
-                <div class="alert alert-success"><?= htmlspecialchars($success_msg) ?></div>
-            <?php endif; ?>
+        <?php if ($success_msg): ?>
+            <div class="alert alert-success"><?= htmlspecialchars($success_msg) ?></div>
+        <?php endif; ?>
 
-            <?php if ($login_error): ?>
-                <div class="alert alert-danger"><?= htmlspecialchars($login_error) ?></div>
-            <?php endif; ?>
+        <?php if ($login_error): ?>
+            <div class="alert alert-danger"><?= htmlspecialchars($login_error) ?></div>
+        <?php endif; ?>
 
-            <form method="POST" novalidate>
-                <div class="mb-3">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email"
-                           value="<?= htmlspecialchars($email) ?>"
-                           class="form-control" required>
-                    <div class="invalid-feedback">Please enter your email.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password"
-                           class="form-control" required>
-                    <div class="invalid-feedback">Please enter your password.</div>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-                <div class="text-center mt-3">
-                    <a href="forgotpassword.php">Forgot Password?</a> |
-                    <a href="register.php">Register Here</a>
-                </div>
-            </form>
-        </div>
+        <form method="POST" novalidate>
+            <div class="mb-3">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?= htmlspecialchars($email) ?>" class="form-control" required>
+                <div class="invalid-feedback">Please enter your email.</div>
+            </div>
+            <div class="mb-3">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+
+            <div class="text-center mt-3">
+                <a href="forgotpassword1.php">Forgot Password?</a> |
+                <a href="register1.php">Register Here</a>
+            </div>
+        </form>
     </div>
-
-    <!-- Footer Start -->
-    <?php include 'footer.php'; ?>
-    <!-- Footer End -->
+        <?php include 'footer.php'; ?>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -142,13 +134,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="js/main.js"></script>
 
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            if (!this.checkValidity()) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            this.classList.add('was-validated');
-        });
-    </script>
+    // Bootstrap-style form validation
+    document.querySelector('form').addEventListener('submit', function(e) {
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        this.classList.add('was-validated');
+    });
+</script>
 </body>
 </html>

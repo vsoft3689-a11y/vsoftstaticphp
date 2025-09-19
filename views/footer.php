@@ -21,7 +21,7 @@
                     <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
-            <!-- <div class="col-lg-3 col-md-6">
+            <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Gallery</h4>
                 <div class="row g-2 pt-2">
                     <div class="col-4">
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <div class="container">
         <div class="copyright">
             <div class="row">
