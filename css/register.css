@@ -1,0 +1,84 @@
+:root {
+    --primary: #06bbcc;
+    --form-background: #06bbcc;
+    /* Light background with a hint of primary */
+}
+
+body {
+    background: #f4f4f4;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register-page .form-control.border-custom {
+    border: 2px solid var(--custom-color);
+    border-radius: 5px;
+}
+
+.register-page .card {
+    border-radius: 10px;
+}
+
+.register-form {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 200, 255, 0.68);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeInDown 0.6s ease-in-out;
+}
+
+.register-form {
+    max-width: 600px;
+    margin: 50px auto;
+    background: var(--form-background);
+    /* Updated background */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.register-form .form-control {
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.register-form .form-control:focus {
+    box-shadow: 0 0 10px rgba(6, 187, 204, 0.25);
+    border-color: var(--primary);
+    border-radius: 8px;
+}
+
+.register-form label {
+    color: #06bbcc;
+    font-weight: 500;
+}
+
+.register-form .btn-primary {
+    background-color: #06bbcc;
+    border-color: #06bbcc;
+    border-radius: 8px;
+    padding: 12px;
+    font-weight: 600;
+}
+
+.register-form .btn-primary:hover {
+    background-color: #05a4b3;
+    border-color: #05a4b3;
+    transform: translateY(-1px);
+}
+
+.register-form a {
+    color: #06bbcc;
+}
+
+.register-form a:hover {
+    color: #05a4b3;
+}

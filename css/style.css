@@ -101,7 +101,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar-light .navbar-nav .nav-link  {
+    .navbar-light .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -157,7 +157,7 @@
         position: relative;
         min-height: 500px;
     }
-    
+
     .header-carousel .owl-carousel-item img {
         position: absolute;
         width: 100%;
@@ -201,14 +201,14 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-     
+
 }
 
 .page-header-inner {
     background: rgba(15, 23, 43, .7);
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
 
@@ -258,9 +258,11 @@
     background: var(--light);
     transition: .5s;
 }
+
 .service-item p {
     text-align: left;
-    line-height: 1.6;   /* better spacing between lines */
+    line-height: 1.6;
+    /* better spacing between lines */
 }
 
 .service-item:hover {
@@ -323,6 +325,7 @@
 }
 
 @media (min-width: 768px) {
+
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 200px;
@@ -330,6 +333,7 @@
 }
 
 @media (min-width: 992px) {
+
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 300px;
@@ -439,69 +443,79 @@
 }
 
 
-       .price-box {
-  text-align: center;
-  margin: 10px 0;
-  font-family: Arial, sans-serif; /* Clean font */
+.price-box {
+    text-align: center;
+    margin: 10px 0;
+    font-family: Arial, sans-serif;
+    /* Clean font */
 }
 
 .old-price {
-  font-size: 1.5rem;
-  color: #888;
-  text-decoration: line-through;
-  margin-right: 10px;
+    font-size: 1.5rem;
+    color: #888;
+    text-decoration: line-through;
+    margin-right: 10px;
 }
 
 .new-price {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #e63946; /* Red for discount */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e63946;
+    /* Red for discount */
 }
 
 
 
 
-  
 
 
 
 
- .bulk-offer summary {
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 500;
-  color: #007bff; 
-  text-decoration: underline;
-  margin-bottom: 5px;
-  list-style: none;
+
+.bulk-offer summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: #007bff;
+    text-decoration: underline;
+    margin-bottom: 5px;
+    list-style: none;
 }
 
 .bulk-offer summary::-webkit-details-marker {
-  display: none; /* removes default arrow */
+    display: none;
+    /* removes default arrow */
 }
 
 
-  .bulk-offer summary {
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;  /* make text bold */
-  color: black;     /* blue color */
-  text-decoration: line; /* remove underline */
-  margin-bottom: 5px;
-  list-style: none;
+.bulk-offer summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    /* make text bold */
+    color: black;
+    /* blue color */
+    text-decoration: line;
+    /* remove underline */
+    margin-bottom: 5px;
+    list-style: none;
 }
 
 .bulk-offer .offers h6 {
-  margin-top: 0;
-  color: #e63946;
-  font-size: 15px;
+    margin-top: 0;
+    color: #e63946;
+    font-size: 15px;
 }
+
 .bulk-offer summary:hover {
-  color:var(--primary);   /* changes text color on hover */
-  transform: scale(1.05); /* slight zoom */
-  text-decoration: underline; /* underline on hover */
+    color: var(--primary);
+    /* changes text color on hover */
+    transform: scale(1.05);
+    /* slight zoom */
+    text-decoration: underline;
+    /* underline on hover */
 }
- 
+
 
 
 
@@ -511,25 +525,25 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-  }
+}
 
-  .review-box {
+.review-box {
     max-height: 120px;
     overflow-y: auto;
     font-size: 0.95rem;
     line-height: 1.5;
     scrollbar-width: thin;
-  }
+}
 
-  .review-box::-webkit-scrollbar {
+.review-box::-webkit-scrollbar {
     width: 6px;
-  }
+}
 
-  .review-box::-webkit-scrollbar-thumb {
+.review-box::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-  }
+}
 
-  .review-box p {
+.review-box p {
     margin: 0;
-  }
+}
