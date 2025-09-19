@@ -207,6 +207,13 @@
 .page-header-inner {
     background: rgba(15, 23, 43, .7);
 }
+.internship-header {
+    background: linear-gradient(rgba(24, 29, 56, .7), rgba(24, 29, 56, .7)), url(../img/intern34.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 200px;
+}
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: var(--light);
