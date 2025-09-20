@@ -150,12 +150,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </a>
                 </td>
                 <td>
-                  <a href='{$row['file_path_abstract']}' class='btn btn-sm btn-primary'>
+                  <a href='{$row['file_path_abstract']}' fa fa-download class='btn btn-sm btn-primary'>
                     Download
                   </a>
                 </td>
                 <td>
-                  <a href='{$row['file_path_basepaper']}' class='btn btn-sm btn-primary'>
+                  <a href='{$row['file_path_basepaper']}' fa fa-download class='btn btn-sm btn-primary'>
                    Download
                   </a>
                 </td>
@@ -206,9 +206,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if (degree === "M.Tech") {
       ["CSE","ECE","Power Systems","Structural Engineering"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
     } else if (degree === "MCA") {
-      ["Software Engineering","Networking","Hardware Technologies","Management Information Systems"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
+      branch.innerHTML = "<option value='IT'>MCA</option>";
+      projectTypeDiv.style.display = "none";
+      ["Database Systems","Web Development","AI/ML","Mobile Applications"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
     } else if (degree === "MBA") {
-      ["Marketing","Finance","Hospitality & Tourism","Banking & Insurance"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
+      branch.innerHTML = "<option value='Management'>MBA</option>";
+      projectTypeDiv.style.display = "none";
+      ["Marketing","Finance","HR","Operations"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
     }
   }
 
@@ -240,26 +244,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ["FACTS","Smart Energy System","Load Flow Studies"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
       } else if (branch === "Structural Engineering") {
         ["Finite Element","Concrete Technology","Seismic Design"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      }
-    } else if (degree === "MCA") {
-      if (branch === "Software Engineering") {
-        ["Database Management Systems","Software Design & Architecture","Software Project Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      } else if (branch === "Networking") {
-        ["Computer Networking","Network Security","Cloud Networking","Data Communication"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      } else if (branch === "Hardware Technologies") {
-        ["Embedded Systems","VLSI Design","IoT Hardware & Sensors"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      } else if (branch === "Management Information Systems") {
-        ["Enterprise Systems","E-business & E-commerce Systems","Information Security"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      }
-    } else if (degree === "MBA") {
-      if (branch === "Marketing") {
-        ["Brand Management","Digital Marketing","International Marketing","Sales & Distribution Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      } else if (branch === "Finance") {
-        ["Corporate","Investment Banking","Risk Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      } else if (branch === "Hospitality & Tourism") {
-        ["Hotel Management & Operations","Housekeeping & Facility Management","Travel & Transport Management","Sustainable Eco-Tourism"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
-      } else if (branch === "Banking & Insurance") {
-        ["Corporate Banking","Investment Banking","Retail Banking","Insurance Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
       }
     }
   });
