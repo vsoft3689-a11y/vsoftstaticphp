@@ -1,154 +1,70 @@
 <?php
+// public/login.php
+
 session_start();
-include 'connection1.php';
-
-$email = $_SESSION['registered_email'] ?? '';
-$success_msg = $_SESSION['success_msg'] ?? '';
-$login_error = '';
-
-// Clear session flash after reading
-unset($_SESSION['registered_email'], $_SESSION['registered_pass'], $_SESSION['success_msg']);
+include "./config/database.php" ;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    if ($email === '' || $password === '') {
-        $login_error = "Please enter both email and password.";
+    $errors = [];
+
+    if (!$email || !$password) {
+        $errors[] = "Email and Password are required.";
     } else {
-        $stmt = $conn->prepare("SELECT id, password, name FROM users WHERE email = ?");
-        $stmt->bind_param('s', $email);
+        // Fetch user
+        $stmt = $conn->prepare("SELECT id, name, password_hash, email_verified_at FROM users WHERE email = ?");
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $stmt->store_result();
-
-        if ($stmt->num_rows === 1) {
-            $stmt->bind_result($user_id, $hashed_password, $user_name);
+        if ($stmt->num_rows == 1) {
+            $stmt->bind_result($id, $name, $password_hash, $email_verified_at);
             $stmt->fetch();
-            if (password_verify($password, $hashed_password)) {
-                $_SESSION['user_id'] = $user_id;
-                $_SESSION['user_name'] = $user_name;
-                echo "<script>alert('Login successful!'); window.location.href='dashboard.php';</script>";
-                exit();
+            if (!password_verify($password, $password_hash)) {
+                $errors[] = "Invalid credentials.";
             } else {
-                $login_error = "Incorrect password.";
+                // Optional: check if email is verified
+                if (is_null($email_verified_at)) {
+                    $errors[] = "Please verify your email first.";
+                } else {
+                    // Login successful
+                    $_SESSION['user_id'] = $id;
+                    $_SESSION['user_name'] = $name;
+                    // Optionally: set a remember_token cookie if “remember me” feature
+                    header('Location: dashboard.php');
+                    exit;
+                }
             }
         } else {
-            $login_error = "User not found.";
+            $errors[] = "Invalid credentials.";
         }
+        $stmt->close();
     }
 }
+
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Login | VSoft</title>
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
-
-    <!-- Page theme overrides -->
-    <style>
-
-    </style>
-</head>
+<html>
+<head><title>Login</title></head>
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
+<?php
+if (!empty($errors)) {
+    echo '<ul>';
+    foreach ($errors as $e) {
+        echo "<li>" . htmlspecialchars($e) . "</li>";
+    }
+    echo '</ul>';
+}
+?>
 
-    <!-- Navbar Start -->
-    <?php include 'navbar.php'; ?>
-    <!-- Navbar End -->
+<form action="login.php" method="post">
+    Email: <input type="email" name="email" value="<?=htmlspecialchars($email ?? '')?>"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
 
-    <div class="login-wrapper">
-        <div class="login-form">
-            <h2 class="text-center">Login to Vsofts</h2>
-
-            <?php if ($success_msg): ?>
-                <div class="alert alert-success"><?= htmlspecialchars($success_msg) ?></div>
-            <?php endif; ?>
-
-            <?php if ($login_error): ?>
-                <div class="alert alert-danger"><?= htmlspecialchars($login_error) ?></div>
-            <?php endif; ?>
-
-            <form method="POST" novalidate>
-                <div class="mb-3">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email"
-                           value="<?= htmlspecialchars($email) ?>"
-                           class="form-control" required>
-                    <div class="invalid-feedback">Please enter your email.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password"
-                           class="form-control" required>
-                    <div class="invalid-feedback">Please enter your password.</div>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-                <div class="text-center mt-3">
-                    <a href="forgotpassword.php">Forgot Password?</a> |
-                    <a href="register.php">Register Here</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Footer Start -->
-    <?php include 'footer.php'; ?>
-    <!-- Footer End -->
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-
-    <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
-            if (!this.checkValidity()) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-            this.classList.add('was-validated');
-        });
-    </script>
+<p><a href="password_reset_request.php">Forgot password?</a></p>
 </body>
 </html>
