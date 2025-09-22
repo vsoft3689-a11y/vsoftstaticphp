@@ -5,7 +5,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     exit();
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,6 +33,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             border-radius: 8px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             max-width: 500px;
+            width: 100%;
         }
 
         input,
@@ -47,20 +47,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             font-size: 14px;
         }
 
-        #serviceForm input {
-            margin-bottom: 10px;
-        }
-
-        #serviceForm select {
-            margin-bottom: 10px;
-        }
-
         #btn {
             width: auto;
             background: #06BBCC;
             color: #fff;
             font-weight: bold;
-            padding: 10px;
+            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             border: none;
@@ -68,15 +60,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         }
 
         #btn:hover {
-            background: #06BBCC;
-        }
-
-        #btn[type="button"] {
-            background: #06BBCC;
-        }
-
-        #btn[type="button"]:hover {
-            background: #06BBCC;
+            background: #0499a8;
         }
 
         table {
@@ -123,26 +107,27 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
     <div class="main">
         <h2 id="serviceHeading">Manage Price Packages</h2>
+
+        <!-- Updated Form -->
         <form id="serviceForm">
             <input type="hidden" name="id" id="service_id">
-            <!-- <label>Service Type</label>
-            <select name="service_type" id="service_type">
+
+            <label>Service Type</label>
+            <select name="service_type" id="service_type" required>
                 <option value="">-- Select --</option>
                 <option value="project">Project</option>
                 <option value="internship">Internship</option>
                 <option value="training">Training</option>
-            </select> -->
-            <label>Service Type</label>
-            <input type="text" name="service_type" id="service_type">
+            </select>
 
             <label>Package Name</label>
-            <input type="text" name="package_name" id="package_name">
+            <input type="text" name="package_name" id="package_name" required>
 
             <label>Description</label>
             <textarea name="description" id="description"></textarea>
 
             <label>Original Price</label>
-            <input type="number" step="0.01" name="original_price" id="original_price">
+            <input type="number" step="0.01" name="original_price" id="original_price" required>
 
             <label>Discounted Price</label>
             <input type="number" step="0.01" name="discounted_price" id="discounted_price">
@@ -153,12 +138,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <label>Button Link</label>
             <input type="text" name="button_link" id="button_link">
 
-            <div style="display:flex; align-items:center;">
+            <div style="display:flex; align-items:center; margin:10px 0;">
                 <label for="is_featured">Featured</label>
-                <input style="margin-right: 350px;" type="checkbox" name="is_featured" id="is_featured">
+                <input style="margin-left:10px;" type="checkbox" name="is_featured" id="is_featured" value="1">
             </div>
-            <br>
-            <button id="btn" type="submit">Save Service</button>
+
+            <button id="btn" type="submit">Save Offer</button>
         </form>
     </div>
 
@@ -221,23 +206,20 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             if (serviceType.value === "") {
                 alert("Please select a service type.");
                 serviceType.focus();
-                e.preventDefault();
                 return;
             }
 
-            // Validate Package Name (min 3 chars)
+            // Validate Package Name
             if (packageName.value.trim().length < 3) {
                 alert("Package name must be at least 3 characters long.");
                 packageName.focus();
-                e.preventDefault();
                 return;
             }
 
-            // Validate Original Price (must be positive)
+            // Validate Original Price
             if (originalPrice.value === "" || parseFloat(originalPrice.value) <= 0) {
                 alert("Original price must be a positive number.");
                 originalPrice.focus();
-                e.preventDefault();
                 return;
             }
 
@@ -282,5 +264,4 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         loadServices();
     </script>
 </body>
-
 </html>

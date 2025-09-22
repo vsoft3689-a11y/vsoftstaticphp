@@ -105,10 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <!-- Map -->
-                <div class="col-lg-4">
+               <div class="col-lg-4">
     <?= str_replace('<iframe', '<iframe style="width:100%; height:350px; border-radius:8px;"', $configs['google_map'] ?? '<p>No map found</p>'); ?>
 </div>
-
 
                 <!-- Form -->
                 <div class="col-lg-4">
