@@ -124,16 +124,16 @@ $file_path_basepaper = $_GET['file_path_basepaper'];
                     <input type="hidden" name="action" value="update" />
                     <input type="hidden" name="id" id="update_id" value="<?php echo htmlspecialchars($id); ?>" />
                     <label>Degree</label>
-                    <input type="text" name="degree" id="update_degree" value="<?php echo htmlspecialchars($degree); ?>" placeholder="Degree" disabled />
+                    <input type="text" name="degree" id="update_degree" value="<?php echo htmlspecialchars($degree); ?>" placeholder="Degree" readonly />
                     <label>Branch</label>
-                    <input type="text" name="branch" id="update_branch" value="<?php echo htmlspecialchars($branch); ?>" placeholder="Branch" disabled />
+                    <input type="text" name="branch" id="update_branch" value="<?php echo htmlspecialchars($branch); ?>" placeholder="Branch" readonly />
                     <label>Type</label>
-                    <select name="type" id="update_type" disabled>
+                    <select name="type" id="update_type" readonly>
                         <option value="mini" <?php if ($type == "mini") echo "selected"; ?>>Mini</option>
                         <option value="major" <?php if ($type == "major") echo "selected"; ?>>Major</option>
                     </select>
                     <label>Domain</label>
-                    <input type="text" name="domain" id="update_domain" value="<?php echo htmlspecialchars($domain); ?>" placeholder="Domain" disabled />
+                    <input type="text" name="domain" id="update_domain" value="<?php echo htmlspecialchars($domain); ?>" placeholder="Domain" readonly />
                     <label>Title</label>
                     <input type="text" name="title" id="update_title" value="<?php echo htmlspecialchars($title); ?>" placeholder="Title" />
                 </div>
@@ -228,6 +228,7 @@ $file_path_basepaper = $_GET['file_path_basepaper'];
                     body: formData
                 });
                 let result = await res.json();
+                console.log(result)
                 alert(result.success ? "Updated!" : "Update failed");
                 window.location.href = "./viewproject.php";
             } catch (err) {

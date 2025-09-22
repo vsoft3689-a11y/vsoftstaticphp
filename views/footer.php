@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 &copy; <a class="border-bottom" href="#">VSOFTSSolutions</a>, All Right Reserved.
-                Designed By <a class="border-bottom" href="#">westechnologies.in</a><br><br>
+                Designed By <a class="border-bottom" target="_blank" href="https://westechnologies.in/">westechnologies.in</a><br><br>
             </div>
         </div>
     </div>

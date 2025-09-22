@@ -285,7 +285,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       }
 
       // Validate Type
-      if (type !== "Mini" && type !== "Major" && type !== "Final") {
+      if (type !== "mini" && type !== "major") {
         alert("Please select type.");
         form.type.focus();
         e.preventDefault();
