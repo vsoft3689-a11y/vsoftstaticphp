@@ -146,11 +146,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         <div id="siteConfig"></div>
     </section>
 
-
- 
-
-   
-
     <?php include "./footer.php" ?>
 
 </body>

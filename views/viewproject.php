@@ -8,6 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -146,6 +147,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             table.appendChild(tbody);
             document.getElementById("projects").appendChild(table);
         } else {
+            document.getElementById("projects").innerHTML = "";
             let para = document.createElement("p");
             para.innerHTML = `No projects list found!`;
             para.style.textAlign = "center";

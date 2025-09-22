@@ -56,7 +56,7 @@ class PricingPackageController
                     'is_featured' => isset($_POST['is_featured']) ? 1 : 0
                 ];
                 echo $this->pricingpackageModel->update($id, $data)
-                    ? json_encode(["status" => "success", "message" => "Service Updated"])
+                    ? json_encode(["status" => "success", "message" => "Package Updated!"])
                     : json_encode(["status" => "error", "message" => "Failed to Update"]);
                 break;
 

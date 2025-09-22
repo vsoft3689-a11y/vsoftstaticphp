@@ -178,6 +178,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         ["Marketing", "Finance", "Human Resource", "Operations"].forEach(b => {
           branch.innerHTML += `<option value="${b}">${b}</option>`;
         });
+
       }
     }
 
@@ -280,8 +281,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       let title = form.title.value.trim();
       let url = form.youtube_url.value.trim();
 
-      console.log(degree, branch, type, domain, title, url);
-
       // Validate Degree
       if (degree.length < 2) {
         alert("Degree must be selected.");
@@ -331,7 +330,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       try {
         let formData = new FormData(this);
 
-        console.log(...formData)
         let res = await fetch(apiUrl, {
           method: "POST",
           body: formData

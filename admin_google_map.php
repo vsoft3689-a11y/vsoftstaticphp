@@ -40,14 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // ------------------- LOAD CONFIGS -------------------
-$configs = [];
-$result = $conn->query("SELECT config_key, config_value FROM site_configurations");
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $configs[$row['config_key']] = $row['config_value'];
-    }
-}
-?>
+// $configs = [];
+// $result = $conn->query("SELECT config_key, config_value FROM site_configurations");
+// if ($result && $result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         $configs[$row['config_key']] = $row['config_value'];
+//     }
+// }
+// ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -118,6 +118,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 table.appendChild(tbody);
                 document.getElementById("users").appendChild(table);
             } else {
+                document.getElementById("users").innerHTML = "";
                 let para = document.createElement("p");
                 para.innerHTML = `No users list found!`;
                 para.style.textAlign = "center";
