@@ -29,7 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-     <link href="css/internship.css" rel="stylesheet">
+    <!-- <link href="css/internship.css" rel="stylesheet"> -->
+
 
 </head>
 
@@ -67,7 +68,7 @@
       </div>
       <!-- Header End -->
 
-      <!-- Intern Main Start -->
+      <!-- Intern & Corporate Main Start -->
       <div class="container-xxl py-5">
           <div class="container">
               <div class="row g-2 justify-content-center align-items-stretch">
