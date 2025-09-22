@@ -142,8 +142,13 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 <label for="is_featured">Featured</label>
                 <input style="margin-left:10px;" type="checkbox" name="is_featured" id="is_featured" value="1">
             </div>
+<<<<<<< HEAD
 
             <button id="btn" type="submit">Save Offer</button>
+=======
+            <br>
+            <button id="btn" type="submit">Add Package</button>
+>>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
         </form>
     </div>
 
@@ -230,7 +235,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 method: "POST",
                 body: formData
             });
-            alert(await res.text());
+
+            let result = await res.json();
+            alert(result.message);
             e.target.reset();
             document.getElementById("service_id").value = "";
             loadServices();
@@ -246,6 +253,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             document.getElementById("duration").value = duration;
             document.getElementById("button_link").value = link;
             document.getElementById("is_featured").checked = featured == 1;
+
+            window.scrollTo(0, 0);
         }
 
         async function deleteService(id) {

@@ -8,6 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Site Config Management</title>
@@ -111,6 +112,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <?php include "./adminnavbar.php" ?>
 
+<<<<<<< HEAD
 <div class="main">
     <h2 id="configHeading">Add Config</h2>
     <form id="configForm">
@@ -131,6 +133,16 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 </section>
 
 <?php include "./footer.php" ?>
+=======
+    <section class="load-siteconfig">
+        <h2>Config List</h2>
+        <div id="siteConfig"></div>
+    </section>
+
+    <?php include "./footer.php" ?>
+
+</body>
+>>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
 
 <script>
     const apiUrl = "../controller/SiteConfigController.php";
@@ -142,9 +154,51 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         const container = document.getElementById("siteConfig");
         container.innerHTML = "";
 
+<<<<<<< HEAD
         if (data.length === 0) {
             const para = document.createElement("p");
             para.innerHTML = "No site configurations found!";
+=======
+            th1.innerHTML = "ID";
+            th2.innerHTML = "Key";
+            th3.innerHTML = "Value";
+            th4.innerHTML = "Created At";
+            th5.innerHTML = "Updated At";
+            th6.innerHTML = "Actions";
+
+
+            tr1.append(th1, th2, th3, th4, th5, th6);
+            thead.appendChild(tr1);
+
+            table.appendChild(thead);
+
+            let tbody = document.createElement("tbody");
+            tbody.innerHTML = "";
+
+            data.forEach((c) => {
+                let tr = document.createElement("tr");
+                tr.innerHTML = `
+                                <tr>
+                                    <td>${c.id}</td>
+                                    <td>${c.config_key}</td>
+                                    <td>${c.config_value}</td>
+                                    <td>${c.created_at}</td>
+                                    <td>${c.updated_at}</td>
+                                <td>
+                                    <button id="btn" onclick="editConfig(${c.id}, '${c.config_key}', \`${c.config_value}\`)">Edit</button>
+                                    <button id="btn" onclick="deleteConfig(${c.id})">Delete</button>
+                                </td>
+                                </tr>
+                                `;
+                tbody.appendChild(tr);
+            });
+            table.appendChild(tbody);
+            document.getElementById("siteConfig").appendChild(table);
+        } else {
+            document.getElementById("siteConfig").innerHTML = "";
+            let para = document.createElement("p");
+            para.innerHTML = `No site configurations list found!`;
+>>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
             para.style.textAlign = "center";
             para.style.fontWeight = "bold";
             para.style.paddingTop = "40px";
@@ -216,6 +270,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
         const result = await res.json();
         alert(result.message);
+<<<<<<< HEAD
         form.reset();
         form.querySelector("button[type='submit']").innerText = "Add Config";
         form.querySelector("input[name='action']").value = "create";
@@ -223,6 +278,19 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             form.querySelector("input[name='id']").remove();
         }
         const cancelBtn = form.querySelector(".cancel-btn");
+=======
+        // Reset form after successful update
+        form.reset();
+        form.querySelector("[name='action']").value = "create"; // back to create
+        form.querySelector("button[type='submit']").innerText = "Add Config"; // reset button text
+
+        // remove hidden id field if exists
+        let hiddenId = form.querySelector("[name='id']");
+        if (hiddenId) hiddenId.remove();
+
+        // remove cancel button if exists
+        let cancelBtn = form.querySelector(".cancel-btn");
+>>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
         if (cancelBtn) cancelBtn.remove();
 
         loadConfigs();

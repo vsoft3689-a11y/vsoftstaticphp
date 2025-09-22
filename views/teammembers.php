@@ -8,6 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Team Management</title>
@@ -138,14 +139,14 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <label>Profile Picture:</label>
             <input type="file" name="profile_picture">
 
-            <label>Facebook URL:</label>
-            <input type="url" name="social_facebook">
+            <label>Facebook:</label>
+            <input type="text" name="create_facebook" id="create_facebook">
 
-            <label>Twitter URL:</label>
-            <input type="url" name="social_twitter">
+            <label>Twitter:</label>
+            <input type="text" name="create_twitter" id="create_twitter">
 
-            <label>LinkedIn URL:</label>
-            <input type="url" name="social_linkedin">
+            <label>LinkedIn:</label>
+            <input type="text" name="create_linkedin" id="create_linkedin">
 
             <label>Display Order:</label>
             <input type="number" name="display_order">
@@ -169,21 +170,25 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <textarea name="bio" id="update_bio"></textarea>
 
             <label>Profile Picture:</label>
-            <input type="file" name="profile_picture">
+            <input type="file" name="profile_picture" id="update_picture">
+
+            <!-- Preview old image -->
+            <label id="previous_heading">Previous Image:</label>
+            <img id="update_preview" src="" alt="Current Image" width="120" style="margin:10px; display:none;">
 
             <label>Facebook:</label>
-            <input type="url" name="social_facebook" id="update_facebook">
+            <input type="text" name="social_facebook" id="update_facebook">
 
             <label>Twitter:</label>
-            <input type="url" name="social_twitter" id="update_twitter">
+            <input type="text" name="social_twitter" id="update_twitter">
 
             <label>LinkedIn:</label>
-            <input type="url" name="social_linkedin" id="update_linkedin">
+            <input type="text" name="social_linkedin" id="update_linkedin">
 
             <label>Display Order:</label>
             <input type="number" name="display_order" id="update_order">
 
-            <button type="submit">Update Member</button>
+            <button id="btn" type="submit">Update Member</button>
             <button id="btn" type="button" onclick="cancelUpdate()">Cancel</button>
         </form>
     </div>
@@ -201,7 +206,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         async function loadMembers() {
             let res = await fetch(apiUrl + "?action=read");
             let data = await res.json();
-
+console.log(data)
             if (data.length > 0) {
                 document.getElementById("teamList").innerHTML = "";
                 let table = document.createElement("table");
@@ -251,7 +256,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                                     <td>${m.is_active == 1 ? 'Active' : 'Inactive'}</td>
                                     <td>${m.display_order}</td>
                                     <td>
-                                        <button id="btn" onclick="editMember(${m.id}, '${m.name}', '${m.designation}', \`${m.bio || ''}\`, '${m.social_facebook || ''}', '${m.social_twitter || ''}', '${m.social_linkedin || ''}', ${m.display_order})">Edit</button>
+                                        <button id="btn" 
+                                            onclick="editMember(${m.id}, '${m.name}', '${m.designation}', \`${m.bio || ''}\`, '${m.social_facebook || ''}', '${m.social_twitter || ''}', '${m.social_linkedin || ''}', ${m.display_order}, '${m.profile_picture_path || ''}')">
+                                        Edit
+                                        </button>
                                         <button id="btn" onclick="toggleStatus(${m.id}, ${m.is_active})">${m.is_active == 1 ? 'Deactivate' : 'Activate'}</button>
                                         <button id="btn" onclick="deleteMember(${m.id})">Delete</button>
                                     </td>
@@ -261,6 +269,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 table.appendChild(tbody);
                 document.getElementById("teamList").appendChild(table);
             } else {
+                document.getElementById("teamList").innerHTML = "";
                 let para = document.createElement("p");
                 para.innerHTML = `No team members list found!`;
                 para.style.textAlign = "center";
@@ -278,6 +287,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             let name = form.name.value.trim();
             let designation = form.designation.value.trim();
             let displayOrder = form.display_order.value.trim();
+            let facebook = form.create_facebook.value.trim();
+            let twitter = form.create_twitter.value.trim();
+            let linkedin = form.create_linkedin.value.trim();
 
             // Validate Name (min 3 characters)
             if (name.length < 3) {
@@ -292,6 +304,24 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 alert("Designation must be at least 2 characters long.");
                 form.designation.focus();
                 e.preventDefault();
+                return;
+            }
+
+            if (facebook !== "" && !facebook.includes("facebook.com")) {
+                e.preventDefault(); // stop form submit
+                alert("Please enter a valid Facebook URL.");
+                return;
+            }
+
+            if (twitter !== "" && !twitter.includes("twitter.com")) {
+                e.preventDefault(); // stop form submit
+                alert("Please enter a valid Twitter URL.");
+                return;
+            }
+
+            if (linkedin !== "" && !linkedin.includes("linkedin.com")) {
+                e.preventDefault(); // stop form submit
+                alert("Please enter a valid Linkedin URL.");
                 return;
             }
 
@@ -323,6 +353,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             let name = form.name.value.trim();
             let designation = form.designation.value.trim();
             let displayOrder = form.display_order.value.trim();
+            let facebook = document.getElementById("update_facebook").value.trim();
+            let twitter = document.getElementById("update_twitter").value.trim();
+            let linkedin = document.getElementById("update_linkedin").value.trim();
 
             // Validate Name (min 3 characters)
             if (name.length < 3) {
@@ -337,6 +370,24 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 alert("Designation must be at least 2 characters long.");
                 form.designation.focus();
                 e.preventDefault();
+                return;
+            }
+
+            if (facebook !== "" && !facebook.includes("facebook.com")) {
+                e.preventDefault(); // stop form submit
+                alert("Please enter a valid Facebook URL.");
+                return;
+            }
+
+            if (twitter !== "" && !twitter.includes("twitter.com")) {
+                e.preventDefault(); // stop form submit
+                alert("Please enter a valid Twitter URL.");
+                return;
+            }
+
+            if (linkedin !== "" && !linkedin.includes("linkedin.com")) {
+                e.preventDefault(); // stop form submit
+                alert("Please enter a valid Linkedin URL.");
                 return;
             }
 
@@ -388,7 +439,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             loadMembers();
         }
 
-        function editMember(id, name, designation, bio, facebook, twitter, linkedin, order) {
+        function editMember(id, name, designation, bio, social_facebook, twitter, linkedin, order, picture) {
             document.getElementById("createForm").style.display = "none";
             document.getElementById("createHeading").style.display = "none";
             document.getElementById("updateForm").style.display = "block";
@@ -398,10 +449,22 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             document.getElementById("update_name").value = name;
             document.getElementById("update_designation").value = designation;
             document.getElementById("update_bio").value = bio;
-            document.getElementById("update_facebook").value = facebook;
+            document.getElementById("update_facebook").value = social_facebook;
             document.getElementById("update_twitter").value = twitter;
             document.getElementById("update_linkedin").value = linkedin;
             document.getElementById("update_order").value = order;
+
+            console.log(social_facebook)
+            // Show old image if available
+            let preview = document.getElementById("update_preview");
+            if (picture) {
+                preview.src = "../" + picture;
+                preview.style.display = "block";
+                document.getElementById("previous_heading").style.display = "block"
+            } else {
+                preview.style.display = "none";
+                document.getElementById("previous_heading").style.display = "none";
+            }
 
             window.scrollTo(0, 0);
         }

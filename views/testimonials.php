@@ -122,7 +122,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             <label>Rating (1-5):</label>
             <input type="number" name="rating" min="1" max="5">
             <label>Review:</label>
-            <textarea name="review_text" required></textarea>
+            <textarea name="review_text"></textarea>
             <label>Photo:</label>
             <input type="file" name="customer_photo" accept="image/*">
             <label>Display Order:</label>
@@ -183,7 +183,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                         </td>
                         <td>${r.display_order}</td>
                         <td>
-                        <button id="btn" onclick="toggleApproval(${r.id}, ${r.is_approved})">${r.is_approved == 1 ? "UnApprove" : "Approve"}</button>
+                        <button id="btn" onclick="toggleApproval(${r.id}, ${r.is_approved})">${r.is_approved == 1 ? "Unapprove" : "Approve"}</button>
                         <button id="btn" onclick="deleteReview(${r.id})">Delete</button>
                         </td>
                         </tr>`;
