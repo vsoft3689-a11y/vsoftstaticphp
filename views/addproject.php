@@ -212,7 +212,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         }
-      } else if (degree === "MTech") {
+      } else if (degree === "M.Tech") {
         if (branch === "CSE") {
           ["Data Mining", "Blockchain", "Network Security"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
