@@ -200,7 +200,7 @@ if ($conn->connect_error) {
     </main>
 
     <!-- Footer Start -->
-    <?php // footer.php should output a root <footer> with class="site-footer ..." ?>
+    
     <?php include 'footer.php'; ?>
     <!-- Footer End -->
 

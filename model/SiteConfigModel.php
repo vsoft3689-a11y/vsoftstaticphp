@@ -29,4 +29,8 @@ class SiteConfigModel {
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
+    
 }
+
+
+

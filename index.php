@@ -148,6 +148,12 @@ $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
                                                 style="font-size: 40px; line-height: 1.2;">
                                                 <?php echo htmlspecialchars($row['sub_text']); ?>
                                             </h1>
+
+
+                                             
+
+
+
                                         <?php endif; ?>
 
                                         <!-- CTA Button -->
