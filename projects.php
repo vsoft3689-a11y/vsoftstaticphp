@@ -102,8 +102,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <option value="">Select Branch</option>
     </select>
 
+    <!-- Project Type for all degrees -->
     <div id="projectTypeDiv">
-      <select name="project_type" id="project_type">
+      <select name="project_type" id="project_type" required>
         <option value="">Select Project Type</option>
         <option value="mini">Mini Project</option>
         <option value="major">Major Project</option>
@@ -195,11 +196,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     let degree = document.getElementById("degree").value;
     let branch = document.getElementById("branch");
     let domain = document.getElementById("domain");
-    let projectTypeDiv = document.getElementById("projectTypeDiv");
 
     branch.innerHTML = "<option value=''>Select Branch</option>";
     domain.innerHTML = "<option value=''>Select Domain</option>";
-    projectTypeDiv.style.display = "block";
 
     if (degree === "B.Tech") {
       ["CSE","ECE","EEE","Civil","Mech"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
@@ -207,10 +206,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       ["CSE","ECE","Power Systems","Structural Engineering"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
     } else if (degree === "MCA") {
       ["Software Engineering","Networking","Hardware Technologies","Management Information Systems"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
-      projectTypeDiv.style.display = "none";
     } else if (degree === "MBA") {
       ["Marketing","Finance","Hospitality & Tourism","Banking & Insurance"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
-      projectTypeDiv.style.display = "none";
     }
   }
 
