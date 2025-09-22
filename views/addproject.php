@@ -178,7 +178,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         ["Marketing", "Finance", "Human Resource", "Operations"].forEach(b => {
           branch.innerHTML += `<option value="${b}">${b}</option>`;
         });
-
       }
     }
 
