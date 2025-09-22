@@ -1,16 +1,22 @@
 <?php
 // ----------------- DB CONNECTION -----------------
- include './config/database.php';
+include './config/database.php';
 
- 
 $conn = (new Database())->connect();
-
 
 // Check connection
 if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
+// ----------------- LOAD CONFIGURATIONS -----------------
+$configs = [];
+$result = $conn->query("SELECT config_key, config_value FROM site_configurations");
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $configs[$row['config_key']] = $row['config_value'];
+    }
+}
 // ----------------- FORM SUBMIT -----------------
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = $conn->real_escape_string($_POST['name']);
@@ -27,9 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "<script>alert('❌ Error: " . $conn->error . "');</script>";
     }
-
-    
-
 }
 ?>
 
@@ -41,42 +44,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>VsoftSolutions - Contact</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<<<<<<< HEAD
     <link href="img/favicon.ico" rel="icon">
-=======
-<link href="img/favicon.ico" rel="icon">
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
+    <!-- Icon Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-
-    <!-- Libraries Stylesheet -->
+    <!-- Libraries -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
-    <!-- Bootstrap & Custom CSS -->
+    <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/contact.css" rel="stylesheet">
-
-    <!-- Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -105,28 +90,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Contact For Any Query</h1>
             </div>
             <div class="row g-4">
+                
                 <!-- Info -->
                 <div class="col-lg-4">
-<<<<<<< HEAD
                     <h5 class="text-primary">Get In Touch</h5>
-                    <p>Have questions about academic projects, internships, or training programs? <br>
-                         VSoft Solutions is here to help!  Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries. 
-                         Our team will get back to you shortly.<a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-=======
-                    <h5>Get In Touch</h5>
-                    <p>Have questions about projects, internships, or training programs? Reach out to us.</p>
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
-                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i> Survey No. 64, Madhapur</p>
-                    <p><i class="fa fa-phone-alt text-primary me-2"></i> +91-9441927859</p>
-                    <p><i class="fa fa-envelope text-primary me-2"></i> info@vsoftsolutions.in</p>
+                    <p>
+                        Have questions about academic projects, internships, or training programs? <br>
+                        VSoft Solutions is here to help! Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries. 
+                        Our team will get back to you shortly.
+                    </p>
+                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i> <?= $configs['address'] ?? 'Default Address'; ?></p>
+                    <p><i class="fa fa-phone-alt text-primary me-2"></i> <?= $configs['landline'] ?? 'Default Phone'; ?></p>
+                    <p><i class="fa fa-envelope text-primary me-2"></i> <?= $configs['email'] ?? 'Default Email'; ?></p>
                 </div>
 
                 <!-- Map -->
                 <div class="col-lg-4">
-                    <iframe class="w-100 h-100 rounded"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.366291288729!2d78.3731!3d17.4483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93f2ab2c1d1b%3A0x64e1b2a9e8b8cda!2sHitech%20City%2C%20Hyderabad!5e0!3m2!1sen!2sin!4v1694445555555"
-                        frameborder="0" style="min-height: 300px; border:0;" allowfullscreen></iframe>
-                </div>
+    <?= str_replace('<iframe', '<iframe style="width:100%; height:350px; border-radius:8px;"', $configs['google_map'] ?? '<p>No map found</p>'); ?>
+</div>
+
 
                 <!-- Form -->
                 <div class="col-lg-4">
@@ -153,6 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </form>
                 </div>
+
             </div>
         </div>
     </div>
@@ -167,8 +150,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
