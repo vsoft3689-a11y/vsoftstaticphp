@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
@@ -9,178 +9,256 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Custom Management</title>
-    <style>
-        .main {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+  <meta charset="UTF-8">
+  <title>Custom Requirements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-        #customHeading {
-            margin: 20px 0;
-        }
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+    }
 
-        #btn {
-            width: auto;
-            background: #06BBCC;
-            color: #fff;
-            font-weight: bold;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            border: none;
-            transition: 0.3s;
-        }
+    h2#heading {
+      color: #333;
+    }
 
-        #btn:hover {
-            background: #06BBCC;
-        }
+    table {
+      width: 95%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-        #btn[type="button"] {
-            background: #6c757d;
-        }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
 
-        #btn[type="button"]:hover {
-            background: #5a6268;
-        }
+    th {
+      background-color: #06BBCC;
+      color: white;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: #fff;
-            margin-top: 20px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
+    tr:hover {
+      background-color: #f5f5f5;
+    }
 
-        th,
-        td {
-            padding: 12px;
-            border-bottom: 1px solid #eee;
-            text-align: left;
-        }
+    .status-badge {
+      padding: 6px 10px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
 
-        th {
-            background: #06BBCC;
-            color: #fff;
-        }
+    .badge-pending {
+      background-color: #ffc107;
+      color: #000;
+    }
 
-        tr:hover {
-            background: #f1f1f1;
-        }
+    .badge-approved {
+      background-color: #007bff;
+      color: white;
+    }
 
-        .actions button {
-            width: auto;
-            margin-right: 6px;
-            padding: 6px 12px;
-            font-size: 13px;
-        }
+    .badge-done {
+      background-color: #28a745;
+      color: white;
+    }
 
-        .load-custom {
-            margin: 10px 10px;
-            margin-bottom: 100px;
-        }
-    </style>
+    .status-select {
+      padding: 6px;
+      font-size: 14px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+    }
+
+    .update-btn, .delete-btn {
+      padding: 6px 10px;
+      background-color: #06BBCC;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .update-btn:hover, .delete-btn:hover {
+      background-color: #049eab;
+    }
+
+    .alert {
+      width: 95%;
+      margin: 10px auto;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .alert-success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .alert-error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  </style>
 </head>
-
 <body>
-    <?php include "./adminnavbar.php" ?>
 
-    <div class="main">
-        <h2 id="customHeading">Custom Requirements</h2>
-    </div>
-    <section class="load-custom">
-        <table id="customRequirement">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>User</th>
-                    <th>Title</th>
-                    <th>Technologies</th>
-                    <th>Status</th>
-                    <th>Document</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
-    </section>
+<?php include __DIR__ . '/adminnavbar.php'; ?>
 
-    <?php include "./footer.php" ?>
+<div class="main">
+  <h2 id="heading">Custom Requirements</h2>
+</div>
 
-    <script>
-        const apiUrl = "../controller/CustomRequirementsController.php";
+<section>
+  <table id="custom-req-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>User ID</th>
+        <th>Title</th>
+        <th>Technologies</th>
+        <th>Status</th>
+        <th>Document</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
 
-        // Load all projects
-        async function loadProjects() {
-            let res = await fetch(apiUrl + "?action=read");
-            let data = await res.json();
-            let tbody = document.querySelector("#projectTable tbody");
-            tbody.innerHTML = "";
+<div id="alert-container"></div>
 
-            data.forEach(p => {
-                let tr = document.createElement("tr");
-                tr.innerHTML = `
-                                <td>${p.id}</td>
-                                <td>${p.user_id}</td>
-                                <td>${p.title}</td>
-                                <td>${p.technologies || ""}</td>
-                                <td>
-                                    <select onchange="updateStatus(${p.id}, this.value)">
-                                        <option value="pending" ${p.status === "pending" ? "selected" : ""}>Pending</option>
-                                        <option value="approved" ${p.status === "approved" ? "selected" : ""}>Approved</option>
-                                        <option value="done" ${p.status === "done" ? "selected" : ""}>Done</option>
-                                    </select>
-                                </td>
-                                <td>${p.document_path ? `<a href="../${p.document_path}" target="_blank">Download</a>` : ""}</td>
-                                <td>
-                                    <button id=btn" onclick="deleteProject(${p.id})">Delete</button>
-                                </td>
-                            `;
-                tbody.appendChild(tr);
-            });
-        }
+<?php include __DIR__ . '/footer.php'; ?>
 
-        // Update status
-        async function updateStatus(id, status) {
-            let formData = new FormData();
-            formData.append("action", "update_status");
-            formData.append("id", id);
-            formData.append("status", status);
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tableBody = document.querySelector("#custom-req-table tbody");
+  const alertContainer = document.getElementById("alert-container");
 
-            let res = await fetch(apiUrl, {
-                method: "POST",
-                body: formData
-            });
-            let result = await res.json();
-            alert(result.message);
-        }
+  function showAlert(type, message) {
+    const alertClass = type === 'success' ? 'alert-success' : 'alert-error';
+    alertContainer.innerHTML = `
+      <div class="alert ${alertClass}">${message}</div>
+    `;
+    setTimeout(() => alertContainer.innerHTML = '', 3000);
+  }
 
-        // Delete project
-        async function deleteProject(id) {
-            if (!confirm("Are you sure to delete this project?")) return;
-            let formData = new FormData();
-            formData.append("action", "delete");
-            formData.append("id", id);
+  function getStatusBadge(status) {
+    let badgeClass = 'badge-pending';
+    if (status === 'approved') badgeClass = 'badge-approved';
+    if (status === 'done') badgeClass = 'badge-done';
 
-            let res = await fetch(apiUrl, {
-                method: "POST",
-                body: formData
-            });
-            let result = await res.json();
-            alert(result.message);
-            loadProjects();
-        }
+    return `<span class="status-badge ${badgeClass}">${status}</span>`;
+  }
 
-        // Initial load
-        loadProjects();
-    </script>
+  function fetchRequirements() {
+    fetch("../controller/CustomRequirementsController.php?action=read")
+      .then(res => res.json())
+      .then(data => {
+        tableBody.innerHTML = "";
+
+        data.forEach(req => {
+          const docLink = req.document_path 
+            ? `<a href="../${req.document_path}" target="_blank">Download</a>` 
+            : "-";
+
+          const tr = document.createElement("tr");
+          tr.innerHTML = `
+            <td>${req.id}</td>
+            <td>${req.user_id}</td>
+            <td>${req.title}</td>
+            <td>${req.technologies || '-'}</td>
+            <td>${getStatusBadge(req.status)}</td>
+            <td>${docLink}</td>
+            <td>
+              <form onsubmit="return updateStatus(event, ${req.id})">
+                <select name="status" class="status-select">
+                  <option value="pending" ${req.status === 'pending' ? 'selected' : ''}>Pending</option>
+                  <option value="approved" ${req.status === 'approved' ? 'selected' : ''}>Approved</option>
+                  <option value="done" ${req.status === 'done' ? 'selected' : ''}>Done</option>
+                </select>
+                <button type="submit" class="update-btn">Update</button>
+              </form>
+            </td>
+            <td>
+              <form onsubmit="return deleteRequirement(event, ${req.id})">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+            </td>
+          `;
+          tableBody.appendChild(tr);
+        });
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        showAlert("error", "Failed to load data.");
+      });
+  }
+
+  window.updateStatus = function (event, id) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    formData.append("action", "update_status");
+    formData.append("id", id);
+
+    fetch("../controller/CustomRequirementsController.php", {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      showAlert(data.status, data.message);
+      fetchRequirements();
+    })
+    .catch(err => {
+      console.error("Update error:", err);
+      showAlert("error", "Status update failed.");
+    });
+  };
+
+  window.deleteRequirement = function (event, id) {
+    event.preventDefault();
+    if (!confirm("Are you sure you want to delete this requirement?")) return;
+
+    const formData = new FormData();
+    formData.append("action", "delete");
+    formData.append("id", id);
+
+    fetch("../controller/CustomRequirementsController.php", {
+      method: "POST",
+      body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+      showAlert(data.status, data.message);
+      fetchRequirements();
+    })
+    .catch(err => {
+      console.error("Delete error:", err);
+      showAlert("error", "Delete failed.");
+    });
+  };
+
+  fetchRequirements();
+});
+</script>
+
 </body>
-
 </html>

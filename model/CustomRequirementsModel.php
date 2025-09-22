@@ -1,33 +1,21 @@
 <?php
+// model/CustomRequirementsModel.php
+
 class CustomRequirementsModel {
     private $conn;
-    private $table="custom_requirements";
+    private $table = "custom_requirements";
 
     public function __construct($db) {
         $this->conn = $db;
     }
 
-    // Create project
-    public function create($data) {
-        $stmt = $this->conn->prepare("
-            INSERT INTO {$this->table} (user_id, title, description, technologies, status, document_path) 
-            VALUES (?, ?, ?, ?, ?, ?)
-        ");
-        $stmt->bind_param(
-            "isssss",
-            $data['user_id'],
-            $data['title'],
-            $data['description'],
-            $data['technologies'],
-            $data['status'],
-            $data['document_path']
-        );
-        return $stmt->execute();
-    }
-
-    // Read all projects
     public function readAll() {
-        $result = $this->conn->query("SELECT * FROM {$this->table} ORDER BY created_at DESC");
+        $sql = "SELECT * FROM {$this->table} ORDER BY created_at DESC";
+        $result = $this->conn->query($sql);
+        if (!$result) {
+            error_log("readAll: " . $this->conn->error);
+            return [];
+        }
         $rows = [];
         while ($row = $result->fetch_assoc()) {
             $rows[] = $row;
@@ -35,37 +23,33 @@ class CustomRequirementsModel {
         return $rows;
     }
 
-    // Read single project
-    public function read($id) {
-        $stmt = $this->conn->prepare("SELECT * FROM {$this->table} WHERE id=?");
-        $stmt->bind_param("i", $id);
-        $stmt->execute();
-        return $stmt->get_result()->fetch_assoc();
+    public function updateStatus($id, $status) {
+        $stmt = $this->conn->prepare("UPDATE {$this->table} SET status = ? WHERE id = ?");
+        if (!$stmt) {
+            error_log("updateStatus prepare failed: " . $this->conn->error);
+            return false;
+        }
+        $stmt->bind_param("si", $status, $id);
+        $res = $stmt->execute();
+        if (!$res) {
+            error_log("updateStatus execute failed: " . $stmt->error);
+        }
+        $stmt->close();
+        return $res;
     }
 
-    // Update project
-    public function update($id, $data) {
-        $stmt = $this->conn->prepare("
-            UPDATE {$this->table} 
-            SET title=?, description=?, technologies=?, status=?, document_path=? 
-            WHERE id=?
-        ");
-        $stmt->bind_param(
-            "sssssi",
-            $data['title'],
-            $data['description'],
-            $data['technologies'],
-            $data['status'],
-            $data['document_path'],
-            $id
-        );
-        return $stmt->execute();
-    }
-
-    // Delete project
     public function delete($id) {
-        $stmt = $this->conn->prepare("DELETE FROM {$this->table} WHERE id=?");
+        $stmt = $this->conn->prepare("DELETE FROM {$this->table} WHERE id = ?");
+        if (!$stmt) {
+            error_log("delete prepare failed: " . $this->conn->error);
+            return false;
+        }
         $stmt->bind_param("i", $id);
-        return $stmt->execute();
+        $res = $stmt->execute();
+        if (!$res) {
+            error_log("delete execute failed: " . $stmt->error);
+        }
+        $stmt->close();
+        return $res;
     }
 }

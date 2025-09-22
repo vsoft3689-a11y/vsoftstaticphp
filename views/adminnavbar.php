@@ -73,7 +73,7 @@
                 <a href="logout.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout</a>
             <?php else: ?>
                 <!-- Show only when logged out -->
-                <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Admin Login</a>
+             <a href="login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Admin Login</a> 
             <?php endif; ?>
         </div>
     </nav>
