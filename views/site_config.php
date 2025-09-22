@@ -8,6 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Site Config Management</title>
@@ -202,6 +203,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             table.appendChild(tbody);
             document.getElementById("siteConfig").appendChild(table);
         } else {
+            document.getElementById("siteConfig").innerHTML = "";
             let para = document.createElement("p");
             para.innerHTML = `No site configurations list found!`;
             para.style.textAlign = "center";
@@ -241,7 +243,19 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         });
         let result = await res.json();
         alert(result.message);
-        this.reset();
+        // Reset form after successful update
+        form.reset();
+        form.querySelector("[name='action']").value = "create"; // back to create
+        form.querySelector("button[type='submit']").innerText = "Add Config"; // reset button text
+
+        // remove hidden id field if exists
+        let hiddenId = form.querySelector("[name='id']");
+        if (hiddenId) hiddenId.remove();
+
+        // remove cancel button if exists
+        let cancelBtn = form.querySelector(".cancel-btn");
+        if (cancelBtn) cancelBtn.remove();
+
         loadConfigs();
     });
 

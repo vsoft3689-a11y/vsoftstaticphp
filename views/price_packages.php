@@ -8,6 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Price Services</title>
@@ -124,13 +125,15 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         <h2 id="serviceHeading">Manage Price Packages</h2>
         <form id="serviceForm">
             <input type="hidden" name="id" id="service_id">
-            <label>Service Type</label>
+            <!-- <label>Service Type</label>
             <select name="service_type" id="service_type">
                 <option value="">-- Select --</option>
                 <option value="project">Project</option>
                 <option value="internship">Internship</option>
                 <option value="training">Training</option>
-            </select>
+            </select> -->
+            <label>Service Type</label>
+            <input type="text" name="service_type" id="service_type">
 
             <label>Package Name</label>
             <input type="text" name="package_name" id="package_name">
@@ -155,7 +158,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 <input style="margin-right: 350px;" type="checkbox" name="is_featured" id="is_featured">
             </div>
             <br>
-            <button id="btn" type="submit">Save Service</button>
+            <button id="btn" type="submit">Add Package</button>
         </form>
     </div>
 
@@ -245,7 +248,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 method: "POST",
                 body: formData
             });
-            alert(await res.text());
+
+            let result = await res.json();
+            alert(result.message);
             e.target.reset();
             document.getElementById("service_id").value = "";
             loadServices();
@@ -261,6 +266,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             document.getElementById("duration").value = duration;
             document.getElementById("button_link").value = link;
             document.getElementById("is_featured").checked = featured == 1;
+
+            window.scrollTo(0, 0);
         }
 
         async function deleteService(id) {

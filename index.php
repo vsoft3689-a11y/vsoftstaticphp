@@ -6,8 +6,13 @@ $conn = (new Database())->connect();
 if ($conn->connect_error) {
     die(json_encode(["status" => "error", "message" => $conn->connect_error]));
 }
+
+
 $sql = "SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC";
 $result = $conn->query($sql);
+
+$bannerResult = $conn->query("SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC");
+
 
 
 $result = $conn->query("SELECT * FROM pricing_packages ORDER BY created_at DESC");
@@ -55,6 +60,31 @@ $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
     <link href="css/style.css" rel="stylesheet">
     <link href="css/zoom.css" rel="stylesheet">
     <link href="css/offer.css" rel="stylesheet">
+
+
+
+        <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+
+    <style>
+        .owl-carousel .owl-nav button.owl-prev,
+        .owl-carousel .owl-nav button.owl-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+        }
+        .owl-carousel .owl-nav button.owl-prev { left: 15px; }
+        .owl-carousel .owl-nav button.owl-next { right: 15px; }
+        .owl-carousel .owl-dots { text-align: center; margin-top: 15px; }
+        .owl-carousel .owl-dots .owl-dot span { background: #007bff; }
+    </style>
+
     
   
 
@@ -83,76 +113,71 @@ $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
     
     
 
-
     <!-- Carousel Start -->
-
-    <div class="container-fluid p-0 mb-5">
+<div class="container-fluid p-0 mb-5">
     <div class="owl-carousel header-carousel position-relative">
-        <?php if ($result && $result->num_rows > 0): ?>
-            <?php while ($row = $result->fetch_assoc()): ?>
+
+        <?php if ($bannerResult && $bannerResult->num_rows > 0): ?>
+            <?php while ($row = $bannerResult->fetch_assoc()): ?>
                 <div class="owl-carousel-item position-relative">
                     <!-- Banner Image -->
-                    <img class="img-fluid w-100" src="<?php echo $row['image_path']; ?>" alt="Banner" style="object-fit: cover; height: 600px;">
+                    <img class="img-fluid w-100"
+                         src="<?php echo htmlspecialchars($row['image_path']); ?>"
+                         alt="Banner"
+                         style="object-fit: cover; height: 600px;">
 
                     <!-- Dark Overlay -->
-                    <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(24, 29, 56, .6);">
-                        <!-- Centered Text -->
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <div class="container text-center">
-                                
-                                  <div class="row justify-content-left">
-                                    <div class="col-sm-10 col-lg-10">
+                    <div class="position-absolute top-0 start-0 w-100 h-100"
+                         style="background: rgba(24, 29, 56, .6);">
+                        <div class="d-flex align-items-center h-100">
+                            <div class="container">
+                                <div class="row justify-content-start">
+                                    <div class="col-sm-10 col-lg-8 text-start">
 
                                         <!-- Tagline -->
                                         <?php if (!empty($row['tagline'])): ?>
-                                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown text-start" style="font-size: 22px; letter-spacing: 2px;">
-                                                <?php echo $row['tagline']; ?>
+                                            <h5 class="text-primary text-uppercase mb-3 animated slideInDown"
+                                                style="font-size: 22px; letter-spacing: 2px;">
+                                                <?php echo htmlspecialchars($row['tagline']); ?>
                                             </h5>
                                         <?php endif; ?>
 
-                                        <!-- Main Subject -->
+                                        <!-- Sub Text -->
                                         <?php if (!empty($row['sub_text'])): ?>
-                                            <h1 class="text-white fw-bold animated slideInDown text-start" 
+                                            <h1 class="text-white fw-bold animated slideInDown"
                                                 style="font-size: 40px; line-height: 1.2;">
-                                                <?php echo $row['sub_text']; ?>
+                                                <?php echo htmlspecialchars($row['sub_text']); ?>
                                             </h1>
+
+
+                                             
+
+
+
                                         <?php endif; ?>
 
-
+                                        <!-- CTA Button -->
                                         <?php if (!empty($row['cta_button_text']) && !empty($row['cta_button_link'])): ?>
-                                          <div class="text-start">
-                                        <a href="<?php echo $row['cta_button_link']; ?>"
-                                            class="btn btn-primary py-md-3 px-md-5 me-3 mt-3 animated slideInLeft ">
-                                            <?php echo $row['cta_button_text']; ?>
-                                        </a>
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <?php if (!empty($row['button2_text']) && !empty($row['button2_link'])): ?>
-                                        <a href="<?php echo $row['button2_link']; ?>"
-                                            class="btn btn-light py-md-3 px-md-5 animated slideInRight">
-                                            <?php echo $row['button2_text']; ?>
-                                        </a>
-                                    <?php endif; ?>
+                                            <a href="<?php echo htmlspecialchars($row['cta_button_link']); ?>"
+                                               class="btn btn-primary py-md-3 px-md-5 me-3 mt-3 animated slideInLeft">
+                                                <?php echo htmlspecialchars($row['cta_button_text']); ?>
+                                            </a>
+                                        <?php endif; ?>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             <?php endwhile; ?>
         <?php else: ?>
             <p class="text-center text-white bg-dark py-5">No banners found!</p>
         <?php endif; ?>
+
     </div>
 </div>
-
-<?php $conn->close(); ?>
-
-
-
-
 
 
 
@@ -762,6 +787,23 @@ $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+
+
+
+
+
+     <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
 </body>
 
 </html>
