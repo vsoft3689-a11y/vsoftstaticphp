@@ -42,16 +42,27 @@ class ProjectController
             case "update":
                 $id = $_POST['id'];
                 $data = $_POST;
-                $data['file_path_abstract'] = !empty($_FILES['abstract']['name'])
-                    ? $this->uploadFile('abstract')
-                    : null;
 
-                $data['file_path_basepaper'] = !empty($_FILES['basepaper']['name'])
-                    ? $this->uploadFile('basepaper')
-                    : null;
+                // Fetch existing file paths from DB
+                $project = $this->projectModel->getById($id); // you need a method to get project by id
+
+                // Handle Abstract Paper
+                if (!empty($_FILES['abstract']['name']) && $_FILES['abstract']['error'] === 0) {
+                    $data['file_path_abstract'] = $this->uploadFile('abstract'); // new file uploaded
+                } else {
+                    $data['file_path_abstract'] = $project['file_path_abstract']; // keep existing
+                }
+
+                // Handle Basepaper
+                if (!empty($_FILES['basepaper']['name']) && $_FILES['basepaper']['error'] === 0) {
+                    $data['file_path_basepaper'] = $this->uploadFile('basepaper'); // new file uploaded
+                } else {
+                    $data['file_path_basepaper'] = $project['file_path_basepaper']; // keep existing
+                }
 
                 echo json_encode(["success" => $this->projectModel->update($id, $data)]);
                 break;
+
 
             case "delete":
                 $id = $_POST['id'];
@@ -62,10 +73,6 @@ class ProjectController
                 echo json_encode(["error" => "Invalid action"]);
                 break;
         }
-    }
-
-    private function uploadExcel(){
-
     }
 
     private function uploadFile($fieldName, $oldPath = null)

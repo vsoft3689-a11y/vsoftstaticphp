@@ -131,7 +131,6 @@ $file_path_basepaper = $_GET['file_path_basepaper'];
                     <select name="type" id="update_type" disabled>
                         <option value="mini" <?php if ($type == "mini") echo "selected"; ?>>Mini</option>
                         <option value="major" <?php if ($type == "major") echo "selected"; ?>>Major</option>
-                        <option value="final" <?php if ($type == "final") echo "selected"; ?>>Final</option>
                     </select>
                     <label>Domain</label>
                     <input type="text" name="domain" id="update_domain" value="<?php echo htmlspecialchars($domain); ?>" placeholder="Domain" disabled />
@@ -149,8 +148,14 @@ $file_path_basepaper = $_GET['file_path_basepaper'];
                     <label>Youtube URL</label>
                     <input type="url" name="youtube_url" id="update_youtube_url" value="<?php echo htmlspecialchars($youtube_url); ?>" placeholder="YouTube URL" />
                     <label>Abstract Paper</label>
+                    <?php if (!empty($file_path_abstract)): ?>
+                        <p>Current File: <a href="<?php echo htmlspecialchars($file_path_abstract); ?>" target="_blank">Download Abstract</a></p>
+                    <?php endif; ?>
                     <input type="file" name="abstract" accept="application/pdf" value="<?php echo htmlspecialchars($file_path_abstract); ?>" />
                     <label>Basepaper</label>
+                    <?php if (!empty($file_path_basepaper)): ?>
+                        <p>Current File: <a href="<?php echo htmlspecialchars($file_path_basepaper); ?>" target="_blank">Download Basepaper</a></p>
+                    <?php endif; ?>
                     <input type="file" name="basepaper" accept="application/pdf" value="<?php echo htmlspecialchars($file_path_basepaper); ?>" />
                     <button type="submit">Update</button>
                     <button type="button" onclick="window.location='./viewproject.php'">Cancel</button>

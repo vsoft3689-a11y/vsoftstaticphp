@@ -159,7 +159,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
     // Delete project
     async function deleteProject(id) {
-        if (!confirm("Are you sure you want to delete this student?")) return;
+        if (!confirm("Are you sure you want to delete this project?")) return;
         let formData = new FormData();
         formData.append("action", "delete");
         formData.append("id", id);

@@ -122,8 +122,24 @@ class ProjectModel
     // Delete
     public function delete($id)
     {
-        $sql = "DELETE FROM {$this->table} WHERE id=?";
-        $stmt = $this->conn->prepare($sql);
+        // 1️⃣ Fetch existing file paths
+        $stmt = $this->conn->prepare("SELECT file_path_abstract, file_path_basepaper FROM {$this->table} WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $project = $result->fetch_assoc();
+
+        // 2️⃣ Delete files from server if they exist
+        if (!empty($project['file_path_abstract']) && file_exists($project['file_path_abstract'])) {
+            unlink($project['file_path_abstract']);
+        }
+
+        if (!empty($project['file_path_basepaper']) && file_exists($project['file_path_basepaper'])) {
+            unlink($project['file_path_basepaper']);
+        }
+
+        // 3️⃣ Delete record from database
+        $stmt = $this->conn->prepare("DELETE FROM {$this->table} WHERE id = ?");
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
