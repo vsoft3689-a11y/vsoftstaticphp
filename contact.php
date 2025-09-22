@@ -41,11 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>VsoftSolutions - Contact</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<<<<<<< HEAD
     <link href="img/favicon.ico" rel="icon">
-=======
-<link href="img/favicon.ico" rel="icon">
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,10 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
     <!-- Bootstrap & Custom CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -107,15 +99,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="row g-4">
                 <!-- Info -->
                 <div class="col-lg-4">
-<<<<<<< HEAD
                     <h5 class="text-primary">Get In Touch</h5>
                     <p>Have questions about academic projects, internships, or training programs? <br>
                          VSoft Solutions is here to help!  Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries. 
                          Our team will get back to you shortly.<a href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-=======
-                    <h5>Get In Touch</h5>
-                    <p>Have questions about projects, internships, or training programs? Reach out to us.</p>
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
                     <p><i class="fa fa-map-marker-alt text-primary me-2"></i> Survey No. 64, Madhapur</p>
                     <p><i class="fa fa-phone-alt text-primary me-2"></i> +91-9441927859</p>
                     <p><i class="fa fa-envelope text-primary me-2"></i> info@vsoftsolutions.in</p>
@@ -167,8 +154,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 3cab135304b5b292991e975da58b82bfbd5a147f
