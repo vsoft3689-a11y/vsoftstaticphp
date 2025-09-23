@@ -95,67 +95,58 @@
         let college = form.college.value.trim();
         let branch = form.branch.value.trim();
         let year = form.year.value.trim();
-        let isValid = true;
 
         // Name validation
         if (name === "") {
             alert("Full name is required");
-            isValid = false;
+            return;
         }
 
         // Email validation
         let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
         if (email === "") {
             alert("Email is required");
-            isValid = false;
+            return;
         } else if (!emailPattern.test(email)) {
             alert("Enter a valid email");
-            isValid = false;
+            return;
         }
 
         // Password validation
         if (password.length < 6) {
             alert("Password must be at least 6 characters");
-            isValid = false;
+            return;
         }
 
         // Confirm password validation
         if (confirmPassword !== password) {
             alert("Passwords do not match");
-            isValid = false;
+            return;
         }
 
         // Phone validation (10 digits only)
         let phonePattern = /^[0-9]{10}$/;
         if (!phonePattern.test(phone)) {
             alert("Enter a valid 10-digit phone number");
-            isValid = false;
+            return;
         }
 
         // College validation
         if (college === "") {
             alert("College name is required");
-            isValid = false;
+            return;
         }
 
         // Branch validation
         if (branch === "") {
             alert("Branch name is required");
-            isValid = false;
+            return;
         }
 
-        // Year validation (only 4-digit year)
-        let yearPattern = /^[0-9]{4}$/;
-        let currentYear = new Date().getFullYear();
-        if (!yearPattern.test(year)) {
-            alert("Enter a valid 4-digit year");
-            isValid = false;
-        } else if (year < 2000 || year > currentYear + 10) {
-            alert("Enter a realistic year");
-            isValid = false;
+        if(year===""){
+            alert("Year is required");
+            return;
         }
-
-        return isValid;
 
         try {
             let formData = new FormData(this);
