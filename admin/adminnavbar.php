@@ -44,7 +44,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./admin.php" class="nav-item nav-link">Dashboard</a>
+                <a href="./admin_dashboard.php" class="nav-item nav-link">Dashboard</a>
                 <a href="./users.php" class="nav-item nav-link">Users</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>
