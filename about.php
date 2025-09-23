@@ -189,21 +189,21 @@ $result = $conn->query($sql);
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Our History</h6>
                     <h2 class="mb-3">How We Started</h2>
-                    <p>V SOFTS SOLUTIONS established in 2003 with the vision to give best-in-class programming improvement and quality confirmation administrations to a various arrangement of clients. In today's market, Companies who depend on seaward improvement as major to their business achievement must secure the correct blend of mastery and experience from its accomplices.</p>
+                    <p class = "justify"  style = "text-align: justify;">V SOFTS SOLUTIONS established in 2003 with the vision to give best-in-class programming improvement and quality confirmation administrations to a various arrangement of clients. In today's market, Companies who depend on seaward improvement as major to their business achievement must secure the correct blend of mastery and experience from its accomplices.</p>
                 </div>
 
                 <!-- Mission -->
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Our Mission</h6>
                     <h2 class="mb-3">What Drives Us</h2>
-                    <p>We are committed to providing outstanding software solutions tailored to our clients' specific needs. Our goal is to help them excel in a competitive market and reach their strategic goals. By understanding their unique challenges, we deliver innovative and effective solutions. We prioritize quality, efficiency, and client satisfaction in every project. Partner with us to stay ahead and succeed.</p>
+                    <p class = "justify"  style = "text-align: justify;">We are committed to providing outstanding software solutions tailored to our clients' specific needs. Our goal is to help them excel in a competitive market and reach their strategic goals. By understanding their unique challenges, we deliver innovative and effective solutions. We prioritize quality, efficiency, and client satisfaction in every project. Partner with us to stay ahead and succeed.</p>
                 </div>
 
                 <!-- Vision -->
                 <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Our Vision</h6>
                     <h2 class="mb-3">Looking Ahead</h2>
-                    <p>Our mission is to revolutionize industries with disruptive software technologies. We aim to redefine possibilities and inspire innovation, driving forward the future of digital transformation. By pushing the boundaries, we create solutions that set new standards. Our commitment is to lead the way in technological advancements. Join us in shaping the future.</p>
+                    <p class = "justify"  style = "text-align: justify;">Our mission is to revolutionize industries with disruptive software technologies. We aim to redefine possibilities and inspire innovation, driving forward the future of digital transformation. By pushing the boundaries, we create solutions that set new standards. Our commitment is to lead the way in technological advancements. Join us in shaping the future.</p>
 
                 </div>
             </div>
@@ -262,9 +262,17 @@ $result = $conn->query($sql);
 
     <!-- team Start-->
 
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
+      <!-- Team Section Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    
+    <!-- Section Heading -->
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">Team Members</h6>
+      <h2 class="mb-5">Meet Our Professional Team</h2>
+    </div>
+
+    <div class="row g-4">
 
                 <?php
                 if ($result->num_rows > 0) {
@@ -304,8 +312,11 @@ $result = $conn->query($sql);
             </div>
         </div>
     </div>
-    <!-- Team Section End -->
-    <!-- team end -->
+  </div>
+</div>
+<!-- Team Section End -->
+
+<!-- team end -->
 
 
 
