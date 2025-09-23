@@ -4,12 +4,6 @@
   <meta charset="UTF-8" />
   <title>Manage Custom Requirements</title>
   <style>
-    /* body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    } */
     .main {
       display: flex;
       justify-content: center;
@@ -152,8 +146,10 @@
         <th>Description</th>
         <th>Technologies</th>
         <th>Status</th>
-        <th>Document</th>
-        <th>Actions</th>
+        <th>Change Status</th>
+        <th>Update</th>
+        <th>Download</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -194,13 +190,15 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>${escapeHtml(item.technologies || '')}</td>
             <td>
               <span id="status-badge-${item.id}" class="status-badge ${statusClass}">${item.status}</span>
-              <br/>
+            </td>
+            <td>
               <select id="status-${item.id}" class="status-select">
                 <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
                 <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Approved</option>
                 <option value="done" ${item.status === 'done' ? 'selected' : ''}>Done</option>
               </select>
-              <br/>
+            </td>
+            <td>
               <button class="update-btn" onclick="updateStatus(${item.id})">Update</button>
             </td>
             <td>${documentInfo}</td>
