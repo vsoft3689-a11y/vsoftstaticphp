@@ -7,10 +7,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (empty($_SESSION['user_id'])) {
+if (empty($_SESSION['user'])) {
     die("Please login first.");
 }
-$user_id = (int)$_SESSION['user_id'];
+$user_id = (int)$_SESSION['user']['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@ $user_id = (int)$_SESSION['user_id'];
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-light">
-<?php include 'dashboard_nav.php'; ?>
+<?php include 'user_navbar.php'; ?>
 
 <div class="container mt-4">
   <div class="card shadow">
@@ -33,7 +33,7 @@ $user_id = (int)$_SESSION['user_id'];
         <table class="table mb-0">
           <thead class="table-light">
             <tr>
-              <th>#</th>
+              <th>ID</th>
               <th>Title</th>
               <th>Technologies</th>
               <th>Status</th>
@@ -79,7 +79,7 @@ $user_id = (int)$_SESSION['user_id'];
 </div>
 
  <!-- Footer Start -->
-      <?php include '../footer.php'; ?>
+  
     <!-- Footer End -->
 
 

@@ -1,13 +1,12 @@
 <?php include './config/database.php';
-
 session_start();
+
 
 $conn = (new Database())->connect();
 
 if ($conn->connect_error) {
     die(json_encode(["status" => "error", "message" => $conn->connect_error]));
 }
-
 ?>
 
 
@@ -76,7 +75,6 @@ if ($conn->connect_error) {
             <div class="row g-4">
                 <!-- B.Tech Projects -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-<<<<<<< HEAD
                     <div class="service-item text-center pt-3 h-100 shadow-sm">
                         <div class="p-4">
                             <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
@@ -86,17 +84,6 @@ if ($conn->connect_error) {
                                 They build problem-solving,teamwork,and research skills essential for professional growth.
                                 These projects serve as a bridge between academic learning and industry readiness.
                             </p>
-=======
-                        <div class="service-item text-center pt-3 h-100 shadow-sm">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-laptop-code text-primary mb-4"></i>
-                                <h5 class="mb-3">B.Tech Projects</h5>
-                                <p style = "text-align: justify;">
-                                    B.Tech projects enable students to apply engineering concepts to the real-world challenges, fostering innovation and technical expertise.
-They improve problem-solving, teamwork & research abilities, serving as a bridge between academics and industry.
-
-                                </p>
->>>>>>> cc3cf03d9c5df44145a7e7c4bc67fbc817217e71
 
                         </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
@@ -106,7 +93,6 @@ They improve problem-solving, teamwork & research abilities, serving as a bridge
 
                 <!-- M.Tech Projects -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-<<<<<<< HEAD
                     <div class="service-item text-center pt-3 h-100 shadow-sm">
                         <div class="p-4">
                             <i class="fa fa-3x fa-microchip text-primary mb-4"></i>
@@ -115,18 +101,6 @@ They improve problem-solving, teamwork & research abilities, serving as a bridge
                                 M.Tech projects focus on advanced research and specialized technical problem-solving in chosen domains.They enhance innovation,critical analysis,and deep subject expertise.
                                 These projects prepare students for careers in R&D,academia,or leadership roles in industry.
                             </p>
-=======
-                        <div class="service-item text-center pt-3 h-100 shadow-sm">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-microchip text-primary mb-4"></i>
-                                <h5 class="mb-3">M.Tech Projects</h5>
-                                <p style = "text-align: justify;">
-                                    M.Tech projects focus on advanced research and specialized technical problem-solving in chosen domains.They enhance innovation, critical analysis and deep subject expertise.
-These projects prepare students for careers in R&D, academia, leadership roles in industry.
-                                </p>
-                            </div>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
->>>>>>> cc3cf03d9c5df44145a7e7c4bc67fbc817217e71
                         </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
                     </div>
@@ -135,7 +109,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
 
                 <!-- MBA Projects -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-<<<<<<< HEAD
                     <div class="service-item text-center pt-3 h-100 shadow-sm">
                         <div class="p-4">
                             <i class="fa fa-3x fa-briefcase text-primary mb-4"></i>
@@ -143,18 +116,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
                             <p>
                                 MBA projects provide practical exposure to business management,finance,marketing.They develop leadership,analytical,and decision-making skills through industry-based case studies.These projects prepare students for strategic roles and entrepreneurial ventures.
                             </p>
-=======
-                        <div class="service-item text-center pt-3 h-100 shadow-sm">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-briefcase text-primary mb-4"></i>
-                                <h5 class="mb-3">MBA Projects</h5>
-                                <p style = "text-align: justify;">
-
-                                   MBA projects provide practical exposure to business management, finance, marketing. They develop leadership, analytical and decision-making skills through industry-based case studies. These projects prepare students for strategic roles and entrepreneurial ventures.
-                                </p>
-                            </div>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
->>>>>>> cc3cf03d9c5df44145a7e7c4bc67fbc817217e71
                         </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
                     </div>
@@ -163,7 +124,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
 
                 <!-- MCA Projects -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-<<<<<<< HEAD
                     <div class="service-item text-center pt-3 h-100 shadow-sm">
                         <div class="p-4">
                             <i class="fa fa-3x fa-desktop text-primary mb-4"></i>
@@ -171,15 +131,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
                             <p>
                                 MCA projects focus on software development, application design, and IT solutions. They enhance programming, database, system integration, problem-solving, and adaptability skills, fostering innovation, creativity, efficiency, and technology expertise for a smooth transition into the IT industry.
                             </p>
-=======
-                        <div class="service-item text-center pt-3 h-100 shadow-sm">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-desktop text-primary mb-4"></i>
-                                <h5 class="mb-3">MCA Projects</h5>
-                                <p style = "text-align: justify;">
-                               MCA projects mainly focus on software development, application design and  IT solutions. They enhance programming, database, system integration, problem-solving, and adaptability skills, fostering innovation, creativity, efficiency, and technology expertise for a smooth transition into the IT industry.
-                              </p>
->>>>>>> cc3cf03d9c5df44145a7e7c4bc67fbc817217e71
 
                         </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="projects.php">Know More</a>
@@ -189,7 +140,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
 
                 <!-- Internship Programs -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-<<<<<<< HEAD
                     <div class="service-item text-center pt-3 h-100 shadow-sm">
                         <div class="p-4">
                             <i class="fa fa-3x fa-users text-primary mb-4"></i>
@@ -199,19 +149,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
                                 They help students apply academic learning to practical scenarios and build professional networks.
                                 Internships improve employability and prepare candidates for corporate environments.
                             </p>
-=======
-                        <div class="service-item text-center pt-3 h-100 shadow-sm">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-users text-primary mb-4"></i>
-                                <h5 class="mb-3">Internship Programs</h5>
-                                <p style = "text-align: justify;">
-                                    Summer  Winter and Virtual Internships offer hands-on industry experience under expert guidance.
-                                   They help students apply academic learning to practical scenarios & build professional networks.
-                                    Internships improve employability, Creates Online Presence and prepare candidates for corporate environments.
-                                </p>
-                            </div>
-                            <a class="btn btn-primary py-3 px-5 mt-2" href="internship.php">Know More</a>
->>>>>>> cc3cf03d9c5df44145a7e7c4bc67fbc817217e71
                         </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="internship.php">Know More</a>
                     </div>
@@ -220,7 +157,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
 
                 <!-- Corporate Training -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-<<<<<<< HEAD
                     <div class="service-item text-center pt-3 h-100 shadow-sm">
                         <div class="p-4">
                             <i class="fa fa-3x fa-chalkboard-teacher text-primary mb-4"></i>
@@ -230,20 +166,6 @@ These projects prepare students for careers in R&D, academia, leadership roles i
                                 They enhance productivity, leadership,and problem-solving abilities within organizations.
                                 These programs bridge skill gaps and drive sustainable business growth.
                             </p>
-=======
-                        <div class="service-item text-center pt-3 h-100 shadow-sm">
-                            <div class="p-4">
-                                <i class="fa fa-3x fa-chalkboard-teacher text-primary mb-4"></i>
-                                <h5 class="mb-3">Corporate Training</h5>
-                                <p style = "text-align: justify;">
-                                    Customized Corporate training programs are designed to upskill professionals with the latest technologies and strategies.
-They enhance productivity, leadership and problem-solving abilities within the organizations.
-These programs bridge skill gaps and drive sustainable business growth.
-                                </p>
-                            </div>
-                 <a class="btn btn-primary py-3 px-5 mt-2" href="internship.php">Know More</a>
-
->>>>>>> cc3cf03d9c5df44145a7e7c4bc67fbc817217e71
                         </div>
                         <a class="btn btn-primary py-3 px-5 mt-2" href="internship.php">Know More</a>
 

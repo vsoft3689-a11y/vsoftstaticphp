@@ -44,10 +44,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./dashboard.php" class="nav-item nav-link">Dashboard</a>
+                <a href="./user_dashboard.php" class="nav-item nav-link">Dashboard</a>
                 <a href="./profile.php" class="nav-item nav-link">Profile</a>             
-                <a href="./customreq.php" class="nav-item nav-link">Custom Requirements</a>
-                <a href="./reqstatus.php" class="nav-item nav-link">Requirements status</a>
+                <a href="./usercustomreq.php" class="nav-item nav-link">Custom Requirements</a>
+                <a href="./userrequirementstatus.php" class="nav-item nav-link">Requirements status</a>
                 
             </div>
             <!-- <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
@@ -56,7 +56,7 @@
                 <a href="../logout.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout</a>
             <?php else: ?>
                 <!-- Show only when logged out -->
-                <a href="../login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">User Login</a>
+                <a href="../login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Login</a>
             <?php endif; ?>
         </div>
     </nav>

@@ -1,5 +1,5 @@
  <?php
-    include './config/database.php';
+include "./config/database.php";
 
     $conn = (new Database())->connect();
 
@@ -82,7 +82,7 @@
          </div>
      </div>
 
-            <!-- <div class="col-lg-3 col-md-6">
+     <!-- <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
@@ -90,27 +90,27 @@
                 </div>
             </div> -->
 
-        </div>
-    </div>
+ </div>
+ </div>
 
-    <!-- Copyright -->
-    <div class="container">
-        <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Vsofts Solutions</a>, All Right Reserved.
-                    Designed By <a class="border-bottom" href="./">westechnologies.in</a>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="footer-menu">
-                        <a href="./index.php">Home</a>
-                        <a href="./contact.php">Help</a>
-                        <a href="./faq.php">FAQs</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
-<?php $conn->close(); ?>
+ <!-- Copyright -->
+ <div class="container">
+     <div class="copyright">
+         <div class="row">
+             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                 &copy; <a class="border-bottom" href="#">Vsofts Solutions</a>, All Right Reserved.
+                 Designed By <a class="border-bottom" href="./">westechnologies.in</a>
+             </div>
+             <div class="col-md-6 text-center text-md-end">
+                 <div class="footer-menu">
+                     <a href="./index.php">Home</a>
+                     <a href="./contact.php">Help</a>
+                     <a href="./faq.php">FAQs</a>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ </div>
+ <!-- Footer End -->
+ <?php $conn->close(); ?>

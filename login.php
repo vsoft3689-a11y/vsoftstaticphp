@@ -15,7 +15,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Login Page</title>
+    <title>VSoft Login Page</title>
     <style>
         .login-box {
             display: flex;
@@ -94,6 +94,30 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
             let form = e.target;
             let email = form.email.value.trim();
             let password = form.password.value.trim();
+            let isValid = true;
+
+            // Email validation
+            if (email === "") {
+                alert("Email is required");
+                isValid = false;
+            } else {
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    alert("Enter a valid email address");
+                    isValid = false;
+                }
+            }
+
+            // Password validation
+            if (password === "") {
+                alert("Password is required");
+                isValid = false;
+            } else if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                isValid = false;
+            }
+
+            return isValid;
 
             try {
                 let formData = new FormData(this);
@@ -117,7 +141,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
                     window.location.href = "./admin/admin_dashboard.php";
                 } else {
                     alert("Login Success.");
-                    window.location.href = "./index.php";
+                    window.location.href = "./user/user_dashboard.php";
                 }
 
             } catch (error) {
