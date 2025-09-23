@@ -1,7 +1,7 @@
 <?php
 // ----------------- DB CONNECTION -----------------
 include './config/database.php';
-include './config/database.php';
+
 
 $conn = (new Database())->connect();
 
@@ -18,14 +18,7 @@ if ($result && $result->num_rows > 0) {
         $configs[$row['config_key']] = $row['config_value'];
     }
 }
-// ----------------- LOAD CONFIGURATIONS -----------------
-$configs = [];
-$result = $conn->query("SELECT config_key, config_value FROM site_configurations");
-if ($result && $result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $configs[$row['config_key']] = $row['config_value'];
-    }
-}
+
 // ----------------- FORM SUBMIT -----------------
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = $conn->real_escape_string($_POST['name']);
