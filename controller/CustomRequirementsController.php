@@ -145,11 +145,19 @@ class CustomRequirementsController {
     }
 
     private function delete() {
-        $id = intval($_POST['id'] ?? 0);
+        // Accept ID from POST or GET for flexibility
+        $id = 0;
+        if (!empty($_POST['id'])) {
+            $id = intval($_POST['id']);
+        } elseif (!empty($_GET['id'])) {
+            $id = intval($_GET['id']);
+        }
+
         if ($id <= 0) {
             echo json_encode(["status" => "error", "message" => "Invalid ID"]);
             return;
         }
+
         $res = $this->customModel->delete($id);
         if ($res) {
             echo json_encode(["status" => "success", "message" => "Project deleted"]);

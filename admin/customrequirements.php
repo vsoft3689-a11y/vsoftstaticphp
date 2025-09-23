@@ -1,30 +1,25 @@
-<?php
-session_start();
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header("Location: login.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Manage Custom Requirements</title>
   <style>
-
+    /* body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    } */
     .main {
       display: flex;
       justify-content: center;
       align-items: center;
       margin: 20px 0;
     }
-
     #heading {
       color: #333;
       font-size: 24px;
     }
-
     table {
       width: 100%;
       max-width: 1200px;
@@ -35,24 +30,20 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
     th, td {
       padding: 12px;
       border-bottom: 1px solid #eee;
       text-align: left;
       vertical-align: middle;
     }
-
     th {
       background-color: #06BBCC;
       color: white;
       user-select: none;
     }
-
     tr:hover {
       background-color: #f5f5f5;
     }
-
     .status-badge {
       padding: 6px 14px;
       border-radius: 12px;
@@ -64,61 +55,16 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       text-align: center;
       color: white;
     }
-
     .status-pending {
       background-color: #ffc107;
       color: #000;
     }
-
     .status-approved {
       background-color: #007bff;
     }
-
     .status-done {
       background-color: #28a745;
     }
-
-    input[type="text"], select {
-      padding: 6px 10px;
-      font-size: 14px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    button.update-btn {
-      background-color: #06BBCC;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 14px;
-      font-size: 14px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background-color 0.3s ease;
-    }
-
-    button.update-btn:hover {
-      background-color: #049eab;
-    }
-
-    button.delete-btn {
-      background-color: #dc3545;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 14px;
-      font-size: 14px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: background-color 0.3s ease;
-    }
-
-    button.delete-btn:hover {
-      background-color: #b02a37;
-    }
-
     .download-btn {
       background-color: #28a745;
       color: white;
@@ -131,18 +77,44 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       transition: background-color 0.3s ease;
       display: inline-block;
     }
-
     .download-btn:hover {
       background-color: #1e7e34;
     }
-
+    button.delete-btn,
+    button.update-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 6px 14px;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+      margin-top: 5px;
+    }
+    button.update-btn {
+      background-color: #06BBCC;
+    }
+    button.update-btn:hover {
+      background-color: #049eab;
+    }
+    button.delete-btn:hover {
+      background-color: #b02a37;
+    }
+    select.status-select {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
     #alert-container {
       width: 80%;
       max-width: 1200px;
       margin: 10px auto;
       text-align: center;
     }
-
     .alert {
       padding: 12px;
       border-radius: 6px;
@@ -150,13 +122,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       font-size: 15px;
       margin-bottom: 10px;
     }
-
     .alert-success {
       background-color: #d4edda;
       color: #155724;
       border: 1px solid #c3e6cb;
     }
-
     .alert-error {
       background-color: #f8d7da;
       color: #721c24;
@@ -183,8 +153,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         <th>Technologies</th>
         <th>Status</th>
         <th>Document</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -220,19 +189,21 @@ document.addEventListener("DOMContentLoaded", function() {
           tr.innerHTML = `
             <td>${item.id}</td>
             <td>${item.user_id}</td>
-            <td><input type="text" id="title-${item.id}" value="${escapeHtml(item.title || '')}"></td>
-            <td><input type="text" id="desc-${item.id}" value="${escapeHtml(item.description || '')}"></td>
-            <td><input type="text" id="tech-${item.id}" value="${escapeHtml(item.technologies || '')}"></td>
-            <td><span id="status-badge-${item.id}" class="status-badge ${statusClass}">${item.status}</span></td>
-            <td>${documentInfo}</td>
+            <td>${escapeHtml(item.title || '')}</td>
+            <td>${escapeHtml(item.description || '')}</td>
+            <td>${escapeHtml(item.technologies || '')}</td>
             <td>
-              <select id="status-${item.id}">
-                <option value="pending"${item.status === 'pending' ? ' selected' : ''}>Pending</option>
-                <option value="approved"${item.status === 'approved' ? ' selected' : ''}>Approved</option>
-                <option value="done"${item.status === 'done' ? ' selected' : ''}>Done</option>
+              <span id="status-badge-${item.id}" class="status-badge ${statusClass}">${item.status}</span>
+              <br/>
+              <select id="status-${item.id}" class="status-select">
+                <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
+                <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Approved</option>
+                <option value="done" ${item.status === 'done' ? 'selected' : ''}>Done</option>
               </select>
-              <button class="update-btn" onclick="updateRequirement(${item.id})">Update</button>
+              <br/>
+              <button class="update-btn" onclick="updateStatus(${item.id})">Update</button>
             </td>
+            <td>${documentInfo}</td>
             <td>
               <button class="delete-btn" onclick="deleteReq(${item.id})">Delete</button>
             </td>
@@ -246,75 +217,13 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   }
 
-  window.updateRequirement = function(id) {
-    const titleInput = document.querySelector(`#title-${id}`);
-    const descInput = document.querySelector(`#desc-${id}`);
-    const techInput = document.querySelector(`#tech-${id}`);
-    const statusSelect = document.querySelector(`#status-${id}`);
-
-    if (!titleInput || !descInput || !statusSelect) {
-      showAlert("error", "Form fields missing for this row.");
-      return;
-    }
-
-    const title = titleInput.value.trim();
-    const description = descInput.value.trim();
-    const technologies = techInput.value.trim();
-    const status = statusSelect.value;
-
-    if (!title) {
-      showAlert("error", "Title cannot be empty.");
-      return;
-    }
-    if (!description) {
-      showAlert("error", "Description cannot be empty.");
-      return;
-    }
+  window.updateStatus = function(id) {
+    const status = document.getElementById(`status-${id}`).value;
 
     const formData = new FormData();
-    formData.append("action", "update");
+    formData.append("action", "update_status");
     formData.append("id", id);
-    formData.append("title", title);
-    formData.append("description", description);
-    formData.append("technologies", technologies);
     formData.append("status", status);
-
-    fetch('../controller/CustomRequirementsController.php', {
-      method: "POST",
-      body: formData
-    })
-    .then(res => {
-      if (!res.ok) {
-        throw new Error("Network response was not OK");
-      }
-      return res.json();
-    })
-    .then(resp => {
-      console.log("UpdateResp", resp);
-      if (resp.status === "success") {
-        showAlert("success", resp.message);
-        const badge = document.querySelector(`#status-badge-${id}`);
-        badge.textContent = status;
-        badge.className = "status-badge";
-        if (status === 'pending') badge.classList.add("status-pending");
-        else if (status === 'approved') badge.classList.add("status-approved");
-        else if (status === 'done') badge.classList.add("status-done");
-      } else {
-        showAlert("error", resp.message || "Update failed.");
-      }
-    })
-    .catch(err => {
-      console.error("Update error:", err);
-      showAlert("error", "Failed to update requirement.");
-    });
-  };
-
-  window.deleteReq = function(id) {
-    if (!confirm("Are you sure you want to delete this record?")) return;
-
-    const formData = new FormData();
-    formData.append("action", "delete");
-    formData.append("id", id);
 
     fetch('../controller/CustomRequirementsController.php', {
       method: "POST",
@@ -322,38 +231,65 @@ document.addEventListener("DOMContentLoaded", function() {
     })
     .then(res => res.json())
     .then(resp => {
+      if (!resp) {
+        showAlert("error", "Empty response from server.");
+        return;
+      }
+      showAlert(resp.status, resp.message);
+
       if (resp.status === "success") {
-        showAlert("success", resp.message);
+        const badge = document.querySelector(`#status-badge-${id}`);
+        badge.textContent = status;
+        badge.className = `status-badge`;
+        if (status === 'pending') badge.classList.add("status-pending");
+        else if (status === 'approved') badge.classList.add("status-approved");
+        else if (status === 'done') badge.classList.add("status-done");
+      }
+    })
+    .catch(err => {
+      console.error("Update error:", err);
+      showAlert("error", "Failed to update status.");
+    });
+  }
+
+  window.deleteReq = function(id) {
+    if (!confirm("Are you sure you want to delete this requirement?")) return;
+
+    fetch(`../controller/CustomRequirementsController.php?action=delete&id=${id}`, {
+      method: "GET"
+    })
+    .then(res => res.json())
+    .then(resp => {
+      showAlert(resp.status, resp.message);
+      if (resp.status === "success") {
         fetchRequirements();
-      } else {
-        showAlert("error", resp.message || "Delete failed.");
       }
     })
     .catch(err => {
       console.error("Delete error:", err);
       showAlert("error", "Failed to delete requirement.");
     });
-  };
+  }
 
   function showAlert(type, message) {
     const container = document.getElementById("alert-container");
-    container.innerHTML = `
-      <div class="alert alert-${type === "success" ? "success" : "error"}">
-        ${escapeHtml(message)}
-      </div>
-    `;
-    setTimeout(() => { container.innerHTML = ""; }, 3000);
+    const alert = document.createElement("div");
+    alert.className = `alert alert-${type}`;
+    alert.textContent = message;
+    container.appendChild(alert);
+
+    setTimeout(() => {
+      alert.remove();
+    }, 4000);
   }
 
   function escapeHtml(text) {
-    if (!text) return "";
-    return text.replace(/[&<>"']/g, m => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    })[m]);
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
   }
 });
 </script>
