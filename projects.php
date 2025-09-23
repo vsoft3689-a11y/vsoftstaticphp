@@ -1,6 +1,7 @@
 <?php
-session_start();
 include './config/database.php';
+
+session_start();
 
 $conn = (new Database())->connect();
 if ($conn->connect_error) {
@@ -85,33 +86,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
   </div>
 
-<!-- Project Selection -->
-<div class="container project-selection">
-  <div class="text-center">
-    <h2>Project Selection</h2>
-  </div>
-  
-  <form method="POST">
-    <select name="degree" id="degree" required onchange="updateBranches()">
-      <option value="">Select Degree</option>
-      <option value="B.Tech">B.Tech</option>
-      <option value="M.Tech">M.Tech</option>
-      <option value="MCA">MCA</option>
-      <option value="MBA">MBA</option>
-    </select>
-
-    <select name="branch" id="branch" required>
-      <option value="">Select Branch</option>
-    </select>
-
-    <!-- Project Type for all degrees -->
-    <div id="projectTypeDiv">
-      <select name="project_type" id="project_type" required>
-        <option value="">Select Project Type</option>
-        <option value="mini">Mini Project</option>
-        <option value="major">Major Project</option>
-      </select>
+  <!-- Project Selection -->
+  <div class="container project-selection">
+    <div class="text-center">
+      <h2>Project Selection</h2>
     </div>
+
+    <form method="POST">
+      <select name="degree" id="degree" required onchange="updateBranches()">
+        <option value="">Select Degree</option>
+        <option value="B.Tech">B.Tech</option>
+        <option value="M.Tech">M.Tech</option>
+        <option value="MCA">MCA</option>
+        <option value="MBA">MBA</option>
+      </select>
+
+      <select name="branch" id="branch" required>
+        <option value="">Select Branch</option>
+      </select>
+
+      <!-- Project Type for all degrees -->
+      <div id="projectTypeDiv">
+        <select name="project_type" id="project_type" required>
+          <option value="">Select Project Type</option>
+          <option value="mini">Mini Project</option>
+          <option value="major">Major Project</option>
+        </select>
+      </div>
 
       <select name="domain" id="domain" required>
         <option value="">Select Domain</option>
@@ -172,46 +173,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       // Clear results after showing once
       unset($_SESSION['project_results']);
-  }
-  ?>
-</div>
-
-<!-- Footer -->
-<?php include 'footer.php'; ?>
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-<!-- JS Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-<!-- Custom JS -->
-<script src="js/main.js"></script>
-
-<script>
-  function updateBranches() {
-    let degree = document.getElementById("degree").value;
-    let branch = document.getElementById("branch");
-    let domain = document.getElementById("domain");
-
-    branch.innerHTML = "<option value=''>Select Branch</option>";
-    domain.innerHTML = "<option value=''>Select Domain</option>";
-
-    if (degree === "B.Tech") {
-      ["CSE","ECE","EEE","Civil","Mech"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
-    } else if (degree === "M.Tech") {
-      ["CSE","ECE","Power Systems","Structural Engineering"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
-    } else if (degree === "MCA") {
-      ["Software Engineering","Networking","Hardware Technologies","Management Information Systems"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
-    } else if (degree === "MBA") {
-      ["Marketing","Finance","Hospitality & Tourism","Banking & Insurance"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
     }
-  }
+    ?>
+  </div>
+
+  <!-- Footer -->
+  <?php include 'footer.php'; ?>
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+  <!-- JS Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+  <script>
+    function updateBranches() {
+      let degree = document.getElementById("degree").value;
+      let branch = document.getElementById("branch");
+      let domain = document.getElementById("domain");
+
+      branch.innerHTML = "<option value=''>Select Branch</option>";
+      domain.innerHTML = "<option value=''>Select Domain</option>";
+
+      if (degree === "B.Tech") {
+        ["CSE", "ECE", "EEE", "Civil", "Mech"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
+      } else if (degree === "M.Tech") {
+        ["CSE", "ECE", "Power Systems", "Structural Engineering"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
+      } else if (degree === "MCA") {
+        ["Software Engineering", "Networking", "Hardware Technologies", "Management Information Systems"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
+      } else if (degree === "MBA") {
+        ["Marketing", "Finance", "Hospitality & Tourism", "Banking & Insurance"].forEach(b => branch.innerHTML += `<option value="${b}">${b}</option>`);
+      }
+    }
 
     document.getElementById("branch").addEventListener("change", function() {
       let branch = this.value;
