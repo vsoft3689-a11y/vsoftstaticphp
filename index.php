@@ -831,10 +831,6 @@ while ($row = $result->fetch_assoc()) {
     <script src="js/main.js"></script>
     
 
-
-
-
-
      <!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Owl Carousel JS -->

@@ -1,76 +1,64 @@
 <?php
+include '../config/database.php';
 session_start();
-include 'connection1.php';
+$conn = (new Database())->connect();
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Prevent viewing cached profile after logout
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+header('Expires: 0');
+
+// Initialize messages
+$success_msg = '';
+$error_msg = '';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php');
+    header("Location: login.php");
     exit();
 }
 
 $user_id = $_SESSION['user_id'];
-$success_msg = '';
-$error_msg = '';
 
-// Fetch user data
+// Fetch current user details
 $stmt = $conn->prepare("SELECT name, email, phone, college, branch, year FROM users WHERE id = ?");
-$stmt->bind_param('i', $user_id);
+$stmt->bind_param("i", $user_id);
 $stmt->execute();
 $result = $stmt->get_result();
 $user = $result->fetch_assoc();
 $stmt->close();
 
-// Handle form submission
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $phone = trim($_POST['phone'] ?? '');
-    $college = trim($_POST['college'] ?? '');
-    $branch = trim($_POST['branch'] ?? '');
-    $year = trim($_POST['year'] ?? '');
+// Handle profile update
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $college = $_POST['college'] ?? '';
+    $branch = $_POST['branch'] ?? '';
+    $year = $_POST['year'] ?? '';
 
-    // Validation
-    if ($name === '' || $email === '' || $phone === '' || $college === '' || $branch === '' || $year === '') {
-        $error_msg = 'Please fill all the fields.';
-    } elseif (!preg_match('/^\d{10}$/', $phone)) {
-        $error_msg = 'Phone number must be exactly 10 digits.';
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_msg = 'Please enter a valid email address.';
+    $stmt = $conn->prepare("UPDATE users SET name = ?, email = ?, phone = ?, college = ?, branch = ?, year = ? WHERE id = ?");
+    $stmt->bind_param("ssssssi", $name, $email, $phone, $college, $branch, $year, $user_id);
+
+    if ($stmt->execute()) {
+        $success_msg = "Profile updated successfully!";
+        // Refresh user data
+        $user = [
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone,
+            'college' => $college,
+            'branch' => $branch,
+            'year' => $year
+        ];
     } else {
-        // Check if email is already taken by another user
-        $check_stmt = $conn->prepare("SELECT id FROM users WHERE email = ? AND id != ?");
-        $check_stmt->bind_param('si', $email, $user_id);
-        $check_stmt->execute();
-        $check_result = $check_stmt->get_result();
-        
-        if ($check_result->num_rows > 0) {
-            $error_msg = 'Email is already taken by another user.';
-        } else {
-            // Update user data
-            $update_stmt = $conn->prepare("UPDATE users SET name = ?, email = ?, phone = ?, college = ?, branch = ?, year = ? WHERE id = ?");
-            $update_stmt->bind_param('ssssssi', $name, $email, $phone, $college, $branch, $year, $user_id);
-            
-            if ($update_stmt->execute()) {
-                $success_msg = 'Profile updated successfully!';
-                // Update session data
-                $_SESSION['user_name'] = $name;
-                // Refresh user data
-                $user = ['name' => $name, 'email' => $email, 'phone' => $phone, 'college' => $college, 'branch' => $branch, 'year' => $year];
-            } else {
-                $error_msg = 'Error updating profile: ' . $conn->error;
-            }
-            $update_stmt->close();
-        }
-        $check_stmt->close();
+        $error_msg = "Error updating profile. Please try again.";
     }
+    $stmt->close();
 }
-?>
-
-<?php
-// Prevent viewing cached profile after logout
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
-header('Expires: 0');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -104,40 +92,10 @@ header('Expires: 0');
       border-color: #05a4b3; 
     }
   </style>
-  <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
 </head>
 <body class="bg-light">
        <!-- Navbar Start -->
      <?php include 'dashboard_nav.php'; ?>
-
      <!-- Navbar End -->
 
   <div class="container mt-5">
@@ -150,11 +108,11 @@ header('Expires: 0');
           </div>
           <div class="card-body">
 
-            <?php if ($success_msg): ?>
+            <?php if (!empty($success_msg)): ?>
                 <div class="alert alert-success"><?= htmlspecialchars($success_msg) ?></div>
             <?php endif; ?>
 
-            <?php if ($error_msg): ?>
+            <?php if (!empty($error_msg)): ?>
                 <div class="alert alert-danger"><?= htmlspecialchars($error_msg) ?></div>
             <?php endif; ?>
 
@@ -230,15 +188,6 @@ header('Expires: 0');
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Preview uploaded photo
-    // function previewPhoto(event) {
-    //   const reader = new FileReader();
-    //   reader.onload = function(){
-    //     document.getElementById("profilePic").src = reader.result;
-    //   };
-    //   reader.readAsDataURL(event.target.files[0]);
-    // }
-
     // Bootstrap form validation
     const form = document.getElementById("profileForm");
     form.addEventListener("submit", function (event) {
@@ -249,11 +198,10 @@ header('Expires: 0');
       form.classList.add("was-validated");
     });
   </script>
-   <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-     <!-- Footer Start -->
+
+   <!-- Footer Start -->
     
-    <?php include 'footer.php'; ?>
+    <?php include '../footer.php'; ?>
 
     <!-- Footer End -->
 
@@ -272,5 +220,14 @@ header('Expires: 0');
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+
+     <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
