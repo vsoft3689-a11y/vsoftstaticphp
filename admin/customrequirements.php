@@ -12,12 +12,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
   <meta charset="UTF-8" />
   <title>Manage Custom Requirements</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-    }
 
     .main {
       display: flex;
