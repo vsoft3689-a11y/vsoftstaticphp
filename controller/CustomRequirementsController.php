@@ -1,98 +1,233 @@
 <?php
+<<<<<<< HEAD
+// path: controller/CustomRequirementsController.php
+
 header("Content-Type: application/json");
-include __DIR__ . "/../config/database.php";
-include __DIR__ . "/../model/CustomRequirementsModel.php";
+include_once __DIR__ . "/../config/Database.php";
+include_once __DIR__ . "/../model/CustomRequirementsModel.php";
 
 $action = $_REQUEST['action'] ?? '';
 
 $controller = new CustomRequirementsController();
 $controller->handleRequest($action);
 
-class CustomRequirementsController
-{
+class CustomRequirementsController {
     private $db;
     private $customModel;
 
-    public function __construct()
-    {
+    public function __construct() {
         $this->db = (new Database())->connect();
+        if (!$this->db) {
+            echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+            exit;
+        }
         $this->customModel = new CustomRequirementsModel($this->db);
     }
 
-    public function handleRequest($action)
-    {
-
+    public function handleRequest($action) {
         switch ($action) {
             case "create":
-                $data = [
-                    "user_id" => $_POST['user_id'],
-                    "title" => $_POST['title'],
-                    "description" => $_POST['description'] ?? null,
-                    "technologies" => $_POST['technologies'] ?? null,
-                    "status" => $_POST['status'] ?? 'pending',
-                    "document_path" => null
-                ];
-
-                // file upload (optional)
-                if (!empty($_FILES['document']['name'])) {
-                    $targetDir = __DIR__ . "/../uploads/";
-                    if (!is_dir($targetDir)) mkdir($targetDir);
-                    $fileName = time() . "_" . basename($_FILES['document']['name']);
-                    $targetFile = $targetDir . $fileName;
-                    if (move_uploaded_file($_FILES['document']['tmp_name'], $targetFile)) {
-                        $data['document_path'] = "uploads/" . $fileName;
-                    }
-                }
-
-                echo $this->customModel->create($data)
-                    ? json_encode(["status" => "success", "message" => "Project created"])
-                    : json_encode(["status" => "error", "message" => "Failed to create"]);
+                $this->create();
                 break;
-
             case "read":
-                echo json_encode($this->customModel->readAll());
+                $this->readAll();
                 break;
-
             case "read_single":
-                $id = $_GET['id'] ?? 0;
-                echo json_encode($this->customModel->read($id));
+                $this->readSingle();
                 break;
-
             case "update":
-                $id = $_POST['id'];
-                $data = [
-                    "title" => $_POST['title'],
-                    "description" => $_POST['description'] ?? null,
-                    "technologies" => $_POST['technologies'] ?? null,
-                    "status" => $_POST['status'] ?? 'pending',
-                    "document_path" => $_POST['document_path'] ?? null
-                ];
-
-                // file upload (optional update)
-                if (!empty($_FILES['document']['name'])) {
-                    $targetDir = __DIR__ . "/../uploads/";
-                    if (!is_dir($targetDir)) mkdir($targetDir);
-                    $fileName = time() . "_" . basename($_FILES['document']['name']);
-                    $targetFile = $targetDir . $fileName;
-                    if (move_uploaded_file($_FILES['document']['tmp_name'], $targetFile)) {
-                        $data['document_path'] = "uploads/" . $fileName;
-                    }
-                }
-
-                echo $this->customModel->update($id, $data)
-                    ? json_encode(["status" => "success", "message" => "Project updated"])
-                    : json_encode(["status" => "error", "message" => "Failed to update"]);
+                $this->update();
                 break;
-
             case "delete":
-                $id = $_POST['id'];
-                echo $this->customModel->delete($id)
-                    ? json_encode(["status" => "success", "message" => "Project deleted"])
-                    : json_encode(["status" => "error", "message" => "Failed to delete"]);
+                $this->delete();
                 break;
-
+            case "update_status":
+                $this->updateStatus();
+                break;
             default:
                 echo json_encode(["status" => "error", "message" => "Invalid action"]);
         }
     }
+
+    private function create() {
+        if (empty($_POST['user_id']) || empty($_POST['title'])) {
+            echo json_encode(["status" => "error", "message" => "user_id and title are required"]);
+            return;
+        }
+
+        $data = [
+            "user_id" => intval($_POST['user_id']),
+            "title" => $_POST['title'],
+            "description" => $_POST['description'] ?? null,
+            "technologies" => $_POST['technologies'] ?? null,
+            "status" => $_POST['status'] ?? 'pending',
+            "document_path" => null
+        ];
+
+        if (!empty($_FILES['document']['name'])) {
+            $targetDir = __DIR__ . "/../uploads/";
+            if (!is_dir($targetDir)) {
+                mkdir($targetDir, 0755, true);
+            }
+            $fileName = time() . "_" . basename($_FILES['document']['name']);
+            $targetFile = $targetDir . $fileName;
+            if (!move_uploaded_file($_FILES['document']['tmp_name'], $targetFile)) {
+                echo json_encode(["status" => "error", "message" => "File upload failed"]);
+                return;
+            }
+            $data['document_path'] = "uploads/" . $fileName;
+        }
+
+        $res = $this->customModel->create($data);
+        if ($res) {
+            echo json_encode(["status" => "success", "message" => "Project created"]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Failed to create project"]);
+        }
+    }
+
+    private function readAll() {
+        $rows = $this->customModel->readAll();
+        echo json_encode($rows);
+    }
+
+    private function readSingle() {
+        $id = intval($_GET['id'] ?? 0);
+        if ($id <= 0) {
+            echo json_encode(["status" => "error", "message" => "Invalid ID"]);
+            return;
+        }
+        $row = $this->customModel->read($id);
+        if ($row) {
+            echo json_encode($row);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Project not found"]);
+        }
+    }
+
+    private function update() {
+        $id = intval($_POST['id'] ?? 0);
+        if ($id <= 0) {
+            echo json_encode(["status" => "error", "message" => "Invalid ID"]);
+            return;
+        }
+        if (empty($_POST['title'])) {
+            echo json_encode(["status" => "error", "message" => "Title required"]);
+            return;
+        }
+        $data = [
+            "title" => $_POST['title'],
+            "description" => $_POST['description'] ?? null,
+            "technologies" => $_POST['technologies'] ?? null,
+            "status" => $_POST['status'] ?? 'pending',
+            "document_path" => $_POST['document_path'] ?? null
+        ];
+
+        if (!empty($_FILES['document']['name'])) {
+            $targetDir = __DIR__ . "/../uploads/";
+            if (!is_dir($targetDir)) {
+                mkdir($targetDir, 0755, true);
+            }
+            $fileName = time() . "_" . basename($_FILES['document']['name']);
+            $targetFile = $targetDir . $fileName;
+            if (!move_uploaded_file($_FILES['document']['tmp_name'], $targetFile)) {
+                echo json_encode(["status" => "error", "message" => "File upload failed"]);
+                return;
+            }
+            $data['document_path'] = "uploads/" . $fileName;
+        }
+
+        $res = $this->customModel->update($id, $data);
+        if ($res) {
+            echo json_encode(["status" => "success", "message" => "Project updated"]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Failed to update project"]);
+        }
+    }
+
+    private function delete() {
+        $id = intval($_POST['id'] ?? 0);
+        if ($id <= 0) {
+            echo json_encode(["status" => "error", "message" => "Invalid ID"]);
+            return;
+        }
+        $res = $this->customModel->delete($id);
+        if ($res) {
+            echo json_encode(["status" => "success", "message" => "Project deleted"]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Failed to delete project"]);
+        }
+    }
+
+    private function updateStatus() {
+        $id = intval($_POST['id'] ?? 0);
+        $status = $_POST['status'] ?? null;
+        if ($id <= 0 || !$status) {
+            echo json_encode(["status" => "error", "message" => "Invalid ID or status"]);
+            return;
+        }
+        $res = $this->customModel->updateStatus($id, $status);
+        if ($res) {
+            echo json_encode(["status" => "success", "message" => "Status updated"]);
+        } else {
+            echo json_encode(["status" => "error", "message" => "Failed to update status"]);
+        }
+    }
 }
+=======
+// controller/CustomRequirementsController.php
+
+header('Content-Type: application/json');
+session_start();
+
+include_once __DIR__ . '/../config/database.php';
+include_once __DIR__ . '/../model/CustomRequirementsModel.php';
+
+$action = $_REQUEST['action'] ?? '';
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
+    exit();
+}
+
+$db = (new Database())->connect();
+$model = new CustomRequirementsModel($db);
+
+switch ($action) {
+    case 'read':
+        $rows = $model->readAll();
+        echo json_encode($rows);
+        break;
+
+    case 'update_status':
+        $id = intval($_POST['id'] ?? 0);
+        $status = $_POST['status'] ?? '';
+        if ($id <= 0 || !in_array($status, ['pending','approved','done'])) {
+            echo json_encode(['status' => 'error', 'message' => 'Invalid parameters']);
+            break;
+        }
+        if ($model->updateStatus($id, $status)) {
+            echo json_encode(['status' => 'success', 'message' => 'Status updated']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to update status']);
+        }
+        break;
+
+    case 'delete':
+        $id = intval($_POST['id'] ?? 0);
+        if ($id <= 0) {
+            echo json_encode(['status' => 'error', 'message' => 'Invalid ID']);
+            break;
+        }
+        if ($model->delete($id)) {
+            echo json_encode(['status' => 'success', 'message' => 'Record deleted']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to delete']);
+        }
+        break;
+
+    default:
+        echo json_encode(['status' => 'error', 'message' => 'Invalid action']);
+        break;
+}
+>>>>>>> eed41cd9edae19e96df751f94c84e55877efb199

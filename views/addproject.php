@@ -110,8 +110,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           <!-- <input type="text" name="degree" placeholder="Degree"/> -->
           <select name="degree" id="degree" onchange="updateBranches()">
             <option value="">Select Degree</option>
-            <option value="BTech">B.Tech</option>
-            <option value="MTech">M.Tech</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="M.Tech">M.Tech</option>
             <option value="MCA">MCA</option>
             <option value="MBA">MBA</option>
           </select>
@@ -122,9 +122,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           <div id="projectTypeDiv">
             <select name="type" id="type">
               <option value="">Select Type</option>
-              <option value="Mini">Mini Project</option>
-              <option value="Major">Major Project</option>
-              <option value="Final">Final Project</option>
+              <option value="mini">Mini Project</option>
+              <option value="major">Major Project</option>
+              <!-- <option value="Final">Final Project</option> -->
             </select>
           </div>
 
@@ -162,20 +162,20 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       domain.innerHTML = "<option value=''>Select Domain</option>";
       projectTypeDiv.style.display = "block";
 
-      if (degree === "BTech") {
+      if (degree === "B.Tech") {
         ["CSE", "ECE", "EEE", "Civil", "Mech"].forEach(b => {
           branch.innerHTML += `<option value="${b}">${b}</option>`;
         });
-      } else if (degree === "MTech") {
+      } else if (degree === "M.Tech") {
         ["CSE", "ECE", "Power Systems", "Structural Engineering"].forEach(b => {
           branch.innerHTML += `<option value="${b}">${b}</option>`;
         });
       } else if (degree === "MCA") {
-        ["Web Development", "AI&ML", "Database Systems", "Mobile Application"].forEach(b => {
+        ["Software Engineering", "Networking", "Hardware Technologies", "Management Information Systems"].forEach(b => {
           branch.innerHTML += `<option value="${b}">${b}</option>`;
         });
       } else if (degree === "MBA") {
-        ["Marketing", "Finance", "Human Resource", "Operations"].forEach(b => {
+        ["Marketing", "Finance", "Hospitality & Tourism", "Banking & Insurance"].forEach(b => {
           branch.innerHTML += `<option value="${b}">${b}</option>`;
         });
 
@@ -190,7 +190,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
       domain.innerHTML = "<option value=''>Select Domain</option>";
 
-      if (degree === "BTech") {
+      if (degree === "B.Tech") {
         if (branch === "CSE") {
           ["Web Development", "AI/ML", "Cloud Computing", "App Development", "Cyber Security"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
@@ -212,7 +212,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
           });
         }
-      } else if (degree === "MTech") {
+      } else if (degree === "M.Tech") {
         if (branch === "CSE") {
           ["Data Mining", "Blockchain", "Network Security"].forEach(d => {
             domain.innerHTML += `<option value="${d}">${d}</option>`;
@@ -231,40 +231,24 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           });
         }
       } else if (degree === "MCA") {
-        if (branch === "Database Systems") {
-          ["Database Systems", "Web Development", "AI&ML", "Mobile Applications"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
-        } else if (branch === "Web Development") {
-          ["Database Systems", "Web Development", "AI&ML", "Mobile Applications"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
-        } else if (branch === "AI&ML") {
-          ["Database Systems", "Web Development", "AI&ML", "Mobile Applications"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
-        } else if (branch === "Mobile Application") {
-          ["Database Systems", "Web Development", "AI&ML", "Mobile Applications"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
+        if (branch === "Software Engineering") {
+          ["Database Management Systems", "Software Design & Architecture", "Software Project Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
+        } else if (branch === "Networking") {
+          ["Computer Networking", "Network Security", "Cloud Networking", "Data Communication"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
+        } else if (branch === "Hardware Technologies") {
+          ["Embedded Systems", "VLSI Design", "IoT Hardware & Sensors"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
+        } else if (branch === "Management Information Systems") {
+          ["Enterprise Systems", "E-Business & E-Commerce Systems", "Information Security"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
         }
       } else if (degree === "MBA") {
         if (branch === "Marketing") {
-          ["Marketing", "Finance", "HR", "Operations"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
+          ["Brand Management", "Digital Marketing", "International Marketing", "Sales & Distribution Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
         } else if (branch === "Finance") {
-          ["Marketing", "Finance", "HR", "Operations"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
-        } else if (branch === "Human Resource") {
-          ["Marketing", "Finance", "HR", "Operations"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
-        } else if (branch === "Operations") {
-          ["Marketing", "Finance", "HR", "Operations"].forEach(d => {
-            domain.innerHTML += `<option value="${d}">${d}</option>`;
-          });
+          ["Corporate Finance", "Investment Banking", "Risk Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
+        } else if (branch === "Hospitality & Tourism") {
+          ["Hotel Management & Operations", "Housekeeping & Facility Management", "Travel & Transport Management", "Sustainable Eco-Tourism"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
+        } else if (branch === "Banking & Insurance") {
+          ["Corporate Banking", "Investment Banking", "Retail Banking", "Insurance Management"].forEach(d => domain.innerHTML += `<option value="${d}">${d}</option>`);
         }
       }
     });
@@ -279,9 +263,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       let type = form.type.value;
       let domain = form.domain.value.trim();
       let title = form.title.value.trim();
+      let description = form.description.value.trim();
+      let technologies = form.technologies.value.trim();
+      let price = form.price.value.trim();
       let url = form.youtube_url.value.trim();
-
-      console.log(degree, branch, type, domain, title, url);
 
       // Validate Degree
       if (degree.length < 2) {
@@ -300,7 +285,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       }
 
       // Validate Type
-      if (type !== "Mini" && type !== "Major" && type !== "Final") {
+      if (type !== "mini" && type !== "major") {
         alert("Please select type.");
         form.type.focus();
         e.preventDefault();
@@ -323,6 +308,31 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         return;
       }
 
+      // Validate Description
+      if (description.length < 2) {
+        alert("Description must be at least 3 characters long.");
+        form.description.focus();
+        e.preventDefault();
+        return;
+      }
+
+      // Validate Technologies
+      if (technologies.length < 2) {
+        alert("Technologies must be at least 3 characters long.");
+        form.technologies.focus();
+        e.preventDefault();
+        return;
+      }
+
+      // Validate Price
+      if (price.length < 2) {
+        alert("Price must be present.");
+        form.price.focus();
+        e.preventDefault();
+        return;
+      }
+
+      // Validate Youtube URL
       if (url !== "" && !url.includes("youtube.com") && !url.includes("youtu.be")) {
         e.preventDefault(); // stop form submit
         alert("Please enter a valid YouTube URL.");
@@ -332,7 +342,6 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       try {
         let formData = new FormData(this);
 
-        console.log(...formData)
         let res = await fetch(apiUrl, {
           method: "POST",
           body: formData

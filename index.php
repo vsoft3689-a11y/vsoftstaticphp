@@ -23,6 +23,42 @@ $result = $conn->query("SELECT * FROM testimonals WHERE is_approved = 1 ORDER BY
 $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
 
+
+
+
+
+
+
+
+
+
+
+$packages = [];
+$sql = "SELECT * FROM pricing_packages";
+$result = $conn->query($sql);
+
+while ($row = $result->fetch_assoc()) {
+    $package_id = $row['id'];
+
+    // Fetch bulk offers for this package
+    $offers_sql = "SELECT quantity, price FROM bulk_offers WHERE package_id = $package_id";
+    $offers_result = $conn->query($offers_sql);
+
+    $bulk_offers = [];
+    while ($offer = $offers_result->fetch_assoc()) {
+        $bulk_offers[] = $offer;
+    }
+
+    $row['bulk_offers'] = $bulk_offers;
+    $packages[] = $row;
+}
+
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -148,6 +184,12 @@ $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
                                                 style="font-size: 40px; line-height: 1.2;">
                                                 <?php echo htmlspecialchars($row['sub_text']); ?>
                                             </h1>
+
+
+                                             
+
+
+
                                         <?php endif; ?>
 
                                         <!-- CTA Button -->
@@ -533,53 +575,59 @@ $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
     <div class="row g-4">
       <?php foreach ($packages as $package): ?>
-        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-          <div class="course-item bg-light">
-            <div class="position-relative overflow-hidden">
-              <!-- Image based on service type -->
-              <?php if ($package['service_type'] === 'project'): ?>
-                <img class="img-fluid" src="img/mini1.jpg" alt="">
-              <?php elseif ($package['service_type'] === 'internship'): ?>
-                <img class="img-fluid" src="img/internship.jpg" alt="">
-              <?php else: ?>
-                <img class="img-fluid" src="img/major1.jpg" alt="">
-              <?php endif; ?>
-            </div>
+<div class="col-lg-4 col-md-6 wow fadeInUp">
+  <div class="course-item bg-light">
+    <div class="position-relative overflow-hidden">
+      <?php if ($package['service_type'] === 'project'): ?>
+        <img class="img-fluid" src="img/mini1.jpg" alt="">
+      <?php elseif ($package['service_type'] === 'internship'): ?>
+        <img class="img-fluid" src="img/internship.jpg" alt="">
+      <?php else: ?>
+        <img class="img-fluid" src="img/major1.jpg" alt="">
+      <?php endif; ?>
+    </div>
 
-            <div class="price-box text-center mt-3">
-              <span class="old-price">₹<?php echo number_format($package['original_price'], 2); ?></span>
-              <?php if (!empty($package['discounted_price'])): ?>
-                <span class="discount">
-                  <?php
-                  $discountPercent = round((($package['original_price'] - $package['discounted_price']) / $package['original_price']) * 100);
-                  echo $discountPercent . "% OFF";
-                  ?>
-                </span>
-                <br>
-                <span class="new-price">₹<?php echo number_format($package['discounted_price'], 2); ?></span>
-              <?php endif; ?>
 
-              <details class="bulk-offer mt-2">
-                <summary>View Offers 🎉</summary>
-                <div class="offers">
-                  <h6>🎉 Tiered Bulk Offers</h6>
-                  <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
-                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>10+</b> projects → ₹1499 per project</a></li>
-                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>50+</b> projects → ₹1399 per project</a></li>
-                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>100+</b> projects → ₹1199 per project</a></li>
-                    <li><a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">✅ Buy <b>200+</b> projects → ₹999 per project</a></li>
-                  </ul>
-                </div>
-              </details>
-            </div>
+    <h5 class="text-center mt-3 mb-2">
+    <?php echo ucfirst($package['package_name']); ?> 
+    (<?php echo ucfirst($package['service_type']); ?>)
+</h5>
 
-            <h5 class="text-center mb-4">
-              <?php echo ucfirst($package['package_name']); ?> 
-              (<?php echo ucfirst($package['service_type']); ?>)
-            </h5>
-          </div>
+
+    <div class="price-box text-center mt-3">
+    <span class="old-price">₹<?php echo number_format($package['original_price'], 2); ?></span>
+
+    <?php if (!empty($package['discounted_price']) && $package['discounted_price'] < $package['original_price']): ?>
+        <?php 
+        $discountPercent = round((($package['original_price'] - $package['discounted_price']) / $package['original_price']) * 100); 
+        ?>
+        <span class="discount"><?php echo $discountPercent; ?>% OFF</span>
+        <br>
+        <span class="new-price">₹<?php echo number_format($package['discounted_price'], 2); ?></span>
+    <?php else: ?>
+        <span class="new-price">₹<?php echo number_format($package['original_price'], 2); ?></span>
+    <?php endif; ?>
+
+    <details class="bulk-offer mt-2">
+        <summary>View Offers 🎉</summary>
+        <div class="offers">
+            <h6>🎉 Bulk Offers</h6>
+            <ul style="list-style:none; padding:0; margin:0;" class="offer-list">
+                <?php foreach ($package['bulk_offers'] as $offer): ?>
+                  <li>
+                    <a href="<?php echo $package['button_link']; ?>" class="zoom-link" style="color:black;">
+                      ✅ Buy <b><?php echo $offer['quantity']; ?></b> → ₹<?php echo number_format($offer['price'], 0); ?> per project
+                    </a>
+                  </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
-      <?php endforeach; ?>
+    </details>
+</div>
+  </div>
+</div>
+<?php endforeach; ?>
+
     </div>
   </div>
 </div>

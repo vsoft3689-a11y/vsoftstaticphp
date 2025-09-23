@@ -1,13 +1,14 @@
 <?php
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header("Location: login.php");
-    exit();
+  header("Location: login.php");
+  exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Upload Excel</title>
   <style>
@@ -106,12 +107,17 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           method: "POST",
           body: formData
         })
-        .then(response => response.text())
+        .then(response => response.json())
         .then(data => {
-          alert(data);
+          console.log(data)
+          alert(data.status ? `${data.message} 
+        Inserted: ${data.inserted} 
+        Updated: ${data.updated}
+        Skipped: ${data.skipped}` :
+            "Error in uploading file!");
         })
         .catch(error => {
-          alert(error);
+          alert(error.status ? error.message : "Error in uploading file!");
         });
     });
   </script>

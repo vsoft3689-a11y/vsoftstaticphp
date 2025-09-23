@@ -1,6 +1,7 @@
 <?php
 // ----------------- DB CONNECTION -----------------
 include './config/database.php';
+include './config/database.php';
 
 $conn = (new Database())->connect();
 
@@ -9,6 +10,14 @@ if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
 
+// ----------------- LOAD CONFIGURATIONS -----------------
+$configs = [];
+$result = $conn->query("SELECT config_key, config_value FROM site_configurations");
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $configs[$row['config_key']] = $row['config_value'];
+    }
+}
 // ----------------- LOAD CONFIGURATIONS -----------------
 $configs = [];
 $result = $conn->query("SELECT config_key, config_value FROM site_configurations");
@@ -47,17 +56,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Icon Fonts -->
     <!-- Icon Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
+    <!-- Libraries -->
     <!-- Libraries -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+    <!-- CSS -->
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -90,6 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Contact For Any Query</h1>
             </div>
             <div class="row g-4">
+                
                 
                 <!-- Info -->
                 <div class="col-lg-4">
@@ -138,6 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </form>
                 </div>
+
 
             </div>
         </div>

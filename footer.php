@@ -161,13 +161,28 @@ if ($result && $result->num_rows > 0) {
             </div>
 
             <!-- Newsletter -->
+
+
             <div class="col-lg-3 col-md-6">
+    <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
+    <form action="subscribe.php" method="POST">
+        <div class="position-relative mx-auto" style="max-width: 400px;">
+            <input name="email" class="form-control border-0 w-100 py-3 ps-4 pe-5" 
+                   type="email" placeholder="Your email" required>
+            <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                Subscribe
+            </button>
+        </div>
+    </form>
+</div>
+
+            <!-- <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-3">Subscribe to our Newsletter</h4>
                 <div class="position-relative mx-auto" style="max-width: 400px;">
                     <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>

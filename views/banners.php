@@ -8,6 +8,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <title>Banner Management</title>
@@ -205,6 +206,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
                 table.appendChild(tbody);
                 document.getElementById("bannerList").appendChild(table);
             } else {
+                document.getElementById("bannerList").innerHTML = "";
                 let para = document.createElement("p");
                 para.innerHTML = `No banners list found!`;
                 para.style.textAlign = "center";

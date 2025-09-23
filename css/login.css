@@ -1,127 +1,104 @@
-/********** Login Page CSS (Standalone) **********/
-
-:root {
-    --primary: #06BBCC;
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f8ff;
 }
 
-/* Wrapper for the login form */
-.login-wrapper {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(50vh - 100px);
-    background-color: #f9f9f9;
-}
-
-/* Login form container */
-.login-form {
-    background: #ffffff;
-    padding: 30px 25px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 200, 255, 0.68);
-    width: 100%;
+.login-container {
     max-width: 400px;
-    animation: fadeInDown 0.6s ease-in-out;
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Heading */
-.login-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-/* Form controls */
-.login-form .form-control {
+    margin: 100px auto;
+    padding: 40px;
+    background-color: #ffffff;
     border-radius: 8px;
+    border: 2px solid #06bbcc;
+    box-shadow: 0 4px 12px rgba(6, 187, 204, 0.3);
+}
+
+.login-container h2 {
+    font-size: 24px;
+    color: #06bbcc;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.login-container .form-control {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 16px;
+    width: 91%;
+    height: 20px;
     border: 2px solid #ccc;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.login-form .form-control:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.67);
+.login-container .form-control:focus {
+    border-color: #06bbcc;
+    box-shadow: 0 0 8px rgba(6, 187, 204, 0.5);
 }
 
-/* Primary login button */
-.login-form .btn-primary {
-    width: 100%;
-    background-color: var(--primary);
-    border-color: var(--primary);
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    color: #ffffff;
+.login-container .is-invalid {
+    border-color: #dc3545;
 }
 
-.login-form .btn-primary:hover {
-    box-shadow: 0 0 12px rgba(0, 183, 255, 0.5);
-    transform: translateY(-2px);
-    background-color: #05a4b3;
-    border-color: #05a4b3;
-}
-
-/* Validation error message */
-.login-form .invalid-feedback {
+.login-container .invalid-feedback {
     display: none;
-    font-size: 0.875em;
-    color: red;
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: -5px;
+    margin-bottom: 10px;
 }
 
-.login-form.was-validated .form-control:invalid~.invalid-feedback {
+.login-container .is-invalid+.invalid-feedback {
     display: block;
 }
 
-:root {
-    --primary: #06bbcc;
-}
-
-.login-form h2 {
-    color: var(--primary);
-}
-
-.login-form .form-control:focus {
-    border-color: var(--primary);
-    box-shadow: 0 0 10px rgba(6, 187, 204, 0.25);
-}
-
-.login-form label {
-    color: #06bbcc;
-}
-
-.login-form .btn-primary {
+.login-container button {
     background-color: #06bbcc;
     border-color: #06bbcc;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    border: 2px solid #06bbcc;
+    margin-top: 10px;
 }
 
-.login-form .btn-primary:hover {
-    background-color: #05a4b3;
-    border-color: #05a4b3;
+.login-container button:hover {
+    background-color: #05a5b1;
+    border-color: #05a5b1;
 }
 
-.login-form a {
+.alert {
+    margin-top: 10px;
+}
+
+.forgot-links {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.forgot-links a {
     color: #06bbcc;
+    text-decoration: none;
 }
 
-.login-form a:hover {
-    color: #05a4b3;
+.forgot-links a:hover {
+    text-decoration: underline;
 }
 
-.login-wrapper {
-    padding-top: 50px;
-    padding-bottom: 50px;
+.label {
+    font-weight: 600;
+    padding-left: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.invalid-feedback {
+    font-weight: 600;
+    padding-left: 10px;
 }
