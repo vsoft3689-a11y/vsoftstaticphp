@@ -221,7 +221,7 @@ $result = $conn->query($sql);
                     <h6 class="section-title bg-white text-start text-primary pe-3">Our Achievements</h6>
                     <h2 class="mb-3">Milestones We Are Proud Of</h2>
                     <p class="mb-4">
-                        At Vsofts Solutions, we take pride in the accomplishments we’ve achieved over the years.
+                        At Vsofts Solutions, we take pride in the accomplishments we have achieved over the years.
                         Each milestone reflects our dedication to innovation, quality, and client success.
                         These achievements strengthen our vision to keep growing and delivering value to our partners worldwide.
                     </p>
