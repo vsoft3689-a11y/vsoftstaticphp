@@ -24,6 +24,7 @@ class UserController
     {
         switch ($action) {
             case "create":
+
                 $data = [
                     "name"     => $_POST['name'],
                     "email"    => $_POST['email'],
@@ -33,11 +34,8 @@ class UserController
                     "branch"   => $_POST['branch'] ?? null,
                     "year"     => $_POST['year'] ?? null
                 ];
-                echo json_encode(
-                    $this->userModel->create($data) ?
-                        ["success" => true, "message" => "Student added"] :
-                        ["success" => false, "message" => "Error adding student"]
-                );
+
+                echo json_encode($this->userModel->create($data));
                 break;
 
             case "read":

@@ -12,13 +12,39 @@ class UserModel
     // CREATE
     public function create($data)
     {
+        // Check if email already exists
+        $checkQuery = "SELECT id FROM $this->table WHERE email = ?";
+        $checkStmt = $this->conn->prepare($checkQuery);
+        $checkStmt->bind_param("s", $data['email']);
+        $checkStmt->execute();
+        $checkStmt->store_result();
+
+        if ($checkStmt->num_rows > 0) {
+            // Email exists
+            return ["success" => false, "message" => "User already exists! Please Login"];
+        }
+
+        // If not exists, insert new record
         $query = "INSERT INTO $this->table (name, email, password_hash, phone, college, branch, year) 
-                  VALUES (?, ?, ?, ?, ?, ?, ?)";
+              VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($query);
         $password = password_hash($data['password'], PASSWORD_BCRYPT);
-        $stmt->bind_param("sssssss", $data['name'], $data['email'], $password, $data['phone'], $data['college'], $data['branch'], $data['year']);
-        return $stmt->execute();
+        $stmt->bind_param(
+            "sssssss",
+            $data['name'],
+            $data['email'],
+            $password,
+            $data['phone'],
+            $data['college'],
+            $data['branch'],
+            $data['year']
+        );
+
+        return $stmt->execute()
+            ? ["success" => true, "message" => "User Registered Successfully!"]
+            : ["success" => false, "message" => "Error in registering user"];
     }
+
 
     // READ
     public function read()
@@ -56,12 +82,13 @@ class UserModel
             if (session_status() === PHP_SESSION_NONE) {
                 session_start();
             }
+
             // Store user info in session
             $_SESSION['user'] = [
-                "id"    => $user['id'],
-                "name"  => $user['name'],
-                "email" => $user['email'],
-                "role"  => $user['role'],
+                "id"     => $user['id'],
+                "name"   => $user['name'],
+                "email"  => $user['email'],
+                "role"   => $user['role'] ?? 'user',  // fallback if role is NULL
                 "status" => $user['status']
             ];
 
@@ -71,6 +98,9 @@ class UserModel
                 "user"    => $_SESSION['user']
             ];
         }
+
+        // If password invalid or no user
+        return ["success" => false, "message" => "Invalid email or password"];
     }
 
     // UPDATE
