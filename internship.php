@@ -1,5 +1,6 @@
-<?php include './config/database.php';
-
+<?php
+// ----------------- DB CONNECTION -----------------
+include './config/database.php';
  
 $conn = (new Database())->connect();
 
@@ -201,8 +202,8 @@ if ($conn->connect_error) {
     <?php // footer.php should output a root <footer> with class="site-footer ..." ?>
     
     <!-- Footer End -->
-    
-    
+     <?php include 'footer.php'; ?>
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
