@@ -1,7 +1,7 @@
 <?php
-// ----------------- DB CONNECTION -----------------
 include './config/database.php';
 
+session_start();
 
 $conn = (new Database())->connect();
 
@@ -97,17 +97,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1>Contact For Any Query</h1>
             </div>
             <div class="row g-4">
-                
-                
+
+
                 <!-- Info -->
                 <div class="col-lg-4">
                     <h5 class="text-primary">Get In Touch</h5>
-                    <p style = "text-align:justify" class="justify">
-                        Have questions about academic projects, internships, or training programs? 
-                        VSoft Solutions is here to help! Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries. 
+                    <p style="text-align:justify" class="justify">
+                        Have questions about academic projects, internships, or training programs?
+                        VSoft Solutions is here to help! Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries.
                         Our team will get back to you shortly.
                     </p>
-                    <div style = "text-align:justify">
+                    <div style="text-align:justify">
                         <p><i class="fa fa-map-marker-alt text-primary me-2"></i> <?= $configs['address'] ?? 'Default Address'; ?></p>
                         <p><i class="fa fa-phone-alt text-primary me-2"></i> <?= $configs['landline'] ?? 'Default Phone'; ?></p>
                         <p><i class="fa fa-envelope text-primary me-2"></i> <?= $configs['email'] ?? 'Default Email'; ?></p>
@@ -117,8 +117,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <!-- Map -->
                 <div class="col-lg-4">
-    <?= str_replace('<iframe', '<iframe style="width:100%; height:350px; border-radius:8px;"', $configs['google_map'] ?? '<p>No map found</p>'); ?>
-</div>
+                    <?= str_replace('<iframe', '<iframe style="width:100%; height:350px; border-radius:8px;"', $configs['google_map'] ?? '<p>No map found</p>'); ?>
+                </div>
 
 
                 <!-- Form -->
@@ -162,4 +162,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

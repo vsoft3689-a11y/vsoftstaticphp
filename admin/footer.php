@@ -1,7 +1,6 @@
 <style>
     .page-wrapper {
         min-height: 60vh;
-        /* full viewport height */
         display: flex;
         flex-direction: column;
     }
@@ -12,7 +11,6 @@
         padding: 10px 0;
         text-align: center;
         margin-top: auto;
-        /* push footer to bottom */
     }
 
     body {
@@ -24,15 +22,12 @@
         bottom: 20px;
         right: 20px;
         display: none;
-        /* hidden by default */
         z-index: 999;
     }
 </style>
 
 <body>
     <div class="page-wrapper">
-
-        <!-- (no content, empty page) -->
         <div class="footer container-fluid bg-dark text-light wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-3">
                 <div class="row">
@@ -53,7 +48,7 @@
         // Show/hide button on scroll
         window.addEventListener("scroll", function() {
             const backToTop = document.querySelector(".back-to-top");
-            if (window.scrollY > 100) { // show after 100px scroll
+            if (window.scrollY > 100) {
                 backToTop.style.display = "block";
             } else {
                 backToTop.style.display = "none";

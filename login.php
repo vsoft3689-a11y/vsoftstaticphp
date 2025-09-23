@@ -1,10 +1,12 @@
 <?php
-session_start(); 
+session_start();
 if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
-    header("Location: admin_dashboard.php");
+    header("Location: ./admin/admin_dashboard");
+    exit();
+} else if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'user') {
+    header("Location: ./index.php");
     exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,8 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
 
         #loginForm {
             width: 350px;
-            height: 250px;
+            height: 300px;
+            text-align: center;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -69,21 +72,21 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
 </head>
 
 <body>
-    <?php include "./adminnavbar.php" ?>
-
+    <?php include "./navbar.php" ?>
     <div class="login-box">
-        <h2>Admin Login</h2>
+        <h2>Login Page</h2>
         <form id="loginForm" method="POST">
-            <input type="email" name="email" placeholder="Admin">
+            <input type="email" name="email" placeholder="Email">
             <input type="password" name="password" placeholder="Password">
             <button type="submit">Login</button>
+            <br><br>
+            <a href="./forgot_password.php">Forgot Password?</a>
+            <p>New User? <a href="./register.php">Register Here</a></p>
         </form>
     </div>
-
     <?php include "./footer.php" ?>
-
     <script>
-        const apiUrl = "../controller/UserController.php";
+        const apiUrl = "./controller/UserController.php";
 
         document.getElementById("loginForm").addEventListener("submit", async function(e) {
             e.preventDefault();
@@ -111,9 +114,10 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
                 // Check role
                 if (data.user.role === "admin") {
                     alert("Welcome Admin!");
-                    window.location.href = "admin_dashboard.php";
+                    window.location.href = "./admin/admin_dashboard.php";
                 } else {
-                    alert("Access denied. You are not an admin.");
+                    alert("Login Success.");
+                    window.location.href = "./index.php";
                 }
 
             } catch (error) {

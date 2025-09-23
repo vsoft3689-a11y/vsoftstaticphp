@@ -1,19 +1,22 @@
 <?php include './config/database.php';
 
+session_start();
+// if (!isset($_SESSION['user'])) {
+//     header("Location: login.php");
+//     exit();
+// }
  
 $conn = (new Database())->connect();
+
 
 if ($conn->connect_error) {
     die(json_encode(["status" => "error", "message" => $conn->connect_error]));
 }
 
-
 $sql = "SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC";
 $result = $conn->query($sql);
 
 $bannerResult = $conn->query("SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC");
-
-
 
 $result = $conn->query("SELECT * FROM pricing_packages ORDER BY created_at DESC");
 $packages = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
@@ -22,36 +25,25 @@ $packages = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 $result = $conn->query("SELECT * FROM testimonals WHERE is_approved = 1 ORDER BY display_order ASC");
 $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
-
-
-
-
-
-
-
-
-
-
-
 $packages = [];
 $sql = "SELECT * FROM pricing_packages";
 $result = $conn->query($sql);
 
-while ($row = $result->fetch_assoc()) {
-    $package_id = $row['id'];
+// while ($row = $result->fetch_assoc()) {
+//     $package_id = $row['id'];
 
-    // Fetch bulk offers for this package
-    $offers_sql = "SELECT quantity, price FROM bulk_offers WHERE package_id = $package_id";
-    $offers_result = $conn->query($offers_sql);
+//     // Fetch bulk offers for this package
+//     $offers_sql = "SELECT quantity, price FROM bulk_offers WHERE package_id = $package_id";
+//     $offers_result = $conn->query($offers_sql);
 
-    $bulk_offers = [];
-    while ($offer = $offers_result->fetch_assoc()) {
-        $bulk_offers[] = $offer;
-    }
+//     $bulk_offers = [];
+//     while ($offer = $offers_result->fetch_assoc()) {
+//         $bulk_offers[] = $offer;
+//     }
 
-    $row['bulk_offers'] = $bulk_offers;
-    $packages[] = $row;
-}
+//     $row['bulk_offers'] = $bulk_offers;
+//     $packages[] = $row;
+// }
 
 
 
