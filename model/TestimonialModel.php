@@ -68,10 +68,35 @@ class TestimonialModel
 
     public function delete($id)
     {
-        $sql = "DELETE FROM $this->table WHERE id=?";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bind_param("i", $id);
-        return $stmt->execute();
+        $id = intval($id);
+
+        // Step 1: Get the display_order of the review to be deleted
+        $result = $this->conn->prepare("SELECT display_order FROM {$this->table} WHERE id=?");
+        $result->bind_param("i", $id);
+        $result->execute();
+        $res = $result->get_result();
+
+        if ($res && $row = $res->fetch_assoc()) {
+            $deletedOrder = (int)$row['display_order'];
+
+            // Step 2: Delete the review
+            $sql = "DELETE FROM {$this->table} WHERE id=?";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+
+            // Step 3: Shift remaining reviews down
+            $shiftSql = "UPDATE {$this->table}
+                     SET display_order = display_order - 1
+                     WHERE display_order > ?";
+            $stmtShift = $this->conn->prepare($shiftSql);
+            $stmtShift->bind_param("i", $deletedOrder);
+            $stmtShift->execute();
+
+            return true;
+        }
+
+        return false;
     }
 
     public function toggleApproval($id, $newStatus)
