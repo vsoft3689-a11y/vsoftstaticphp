@@ -136,13 +136,13 @@ $file_path_basepaper = $_GET['file_path_basepaper'];
                     <input type="text" name="domain" id="update_domain" value="<?php echo htmlspecialchars($domain); ?>" placeholder="Domain" readonly />
                     <label>Title</label>
                     <input type="text" name="title" id="update_title" value="<?php echo htmlspecialchars($title); ?>" placeholder="Title" />
-                </div>
-
-                <div>
                     <label>Description</label>
                     <textarea name="description" id="update_description" placeholder="Description"><?php echo htmlspecialchars($description); ?></textarea>
                     <label>Technologies</label>
                     <input type="text" name="technologies" id="update_technologies" value="<?php echo htmlspecialchars($technologies); ?>" placeholder="Technologies" />
+                </div>
+
+                <div>
                     <label>Price</label>
                     <input type="number" name="price" id="update_price" value="<?php echo htmlspecialchars($price); ?>" placeholder="Price" />
                     <label>Youtube URL</label>

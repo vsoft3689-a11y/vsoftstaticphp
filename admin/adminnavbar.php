@@ -34,7 +34,7 @@
 <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="./admin.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="./admin_dashboard.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <!-- <h2 class="m-0 text-primary">VSoftSolutions</h2> -->
             <img src="../img/logo.webp"
                 alt="VSoft Solutions Pvt Ltd Logo" style="height:48px; width:auto; display:block; object-fit:contain;" />
