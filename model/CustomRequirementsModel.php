@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
 // path: model/CustomRequirementsModel.php
-=======
-// model/CustomRequirementsModel.php
->>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
 
 class CustomRequirementsModel {
     private $conn;
@@ -13,7 +9,6 @@ class CustomRequirementsModel {
         $this->conn = $db;
     }
 
-<<<<<<< HEAD
     public function create($data) {
         $stmt = $this->conn->prepare("
             INSERT INTO {$this->table} (user_id, title, description, technologies, status, document_path) 
@@ -40,17 +35,11 @@ class CustomRequirementsModel {
         return $res;
     }
 
-=======
->>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
     public function readAll() {
         $sql = "SELECT * FROM {$this->table} ORDER BY created_at DESC";
         $result = $this->conn->query($sql);
         if (!$result) {
-<<<<<<< HEAD
             error_log("Query failed in readAll: " . $this->conn->error);
-=======
-            error_log("readAll: " . $this->conn->error);
->>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
             return [];
         }
         $rows = [];
@@ -61,7 +50,6 @@ class CustomRequirementsModel {
         return $rows;
     }
 
-<<<<<<< HEAD
     public function read($id) {
         $stmt = $this->conn->prepare("SELECT * FROM {$this->table} WHERE id = ?");
         if (!$stmt) {
@@ -107,37 +95,12 @@ class CustomRequirementsModel {
         $stmt = $this->conn->prepare("DELETE FROM {$this->table} WHERE id = ?");
         if (!$stmt) {
             error_log("Prepare failed in delete: " . $this->conn->error);
-=======
-    public function updateStatus($id, $status) {
-        $stmt = $this->conn->prepare("UPDATE {$this->table} SET status = ? WHERE id = ?");
-        if (!$stmt) {
-            error_log("updateStatus prepare failed: " . $this->conn->error);
-            return false;
-        }
-        $stmt->bind_param("si", $status, $id);
-        $res = $stmt->execute();
-        if (!$res) {
-            error_log("updateStatus execute failed: " . $stmt->error);
-        }
-        $stmt->close();
-        return $res;
-    }
-
-    public function delete($id) {
-        $stmt = $this->conn->prepare("DELETE FROM {$this->table} WHERE id = ?");
-        if (!$stmt) {
-            error_log("delete prepare failed: " . $this->conn->error);
->>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
             return false;
         }
         $stmt->bind_param("i", $id);
         $res = $stmt->execute();
         if (!$res) {
-<<<<<<< HEAD
             error_log("Execute failed in delete: " . $stmt->error);
-=======
-            error_log("delete execute failed: " . $stmt->error);
->>>>>>> eed41cd9edae19e96df751f94c84e55877efb199
         }
         $stmt->close();
         return $res;

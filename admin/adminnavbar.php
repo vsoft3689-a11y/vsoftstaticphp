@@ -34,7 +34,7 @@
 <body>
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <a href="./admin.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <a href="./admin_dashboard.php" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <!-- <h2 class="m-0 text-primary">VSoftSolutions</h2> -->
             <img src="../img/logo.webp"
                 alt="VSoft Solutions Pvt Ltd Logo" style="height:48px; width:auto; display:block; object-fit:contain;" />
@@ -44,7 +44,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="./admin.php" class="nav-item nav-link">Dashboard</a>
+                <a href="./admin_dashboard.php" class="nav-item nav-link">Dashboard</a>
                 <a href="./users.php" class="nav-item nav-link">Users</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Projects</a>

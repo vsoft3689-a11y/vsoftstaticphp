@@ -1,141 +1,159 @@
-<?php
-session_start();
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header("Location: ../login.php");
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Custom Requirements</title>
+  <meta charset="UTF-8" />
+  <title>Manage Custom Requirements</title>
   <style>
-    body {
+    /* body {
       font-family: Arial, sans-serif;
-    }
-
+      background: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    } */
     .main {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 30px;
+      margin: 20px 0;
     }
-
-    h2#heading {
+    #heading {
       color: #333;
+      font-size: 24px;
     }
-
     table {
-      width: 95%;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto 30px auto;
       border-collapse: collapse;
-      margin: 20px auto;
       background-color: #fff;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-
     th, td {
       padding: 12px;
       border-bottom: 1px solid #eee;
       text-align: left;
+      vertical-align: middle;
     }
-
     th {
       background-color: #06BBCC;
       color: white;
+      user-select: none;
     }
-
     tr:hover {
       background-color: #f5f5f5;
     }
-
     .status-badge {
-      padding: 6px 10px;
+      padding: 6px 14px;
       border-radius: 12px;
       font-size: 13px;
       font-weight: bold;
       text-transform: capitalize;
+      display: inline-block;
+      min-width: 90px;
+      text-align: center;
+      color: white;
     }
-
-    .badge-pending {
+    .status-pending {
       background-color: #ffc107;
       color: #000;
     }
-
-    .badge-approved {
+    .status-approved {
       background-color: #007bff;
-      color: white;
     }
-
-    .badge-done {
+    .status-done {
+      background-color: #28a745;
+    }
+    .download-btn {
       background-color: #28a745;
       color: white;
-    }
-
-    .status-select {
-      padding: 6px;
-      font-size: 14px;
       border-radius: 4px;
-      margin-bottom: 6px;
+      padding: 6px 14px;
+      text-decoration: none;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+      display: inline-block;
     }
-
-    .update-btn, .delete-btn {
-      padding: 6px 10px;
-      background-color: #06BBCC;
+    .download-btn:hover {
+      background-color: #1e7e34;
+    }
+    button.delete-btn,
+    button.update-btn {
+      background-color: #dc3545;
       color: white;
       border: none;
       border-radius: 4px;
-      font-size: 13px;
+      padding: 6px 14px;
+      font-size: 14px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      white-space: nowrap;
+      transition: background-color 0.3s ease;
+      margin-top: 5px;
     }
-
-    .update-btn:hover, .delete-btn:hover {
+    button.update-btn {
+      background-color: #06BBCC;
+    }
+    button.update-btn:hover {
       background-color: #049eab;
     }
-
-    .alert {
-      width: 95%;
+    button.delete-btn:hover {
+      background-color: #b02a37;
+    }
+    select.status-select {
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+    }
+    #alert-container {
+      width: 80%;
+      max-width: 1200px;
       margin: 10px auto;
-      padding: 12px;
-      border-radius: 6px;
       text-align: center;
     }
-
+    .alert {
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
     .alert-success {
       background-color: #d4edda;
       color: #155724;
+      border: 1px solid #c3e6cb;
     }
-
     .alert-error {
       background-color: #f8d7da;
       color: #721c24;
+      border: 1px solid #f5c6cb;
     }
   </style>
 </head>
 <body>
 
-<?php include __DIR__ . '/adminnavbar.php'; ?>
+<?php include "./adminnavbar.php"; ?>
 
 <div class="main">
   <h2 id="heading">Custom Requirements</h2>
 </div>
 
-<section>
-  <table id="custom-req-table">
+<section class="load-custom">
+  <table id="custom-req-table" aria-label="Custom Requirements Table">
     <thead>
       <tr>
         <th>ID</th>
         <th>User ID</th>
         <th>Title</th>
+        <th>Description</th>
         <th>Technologies</th>
         <th>Status</th>
         <th>Document</th>
-        <th>Update</th>
-        <th>Delete</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -144,119 +162,135 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
 <div id="alert-container"></div>
 
-<?php include __DIR__ . '/footer.php'; ?>
+<?php include "./footer.php"; ?>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const tableBody = document.querySelector("#custom-req-table tbody");
-  const alertContainer = document.getElementById("alert-container");
-
-  function showAlert(type, message) {
-    const alertClass = type === 'success' ? 'alert-success' : 'alert-error';
-    alertContainer.innerHTML = `
-      <div class="alert ${alertClass}">${message}</div>
-    `;
-    setTimeout(() => alertContainer.innerHTML = '', 3000);
-  }
-
-  function getStatusBadge(status) {
-    let badgeClass = 'badge-pending';
-    if (status === 'approved') badgeClass = 'badge-approved';
-    if (status === 'done') badgeClass = 'badge-done';
-
-    return `<span class="status-badge ${badgeClass}">${status}</span>`;
-  }
+document.addEventListener("DOMContentLoaded", function() {
+  fetchRequirements();
 
   function fetchRequirements() {
-    fetch("../controller/CustomRequirementsController.php?action=read")
+    fetch('../controller/CustomRequirementsController.php?action=read')
       .then(res => res.json())
       .then(data => {
-        tableBody.innerHTML = "";
+        const tbody = document.querySelector("#custom-req-table tbody");
+        tbody.innerHTML = "";
 
-        data.forEach(req => {
-          const docLink = req.document_path 
-            ? `<a href="../${req.document_path}" target="_blank">Download</a>` 
-            : "-";
+        data.forEach(item => {
+          let statusClass = "";
+          if(item.status === 'pending') statusClass = "status-pending";
+          else if(item.status === 'approved') statusClass = "status-approved";
+          else if(item.status === 'done') statusClass = "status-done";
+
+          const documentInfo = item.document_path
+            ? `<a href="../${item.document_path}" class="download-btn" target="_blank" download>Download</a>`
+            : `<span style="color:#888;">No document</span>`;
 
           const tr = document.createElement("tr");
           tr.innerHTML = `
-            <td>${req.id}</td>
-            <td>${req.user_id}</td>
-            <td>${req.title}</td>
-            <td>${req.technologies || '-'}</td>
-            <td>${getStatusBadge(req.status)}</td>
-            <td>${docLink}</td>
+            <td>${item.id}</td>
+            <td>${item.user_id}</td>
+            <td>${escapeHtml(item.title || '')}</td>
+            <td>${escapeHtml(item.description || '')}</td>
+            <td>${escapeHtml(item.technologies || '')}</td>
             <td>
-              <form onsubmit="return updateStatus(event, ${req.id})">
-                <select name="status" class="status-select">
-                  <option value="pending" ${req.status === 'pending' ? 'selected' : ''}>Pending</option>
-                  <option value="approved" ${req.status === 'approved' ? 'selected' : ''}>Approved</option>
-                  <option value="done" ${req.status === 'done' ? 'selected' : ''}>Done</option>
-                </select>
-                <button type="submit" class="update-btn">Update</button>
-              </form>
+              <span id="status-badge-${item.id}" class="status-badge ${statusClass}">${item.status}</span>
+              <br/>
+              <select id="status-${item.id}" class="status-select">
+                <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
+                <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Approved</option>
+                <option value="done" ${item.status === 'done' ? 'selected' : ''}>Done</option>
+              </select>
+              <br/>
+              <button class="update-btn" onclick="updateStatus(${item.id})">Update</button>
             </td>
+            <td>${documentInfo}</td>
             <td>
-              <form onsubmit="return deleteRequirement(event, ${req.id})">
-                <button type="submit" class="delete-btn">Delete</button>
-              </form>
+              <button class="delete-btn" onclick="deleteReq(${item.id})">Delete</button>
             </td>
           `;
-          tableBody.appendChild(tr);
+          tbody.appendChild(tr);
         });
       })
       .catch(err => {
         console.error("Fetch error:", err);
-        showAlert("error", "Failed to load data.");
+        showAlert("error", "Failed to load requirements.");
       });
   }
 
-  window.updateStatus = function (event, id) {
-    event.preventDefault();
-    const form = event.target;
-    const formData = new FormData(form);
+  window.updateStatus = function(id) {
+    const status = document.getElementById(`status-${id}`).value;
+
+    const formData = new FormData();
     formData.append("action", "update_status");
     formData.append("id", id);
+    formData.append("status", status);
 
-    fetch("../controller/CustomRequirementsController.php", {
+    fetch('../controller/CustomRequirementsController.php', {
       method: "POST",
       body: formData
     })
     .then(res => res.json())
-    .then(data => {
-      showAlert(data.status, data.message);
-      fetchRequirements();
+    .then(resp => {
+      if (!resp) {
+        showAlert("error", "Empty response from server.");
+        return;
+      }
+      showAlert(resp.status, resp.message);
+
+      if (resp.status === "success") {
+        const badge = document.querySelector(`#status-badge-${id}`);
+        badge.textContent = status;
+        badge.className = `status-badge`;
+        if (status === 'pending') badge.classList.add("status-pending");
+        else if (status === 'approved') badge.classList.add("status-approved");
+        else if (status === 'done') badge.classList.add("status-done");
+      }
     })
     .catch(err => {
       console.error("Update error:", err);
-      showAlert("error", "Status update failed.");
+      showAlert("error", "Failed to update status.");
     });
-  };
+  }
 
-  window.deleteRequirement = function (event, id) {
-    event.preventDefault();
+  window.deleteReq = function(id) {
     if (!confirm("Are you sure you want to delete this requirement?")) return;
 
-    const formData = new FormData();
-    formData.append("action", "delete");
-    formData.append("id", id);
-
-    fetch("../controller/CustomRequirementsController.php", {
-      method: "POST",
-      body: formData
+    fetch(`../controller/CustomRequirementsController.php?action=delete&id=${id}`, {
+      method: "GET"
     })
     .then(res => res.json())
-    .then(data => {
-      showAlert(data.status, data.message);
-      fetchRequirements();
+    .then(resp => {
+      showAlert(resp.status, resp.message);
+      if (resp.status === "success") {
+        fetchRequirements();
+      }
     })
     .catch(err => {
       console.error("Delete error:", err);
-      showAlert("error", "Delete failed.");
+      showAlert("error", "Failed to delete requirement.");
     });
-  };
+  }
 
-  fetchRequirements();
+  function showAlert(type, message) {
+    const container = document.getElementById("alert-container");
+    const alert = document.createElement("div");
+    alert.className = `alert alert-${type}`;
+    alert.textContent = message;
+    container.appendChild(alert);
+
+    setTimeout(() => {
+      alert.remove();
+    }, 4000);
+  }
+
+  function escapeHtml(text) {
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
 });
 </script>
 
