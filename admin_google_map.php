@@ -8,6 +8,12 @@
     max-width: 500px;
 }
 
+td iframe {
+  width: 250px !important;
+  height: 250px !important;
+}
+
+
 
 
 </style>

@@ -1,5 +1,6 @@
-<?php include './config/database.php';
-
+<?php
+// ----------------- DB CONNECTION -----------------
+include './config/database.php';
  
 $conn = (new Database())->connect();
 
@@ -7,7 +8,6 @@ if ($conn->connect_error) {
     die(json_encode(["status" => "error", "message" => $conn->connect_error]));
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +40,6 @@ if ($conn->connect_error) {
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <!-- <link href="css/internship.css" rel="stylesheet"> -->
-
 
 </head>
 
@@ -78,7 +77,7 @@ if ($conn->connect_error) {
       </div>
       <!-- Header End -->
 
-      <!-- Intern & Corporate Main Start -->
+      <!-- Intern Main Start -->
       <div class="container-xxl py-5">
           <div class="container">
               <div class="row g-2 justify-content-center align-items-stretch">
@@ -200,9 +199,10 @@ if ($conn->connect_error) {
     </main>
 
     <!-- Footer Start -->
+    <?php // footer.php should output a root <footer> with class="site-footer ..." ?>
     
-    <?php include 'footer.php'; ?>
     <!-- Footer End -->
+     <?php include 'footer.php'; ?>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>

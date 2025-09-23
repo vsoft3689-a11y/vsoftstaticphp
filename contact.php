@@ -2,6 +2,7 @@
 // ----------------- DB CONNECTION -----------------
 include './config/database.php';
 
+
 $conn = (new Database())->connect();
 
 // Check connection
@@ -17,6 +18,7 @@ if ($result && $result->num_rows > 0) {
         $configs[$row['config_key']] = $row['config_value'];
     }
 }
+
 // ----------------- FORM SUBMIT -----------------
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = $conn->real_escape_string($_POST['name']);
@@ -47,17 +49,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Fonts -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Icon Fonts -->
     <!-- Icon Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
+    <!-- Libraries -->
     <!-- Libraries -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+    <!-- CSS -->
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -91,17 +98,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="row g-4">
                 
+                
                 <!-- Info -->
                 <div class="col-lg-4">
                     <h5 class="text-primary">Get In Touch</h5>
-                    <p>
-                        Have questions about academic projects, internships, or training programs? <br>
+                    <p style = "text-align:justify" class="justify">
+                        Have questions about academic projects, internships, or training programs? 
                         VSoft Solutions is here to help! Reach out to us for support with B.Tech, M.Tech, MBA, or MCA project development, internship details, or any general inquiries. 
                         Our team will get back to you shortly.
                     </p>
-                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i> <?= $configs['address'] ?? 'Default Address'; ?></p>
-                    <p><i class="fa fa-phone-alt text-primary me-2"></i> <?= $configs['landline'] ?? 'Default Phone'; ?></p>
-                    <p><i class="fa fa-envelope text-primary me-2"></i> <?= $configs['email'] ?? 'Default Email'; ?></p>
+                    <div style = "text-align:justify">
+                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i> <?= $configs['address'] ?? 'Default Address'; ?></p>
+                        <p><i class="fa fa-phone-alt text-primary me-2"></i> <?= $configs['landline'] ?? 'Default Phone'; ?></p>
+                        <p><i class="fa fa-envelope text-primary me-2"></i> <?= $configs['email'] ?? 'Default Email'; ?></p>
+                    </div>
+
                 </div>
 
                 <!-- Map -->
@@ -135,6 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </form>
                 </div>
+
 
             </div>
         </div>

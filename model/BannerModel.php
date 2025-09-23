@@ -9,7 +9,8 @@ class BannerModel
         $this->conn = $conn;
     }
 
-     public function create($data) {
+    public function create($data)
+    {
         $tagline = $data['tagline'];
         $sub_text = $data['sub_text'];
         $cta_button_text = $data['cta_button_text'];
@@ -50,21 +51,33 @@ class BannerModel
     {
         $id = intval($id);
 
-        // Step 1: Fetch old image path from DB
-        $result = $this->conn->query("SELECT image_path FROM {$this->table} WHERE id=$id");
+        // Step 1: Fetch old image path and display_order from DB
+        $result = $this->conn->query("SELECT image_path, display_order FROM {$this->table} WHERE id=$id");
         if ($result && $row = $result->fetch_assoc()) {
             $oldImage = $row['image_path'];
+            $deletedOrder = (int)$row['display_order'];
 
             // Step 2: Delete file from uploads folder if it exists
             if (!empty($oldImage) && file_exists(__DIR__ . "/../" . $oldImage)) {
                 unlink(__DIR__ . "/../" . $oldImage);
             }
+
+            // Step 3: Delete database row
+            $this->conn->query("DELETE FROM {$this->table} WHERE id=$id");
+
+            // Step 4: Shift orders of remaining banners down
+            $shiftSql = "UPDATE {$this->table} 
+                     SET display_order = display_order - 1 
+                     WHERE display_order > ?";
+            $stmtShift = $this->conn->prepare($shiftSql);
+            $stmtShift->bind_param("i", $deletedOrder);
+            $stmtShift->execute();
+
+            return true;
         }
 
-        // Step 3: Delete database row
-        return $this->conn->query("DELETE FROM {$this->table} WHERE id=$id");
+        return false;
     }
-
 
     public function toggleStatus($id, $is_active)
     {

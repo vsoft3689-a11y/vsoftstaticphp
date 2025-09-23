@@ -111,7 +111,7 @@ if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
                 // Check role
                 if (data.user.role === "admin") {
                     alert("Welcome Admin!");
-                    window.location.href = "admin.php";
+                    window.location.href = "admin_dashboard.php";
                 } else {
                     alert("Access denied. You are not an admin.");
                 }
