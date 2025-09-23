@@ -94,7 +94,7 @@
         let phone = form.phone.value.trim();
         let college = form.college.value.trim();
         let branch = form.branch.value.trim();
-        let year = form.year.trim();
+        let year = form.year.value.trim();
         let isValid = true;
 
         // Name validation
