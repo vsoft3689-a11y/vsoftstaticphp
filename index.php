@@ -51,7 +51,7 @@ while ($row = $result->fetch_assoc()) {
 
     $row['bulk_offers'] = $bulk_offers;
     $packages[] = $row;
- }
+}
 
 
 
