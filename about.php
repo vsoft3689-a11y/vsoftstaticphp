@@ -193,7 +193,7 @@ $result = $conn->query($sql);
                 <!-- Right Side: Image -->
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="position-relative h-100">
-                        <img class="img-fluid rounded shadow" src="img/achivements.jpg.jpg" alt="Achievements" style="object-fit: cover; width:100%; minimum-hight:200px;">
+                        <img class="img-fluid rounded shadow" src="img/achivements.jpg.jpg" alt="Achievements" style="object-fit: cover; width:100%;">
                     </div>
                 </div>
             </div>
