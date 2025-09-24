@@ -1,15 +1,10 @@
 <?php
+include __DIR__ . '/auth.php';
 include '../config/database.php';
-session_start();
 $conn = (new Database())->connect();
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-
-// Prevent viewing cached profile after logout
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-header('Pragma: no-cache');
-header('Expires: 0');
 
 // Initialize messages
 $success_msg = '';

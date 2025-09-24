@@ -1,5 +1,5 @@
-<?php include '../config/database.php';
-session_start();
+<?php include __DIR__ . '/auth.php';
+include '../config/database.php';
 $conn = (new Database())->connect();
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -50,7 +50,7 @@ if ($conn->connect_error) {
         <h2>Dashboard</h2>
         <div class="row">
             <!-- Your cards etc -->
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card shadow-sm h-100 text-center">
                     <div class="card-body">
                         <i class="bi bi-person-circle display-4 text-primary"></i>
@@ -61,7 +61,18 @@ if ($conn->connect_error) {
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-card-checklist display-4 text-secondary"></i>
+                        <h5 class="card-title mt-3">Projects</h5>
+                        <p class="card-text">Search here your requirements for the Project</p>
+                        <a href="userprojects.php" class="btn btn-outline-secondary btn-sm">Projects</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card shadow-sm h-100 text-center">
                     <div class="card-body">
                         <i class="bi bi-file-earmark-plus display-4 text-success"></i>
@@ -72,7 +83,7 @@ if ($conn->connect_error) {
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card shadow-sm h-100 text-center">
                     <div class="card-body">
                         <i class="bi bi-clipboard-check display-4 text-warning"></i>
@@ -83,16 +94,16 @@ if ($conn->connect_error) {
                 </div>
             </div>
 
-            <!-- <div class="col-md-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-lg-4 mb-4">
                 <div class="card shadow-sm h-100 text-center">
                     <div class="card-body">
                         <i class="bi bi-clock-history display-4 text-danger"></i>
                         <h5 class="card-title mt-3">Project History</h5>
                         <p class="card-text">View all the projects you have shown interest in.</p>
-                        <a href="projhistory.php" class="btn btn-outline-danger btn-sm">View History</a>
+                        <a href="projecthistory.php" class="btn btn-outline-danger btn-sm">View History</a>
                     </div>
                 </div>
-            </div> -->
+            </div> 
         </div>
 
         <!-- Footer Start -->

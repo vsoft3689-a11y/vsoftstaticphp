@@ -146,4 +146,23 @@ class UserModel
         $stmt->bind_param("si", $passwordHash, $id);
         return $stmt->execute();
     }
+
+    // Check if a user exists by email
+    public function existsByEmail($email)
+    {
+        $stmt = $this->conn->prepare("SELECT id FROM $this->table WHERE email = ? LIMIT 1");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt->store_result();
+        return $stmt->num_rows > 0;
+    }
+
+    // Update password using email
+    public function updatePasswordByEmail($email, $newPassword)
+    {
+        $passwordHash = password_hash($newPassword, PASSWORD_BCRYPT);
+        $stmt = $this->conn->prepare("UPDATE $this->table SET password_hash=? WHERE email=?");
+        $stmt->bind_param("ss", $passwordHash, $email);
+        return $stmt->execute();
+    }
 }

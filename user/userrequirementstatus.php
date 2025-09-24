@@ -1,5 +1,5 @@
 <?php
-session_start();
+include __DIR__ . '/auth.php';
 include '../config/database.php';
 
 $conn = (new Database())->connect();
@@ -7,9 +7,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if (empty($_SESSION['user'])) {
-    die("Please login first.");
-}
 $user_id = (int)$_SESSION['user']['id'];
 ?>
 <!DOCTYPE html>

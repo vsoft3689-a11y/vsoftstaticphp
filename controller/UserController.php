@@ -2,7 +2,9 @@
 header("Content-Type: application/json");
 
 include __DIR__ . "/../config/database.php";
+include __DIR__ . "/../config/mail.php";
 include __DIR__ . "/../model/UserModel.php";
+include __DIR__ . "/../model/PasswordResetModel.php";
 
 $action = $_REQUEST['action'] ?? '';
 
@@ -13,11 +15,13 @@ class UserController
 {
     private $db;
     private $userModel;
+    private $resetModel;
 
     public function __construct()
     {
         $this->db = (new Database())->connect();
         $this->userModel = new UserModel($this->db);
+        $this->resetModel = new PasswordResetModel($this->db);
     }
 
     public function handleRequest($action)
@@ -98,6 +102,77 @@ class UserController
                         ["success" => true, "message" => "Password updated"] :
                         ["success" => false, "message" => "Failed to update password"]
                 );
+                break;
+
+            // Request a password reset: generate and email OTP
+            case "request_password_reset":
+                $email = trim($_POST['email'] ?? '');
+                if ($email === '') {
+                    echo json_encode(["success" => false, "message" => "Email is required"]);
+                    break;
+                }
+
+                // Check user exists
+                $exists = $this->userModel->existsByEmail($email);
+                if (!$exists) {
+                    // For privacy, return success but do nothing
+                    echo json_encode(["success" => true, "message" => "If the email exists, an OTP has been sent."]);
+                    break;
+                }
+
+                // Generate 6-digit OTP
+                $otp = str_pad((string)random_int(0, 999999), 6, '0', STR_PAD_LEFT);
+                // DEV ONLY: log OTP to server error log for local testing. Remove in production.
+                error_log("[PasswordReset] OTP for {$email}: {$otp}");
+                $saved = $this->resetModel->createToken($email, $otp);
+                if (!$saved) {
+                    echo json_encode(["success" => false, "message" => "Could not initiate password reset. Try again."]);
+                    break;
+                }
+
+                $subject = "Your Password Reset OTP";
+                $bodyHtml = "<p>Your OTP code is <strong>{$otp}</strong>. It expires in 10 minutes.</p>";
+                // Try to send the email, but do not block the flow if SMTP fails
+                $sent = sendMail($email, $subject, $bodyHtml);
+                echo json_encode([
+                    "success" => true,
+                    "message" => "If the email exists, an OTP has been sent.",
+                    "email_sent" => (bool)$sent
+                ]);
+                break;
+
+            // Verify OTP
+            case "verify_otp":
+                $email = trim($_POST['email'] ?? '');
+                $otp = trim($_POST['otp'] ?? '');
+                if ($email === '' || $otp === '') {
+                    echo json_encode(["success" => false, "message" => "Email and OTP are required"]);
+                    break;
+                }
+                $valid = $this->resetModel->verifyToken($email, $otp, 10); // 10 minutes expiry
+                echo json_encode($valid ? ["success" => true] : ["success" => false, "message" => "Invalid or expired OTP"]);
+                break;
+
+            // Reset password using verified OTP
+            case "reset_password":
+                $email = trim($_POST['email'] ?? '');
+                $otp = trim($_POST['otp'] ?? '');
+                $password = $_POST['password'] ?? '';
+                if ($email === '' || $otp === '' || $password === '') {
+                    echo json_encode(["success" => false, "message" => "Email, OTP and password are required"]);
+                    break;
+                }
+                if (!$this->resetModel->verifyToken($email, $otp, 10)) {
+                    echo json_encode(["success" => false, "message" => "Invalid or expired OTP"]);
+                    break;
+                }
+                $updated = $this->userModel->updatePasswordByEmail($email, $password);
+                if ($updated) {
+                    $this->resetModel->consumeToken($email);
+                    echo json_encode(["success" => true, "message" => "Password reset successful"]);
+                } else {
+                    echo json_encode(["success" => false, "message" => "Failed to reset password"]);
+                }
                 break;
 
             default:

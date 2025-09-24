@@ -1,5 +1,11 @@
-<?php include '../config/database.php';
+<?php 
 session_start();
+header('Cache-Control: no-cache, no-store, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
+include __DIR__ . '/auth.php';
+include '../config/database.php';
+// session_start();
 $conn = (new Database())->connect();
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
