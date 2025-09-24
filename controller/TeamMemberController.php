@@ -1,5 +1,6 @@
 <?php
 header("Content-Type: application/json");
+
 require_once "../config/Database.php";
 require_once "../model/TeamMemberModel.php";
 

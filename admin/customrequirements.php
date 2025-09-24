@@ -22,12 +22,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
     #heading {
       color: #333;
-      font-size: 24px;
+      margin: 20px;
     }
 
     table {
       width: 100%;
-      max-width: 1200px;
       margin: 0 auto 30px auto;
       border-collapse: collapse;
       background-color: #fff;
@@ -160,6 +159,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       border: 1px solid #f5c6cb;
     }
 
+    .load-custom {
+      margin: 10px 10px;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -208,7 +211,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
   <?php include "./footer.php"; ?>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       fetchRequirements();
 
       function fetchRequirements() {
@@ -263,7 +266,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       }
 
       // ✅ Update Status Function with Custom Message
-      window.updateStatus = function (id) {
+      window.updateStatus = function(id) {
         const status = document.getElementById(`status-${id}`).value;
 
         const formData = new FormData();
@@ -272,9 +275,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         formData.append("status", status);
 
         fetch('../controller/CustomRequirementsController.php', {
-          method: "POST",
-          body: formData
-        })
+            method: "POST",
+            body: formData
+          })
           .then(res => res.json())
           .then(resp => {
             if (!resp) {
@@ -303,12 +306,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           });
       }
 
-      window.deleteReq = function (id) {
+      window.deleteReq = function(id) {
         if (!confirm("Are you sure you want to delete this requirement?")) return;
 
         fetch(`../controller/CustomRequirementsController.php?action=delete&id=${id}`, {
-          method: "GET"
-        })
+            method: "GET"
+          })
           .then(res => res.json())
           .then(resp => {
             showAlert(resp.status, resp.message);

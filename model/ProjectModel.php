@@ -93,6 +93,31 @@ class ProjectModel
         return $stmt->get_result()->fetch_assoc();
     }
 
+    public function getByFilters($degree, $branch, $type, $domain)
+    {
+        $sql = "SELECT * FROM {$this->table} WHERE 1=1";
+
+        if (!empty($degree)) {
+            $sql .= " AND degree = '" . $this->conn->real_escape_string($degree) . "'";
+        }
+        if (!empty($branch)) {
+            $sql .= " AND branch = '" . $this->conn->real_escape_string($branch) . "'";
+        }
+        if (!empty($type)) {
+            $sql .= " AND type = '" . $this->conn->real_escape_string($type) . "'";
+        }
+        if (!empty($domain)) {
+            $sql .= " AND domain = '" . $this->conn->real_escape_string($domain) . "'";
+        }
+
+        $result = $this->conn->query($sql);
+        $projects = [];
+        while ($row = $result->fetch_assoc()) {
+            $projects[] = $row;
+        }
+        return $projects;
+    }
+
     // Update
     public function update($id, $data)
     {

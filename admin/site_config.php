@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     // header("Location: login.php");
-      header("Location: ../login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
@@ -101,6 +101,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
         th,
         td {
+            width: 10%;
             padding: 12px;
             border-bottom: 1px solid #eee;
             text-align: left;
@@ -188,9 +189,9 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
                 // Detect if it's a Google Maps link
                 let isMap = c.config_key.toLowerCase().includes("map") && c.config_value.includes("maps.google.com");
-                let displayValue = isMap
-                    ? `<iframe src="${c.config_value}" width="100%" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
-                    : c.config_value;
+                let displayValue = isMap ?
+                    `<iframe src="${c.config_value}" width="100%" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>` :
+                    c.config_value;
 
                 tr.innerHTML = `
                     <td>${c.id}</td>
@@ -218,7 +219,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         }
     }
 
-    document.getElementById("configForm").addEventListener("submit", async function (e) {
+    document.getElementById("configForm").addEventListener("submit", async function(e) {
         e.preventDefault();
 
         let form = this.closest("form");

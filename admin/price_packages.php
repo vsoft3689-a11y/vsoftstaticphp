@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     // header("Location: login.php");
-      header("Location: ../login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
@@ -126,13 +126,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         <h2 id="serviceHeading">Manage Price Packages</h2>
         <form id="serviceForm">
             <input type="hidden" name="id" id="service_id">
-            <!-- <label>Service Type</label>
-            <select name="service_type" id="service_type">
-                <option value="">-- Select --</option>
-                <option value="project">Project</option>
-                <option value="internship">Internship</option>
-                <option value="training">Training</option>
-            </select> -->
+
             <label>Service Type</label>
             <input type="text" name="service_type" id="service_type">
 

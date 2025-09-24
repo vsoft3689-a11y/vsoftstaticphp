@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     // header("Location: login.php");
-      header("Location: ../login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
@@ -207,7 +207,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         async function loadMembers() {
             let res = await fetch(apiUrl + "?action=read");
             let data = await res.json();
-console.log(data)
+            console.log(data)
             if (data.length > 0) {
                 document.getElementById("teamList").innerHTML = "";
                 let table = document.createElement("table");
@@ -314,7 +314,7 @@ console.log(data)
                 return;
             }
 
-            if (twitter !== "" && !twitter.includes("twitter.com")) {
+            if (twitter !== "" && !twitter.includes("x.com")) {
                 e.preventDefault(); // stop form submit
                 alert("Please enter a valid Twitter URL.");
                 return;

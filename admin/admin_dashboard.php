@@ -2,13 +2,13 @@
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     // header("Location: login.php");
-      header("Location: ../login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
 
 <?php
-include "../config/database.php"; // your DB connection file
+include "../config/database.php";
 
 $db = new Database();
 $conn = $db->connect();
@@ -40,7 +40,7 @@ $totalRequirements = $requirementsQuery->fetch_assoc()['total'];
             padding-bottom: 100px;
         }
 
-        #dashHeading{
+        #dashHeading {
             margin-bottom: 20px;
         }
 
@@ -53,7 +53,7 @@ $totalRequirements = $requirementsQuery->fetch_assoc()['total'];
             flex: 1;
             padding: 20px;
             background: #06BBCC !important;
-            border-radius: 12px!important;
+            border-radius: 12px !important;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
         }

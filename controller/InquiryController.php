@@ -9,16 +9,19 @@ $action = $_GET['action'] ?? $_POST['action'] ?? '';
 $controller = new InquiryController();
 $controller->handleRequest($action);
 
-class InquiryController {
+class InquiryController
+{
     private $db;
     private $model;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = (new Database())->connect();
         $this->model = new InquiryModel($this->db);
     }
 
-    public function handleRequest($action) {
+    public function handleRequest($action)
+    {
         switch ($action) {
             case "read":
                 echo json_encode($this->model->read());

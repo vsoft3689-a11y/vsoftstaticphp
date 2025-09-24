@@ -39,6 +39,17 @@ class ProjectController
                 echo json_encode($this->projectModel->getById($id));
                 break;
 
+            case "getByFilters":
+                $degree = $_POST['degree'] ?? '';
+                $branch = $_POST['branch'] ?? '';
+                $type   = $_POST['type'] ?? '';
+                $domain = $_POST['domain'] ?? '';
+
+                echo json_encode($this->projectModel->getByFilters($degree, $branch, $type, $domain));
+                break;
+
+
+
             case "update":
                 $id = $_POST['id'];
                 $data = $_POST;
