@@ -1,3 +1,10 @@
+<?php
+// include './config/database.php';
+
+// Connect to DB
+// $conn = (new Database())->connect();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,14 +57,8 @@
                 <a href="./internship.php" class="nav-item nav-link ">Internship</a>
                 <a href="./contact.php" class="nav-item nav-link">Contact</a>
             </div>
-            <!-- <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
-              <?php if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'user'): ?>
-                <!-- Show only when logged in -->
-                <a href="./logout.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Logout</a>
-            <?php else: ?>
-                <!-- Show only when logged out -->
-                <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now</a>
-            <?php endif; ?>
+            <a href="./login.php" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+              
         </div>
     </nav>
 
@@ -71,6 +72,8 @@
 
     <!-- Template Javascript -->
     <script src="./js/main.js"></script>
+
+
 </body>
 
 </html>

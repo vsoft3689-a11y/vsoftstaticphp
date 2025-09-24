@@ -1,49 +1,51 @@
-<?php include './config/database.php';
+<?php 
+require_once __DIR__ . "/config/database.php"; 
 
-session_start();
-// if (!isset($_SESSION['user'])) {
-//     header("Location: login.php");
-//     exit();
-// }
- 
+
+// Connect to DB
 $conn = (new Database())->connect();
 
 
-if ($conn->connect_error) {
-    die(json_encode(["status" => "error", "message" => $conn->connect_error]));
-}
 
-$sql = "SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC";
-$result = $conn->query($sql);
+session_start();
 
+
+
+// Fetch banners
 $bannerResult = $conn->query("SELECT * FROM banners WHERE is_active = 1 ORDER BY display_order ASC");
 
 $result = $conn->query("SELECT * FROM pricing_packages ORDER BY created_at DESC");
 $packages = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
 
+
 $result = $conn->query("SELECT * FROM testimonals WHERE is_approved = 1 ORDER BY display_order ASC");
 $testimonials = $result ? $result->fetch_all(MYSQLI_ASSOC) : [];
 
+
+
 $packages = [];
-$sql = "SELECT * FROM pricing_packages";
-$result = $conn->query($sql);
+$result = $conn->query("SELECT * FROM pricing_packages ORDER BY created_at DESC");
 
-// while ($row = $result->fetch_assoc()) {
-//     $package_id = $row['id'];
+while ($row = $result->fetch_assoc()) {
+    $package_id = $row['id'];
 
-//     // Fetch bulk offers for this package
-//     $offers_sql = "SELECT quantity, price FROM bulk_offers WHERE package_id = $package_id";
-//     $offers_result = $conn->query($offers_sql);
+    // Fetch bulk offers for this package
+    $offers_sql = "SELECT quantity, price FROM bulk_offers WHERE package_id = $package_id";
+    $offers_result = $conn->query($offers_sql);
 
-//     $bulk_offers = [];
-//     while ($offer = $offers_result->fetch_assoc()) {
-//         $bulk_offers[] = $offer;
-//     }
+    $bulk_offers = [];
+    if ($offers_result) {
+        while ($offer = $offers_result->fetch_assoc()) {
+            $bulk_offers[] = $offer;
+        }
+    }
 
-//     $row['bulk_offers'] = $bulk_offers;
-//     $packages[] = $row;
-// }
+    // Make sure bulk_offers key always exists
+    $row['bulk_offers'] = $bulk_offers;
+
+    $packages[] = $row;
+}
 
 
 
@@ -52,6 +54,13 @@ $result = $conn->query($sql);
 
 
 ?>
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,11 +100,41 @@ $result = $conn->query($sql);
 
 
 
+
+
+
+
         <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
 
     <style>
+
+
+
+.testimonial-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-text {
+  max-width: 280px;   /* smaller review box */
+  margin: 0 auto;
+  font-size: 14px;
+  line-height: 1.5;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
         .owl-carousel .owl-nav button.owl-prev,
         .owl-carousel .owl-nav button.owl-next {
             position: absolute;
@@ -111,6 +150,11 @@ $result = $conn->query($sql);
         .owl-carousel .owl-nav button.owl-next { right: 15px; }
         .owl-carousel .owl-dots { text-align: center; margin-top: 15px; }
         .owl-carousel .owl-dots .owl-dot span { background: #007bff; }
+
+
+
+ 
+
     </style>
 
     
@@ -140,8 +184,7 @@ $result = $conn->query($sql);
 
     
     
-
-    <!-- Carousel Start -->
+<!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
     <div class="owl-carousel header-carousel position-relative">
 
@@ -176,12 +219,6 @@ $result = $conn->query($sql);
                                                 style="font-size: 40px; line-height: 1.2;">
                                                 <?php echo htmlspecialchars($row['sub_text']); ?>
                                             </h1>
-
-
-                                             
-
-
-
                                         <?php endif; ?>
 
                                         <!-- CTA Button -->
@@ -206,120 +243,44 @@ $result = $conn->query($sql);
 
     </div>
 </div>
+<!-- Carousel End -->
 
+
+
+<!-- Owl Carousel CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+
+<!-- jQuery + Owl Carousel JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+    $(".header-carousel").owlCarousel({
+        items: 1,
+        loop: true,
+        autoplay: true,          // enable auto sliding
+        autoplayTimeout: 3000,   // time between slides (ms)
+        autoplayHoverPause: false, // don't pause on hover
+        smartSpeed: 1500,        // transition speed
+        dots: true,
+        nav: false
+    });
+});
+
+</script>
+
+
+
+
+
+   
 
 
     
-    <!-- <div class="container-fluid p-0 mb-5">
-        <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/background.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Advance with Machine Learning</h5>
-                               <h1 class="display-3 text-white animated slideInDown">Build Smart Systems with Real Data</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Master Machine Learning through hands-on projects, predictive modeling, and practical algorithm design tailored for real-world applications.</p>
-                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/iot.jpg" alt="">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Explore the World of IoT</h5>
-                                <h1 class="display-3 text-white animated slideInDown">Connect Devices, Create the Future</h1>
-                                <p class="fs-5 text-white mb-4 pb-2">Dive into the Internet of Things with sensor-based systems, embedded programming, and real-time data integration that powers smart environments.</p>
-                                <a href="./services.php" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="login.php" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
-                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Carousel End -->
-
-
-    <!-- Service Start -->
-     <!-- <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item text-center pt-3">
-                     <div class="p-4">
-                         <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">B.TECH Projects</h5>
-                            <p>B.Tech projects showcase practical applications of engineering concepts in fields like software,and civil desig</p>
-                        </div> 
-                 </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa-solid fa-microchip fa-3x text-primary mb-4"></i>
-                            <h5 class="mb-3">M.TECH Projects</h5>
-                            <p>M.Tech Provides research or industry exposure in specialized engineering fields.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa-solid fa-briefcase fa-3x text-info mb-4"></i>
-                            <h5 class="mb-3">MBA Projects</h5>
-                            <p>Focuses on real-world business experience in management, finance, or marketing roles</p>
-                        </div>
-                    </div>
-                </div>
-             <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item text-center pt-3">
-                        <div class="p-4">
-                            <i class="fa-solid fa-laptop-code fa-3x text-info mb-4"></i>
-                            <h5 class="mb-3">MCA Projects</h5>
-                            <p>Offers practical training in software development, IT services, or application design.</p>
-                        </div>
-                    </div>
-                </div> 
-                 <div class="row g-4 mt-3 justify-content-center align-items-stretch">
-                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="service-item text-center pt-3">
-                           <div class="p-4">
-                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
-                             <h5 class="mb-3">Internship & Corporate</h5>
-                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
-                             <a href="./internship.php" class="nav-item nav-link">Click Here</a>
-                           </div>
-                        </div>
-                     </div>
-                </div>
-                <div class="row g-4 mt-3 justify-content-center align-items-stretch">
-                     <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
-                        <div class="service-item text-center pt-3">
-                           <div class="p-4">
-                             <i class="fa-solid fa-chalkboard-teacher fa-3x text-info mb-4"></i>
-                             <h5 class="mb-3">Internship & Corporate</h5>
-                             <p>Internship and corporate training bridge academic knowledge with real-world industry experience, preparing students for professional careers.</p>
-                             <a href="./internship.php" class="nav-item nav-link">Click Here</a>
-                           </div>
-                        </div>
-                     </div>
-                </div>
-
-                 
-
-             </div>
-        </div>
-    </div>   -->
+ 
 
 
     <div class="container-xxl py-5">
@@ -459,57 +420,6 @@ $result = $conn->query($sql);
     <!-- About End -->
 
 
-    <!-- Categories Start -->
-    <!-- <div class="container-xxl py-5 category">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Categories</h6>
-                <h1 class="mb-5">Courses Categories</h1>
-            </div>
-            <div class="row g-3">
-                <div class="col-lg-7 col-md-6">
-                    <div class="row g-3">
-                        <div class="col-lg-12 col-md-12 wow zoomIn" data-wow-delay="0.1s">
-                            <a class="position-relative d-block overflow-hidden" href="./projects.php">
-                                <img class="img-fluid" src="img/ai.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Artificial Intelligence</h5>
-                                    
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.3s">
-                            <a class="position-relative d-block overflow-hidden" href="./projects.php">
-                                <img class="img-fluid" src="img/sathvikacyber.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Cyber Security</h5>
-                                    
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-6 col-md-12 wow zoomIn" data-wow-delay="0.5s">
-                            <a class="position-relative d-block overflow-hidden" href="./projects.php">
-                                <img class="img-fluid" src="img/sathStructural.jpg" alt="">
-                                <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
-                                    <h5 class="m-0">Structural Engineering</h5>
-                                    
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-6 wow zoomIn" data-wow-delay="0.7s" style="min-height: 350px;">
-                    <a class="position-relative d-block h-100 overflow-hidden" href="./projects.php">
-                        <img class="img-fluid position-absolute w-100 h-100" src="img/marketing.jpg" alt="" style="object-fit: cover;">
-                        <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin:  1px;">
-                            <h5 class="m-0">Marketing</h5>
-                            
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div> -->
 <div class="container text-center">
   <div class="row justify-content-center">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -629,13 +539,16 @@ $result = $conn->query($sql);
     <!-- Courses End -->
      <!-- Testimonial Start -->
 
-     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+     
+
+
+<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
   <div class="container">
     <div class="text-center mb-5">
       <h6 class="section-title bg-white text-center text-primary px-3">Testimonials</h6>
       <h1>What Our Students Say</h1>
     </div>
-    
+
     <div class="owl-carousel testimonial-carousel position-relative">
 
       <?php if (!empty($testimonials)): ?>
@@ -651,7 +564,7 @@ $result = $conn->query($sql);
             <!-- Student Name -->
             <h5 class="mb-1"><?php echo htmlspecialchars($row['customer_name']); ?></h5>
             
-            <!-- College / Designation (optional) -->
+            <!-- College / Designation -->
             <?php if (!empty($row['designation'])): ?>
               <p class="text-muted small"><?php echo htmlspecialchars($row['designation']); ?></p>
             <?php else: ?>
@@ -675,8 +588,39 @@ $result = $conn->query($sql);
   </div>
 </div>
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
 
-<!-- Testimonial End -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+
+
+
+$(document).ready(function(){
+  $(".testimonial-carousel").owlCarousel({
+    autoplay: true,
+    // autoplayTimeout: 0,       // no waiting between slides
+    // autoplaySpeed: 3000,      // control how fast it moves
+    // autoplayHoverPause: false,
+    smartSpeed: 3000,         // smooth linear motion
+    margin: 20,
+    dots: false,              // usually disable dots for continuous
+    loop: true,
+    nav: false,
+    center: true,             // keep center zoom effect
+    slideBy: 1,
+    responsive:{
+      0:{ items:1 },
+      576:{ items:1 },
+      768:{ items:2 },
+      992:{ items:3 }         // 3 reviews on desktop
+    }
+  });
+});
+</script>
+
 
 
 
@@ -684,116 +628,6 @@ $result = $conn->query($sql);
 
 
     
-            <!-- <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Students Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Sathvika</h5>
-                    <p>Student</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">⭐Professional team, real-time projects, and excellent guidance throughout.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">mahesh</h5>
-                    <p>Student</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">⭐Great experience! The team was helpful, and the project was industry-relevant.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Bhagath</h5>
-                    <p>Student</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0"> ⭐As an MBA student, I found their domain-specific project support very useful.</p>
-                    </div>
-                </div>
-                <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Anu<h5>
-                    <p>Student</p>
-                    <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">⭐I learned a lot through their internship program—highly recommended!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>  -->
-    <!-- Testimonial End -->
-    
-         <!-- Testimonial Start -->
-<!-- <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-      <h1>Our Students Say!</h1>
-    </div>
-    <div class="owl-carousel testimonial-carousel position-relative"> -->
-
-      <!-- Testimonial 1 -->
-      <!-- <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-1.jpg" alt="Sathvika" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Sathvika</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-09-10T14:30">Sept 10, 2025 at 2:30 PM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">Project support was amazing, everything was explained clearly.</p>
-        </div>
-      </div> -->
-
-      <!-- Testimonial 2 -->
-      <!-- <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-2.jpg" alt="Mahesh" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Mahesh</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-08-22T10:00">Aug 22, 2025 at 10:00 AM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">Very helpful team and good guidance throughout the course.</p>
-        </div>
-      </div> -->
-
-      <!-- Testimonial 3 -->
-      <!-- <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-3.jpg" alt="Bhagath" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Bhagath</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-07-15T16:45">July 15, 2025 at 4:45 PM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">Good experience, I understood my domain better.</p>
-        </div>
-      </div> -->
-
-      <!-- Testimonial 4 -->
-      <!-- <div class="testimonial-item text-center">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="img/testimonial-4.jpg" alt="Anu" style="width: 80px; height: 80px;">
-        <h5 class="mb-1">Anu</h5>
-        <p class="text-muted mb-1">Student</p>
-        <small class="text-secondary d-block mb-3">Reviewed on: <time datetime="2025-06-05T11:20">June 5, 2025 at 11:20 AM</time></small>
-        <div class="text-warning mb-2">
-          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-        <div class="testimonial-text bg-light p-4 rounded fst-italic">
-          <p class="mb-0">I got real-time exposure and learned a lot practically.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div> -->
 <!-- Testimonial End -->
 
 
@@ -802,7 +636,7 @@ $result = $conn->query($sql);
 
     <!-- Footer Start -->
     
-    <?php include 'footer.php'; ?>
+    <?php require_once __DIR__ . "/footer.php"; ?>
 
     <!-- Footer End -->
 
@@ -829,6 +663,13 @@ $result = $conn->query($sql);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+
 
 
 

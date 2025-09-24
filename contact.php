@@ -36,7 +36,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script>alert('❌ Error: " . $conn->error . "');</script>";
     }
 }
+
+
+
+
+
+
+
+
+// Fetch map url from DB
+$sql = "SELECT config_value FROM site_configurations WHERE config_key = 'map' LIMIT 1";
+
+$result = $conn->query($sql);
+$map_url = "";
+if ($row = $result->fetch_assoc()) {
+    $map_url = $row['config_value'];
+}
+
+// Helper function
+function getEmbedMapUrl($url) {
+    if (strpos($url, "google.com/maps/embed") !== false) {
+        return $url; // already embed
+    }
+    if (strpos($url, "google.com/maps") !== false) {
+        return str_replace("/maps/", "/maps/embed?", $url);
+    }
+    return $url; // fallback
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -116,9 +144,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
 
                 <!-- Map -->
+
                 <div class="col-lg-4">
+    <?php if (!empty($map_url)): ?>
+        <iframe 
+            src="<?= htmlspecialchars(getEmbedMapUrl($map_url)); ?>" 
+            style="width:100%; height:350px; border:0; border-radius:8px;" 
+            allowfullscreen 
+            loading="lazy">
+        </iframe>
+    <?php else: ?>
+        <p>No map found</p>
+    <?php endif; ?>
+</div>
+                <!-- <div class="col-lg-4">
                     <?= str_replace('<iframe', '<iframe style="width:100%; height:350px; border-radius:8px;"', $configs['google_map'] ?? '<p>No map found</p>'); ?>
-                </div>
+                </div> -->
 
 
                 <!-- Form -->
