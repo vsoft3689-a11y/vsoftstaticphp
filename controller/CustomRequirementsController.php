@@ -1,7 +1,6 @@
 <?php
-// path: controller/CustomRequirementsController.php
-
 header("Content-Type: application/json");
+
 include_once __DIR__ . "/../config/Database.php";
 include_once __DIR__ . "/../model/CustomRequirementsModel.php";
 
@@ -10,11 +9,13 @@ $action = $_REQUEST['action'] ?? '';
 $controller = new CustomRequirementsController();
 $controller->handleRequest($action);
 
-class CustomRequirementsController {
+class CustomRequirementsController
+{
     private $db;
     private $customModel;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->db = (new Database())->connect();
         if (!$this->db) {
             echo json_encode(["status" => "error", "message" => "Database connection failed"]);
@@ -23,7 +24,8 @@ class CustomRequirementsController {
         $this->customModel = new CustomRequirementsModel($this->db);
     }
 
-    public function handleRequest($action) {
+    public function handleRequest($action)
+    {
         switch ($action) {
             case "create":
                 $this->create();
@@ -48,7 +50,8 @@ class CustomRequirementsController {
         }
     }
 
-    private function create() {
+    private function create()
+    {
         if (empty($_POST['user_id']) || empty($_POST['title'])) {
             echo json_encode(["status" => "error", "message" => "user_id and title are required"]);
             return;
@@ -85,12 +88,14 @@ class CustomRequirementsController {
         }
     }
 
-    private function readAll() {
+    private function readAll()
+    {
         $rows = $this->customModel->readAll();
         echo json_encode($rows);
     }
 
-    private function readSingle() {
+    private function readSingle()
+    {
         $id = intval($_GET['id'] ?? 0);
         if ($id <= 0) {
             echo json_encode(["status" => "error", "message" => "Invalid ID"]);
@@ -104,7 +109,8 @@ class CustomRequirementsController {
         }
     }
 
-    private function update() {
+    private function update()
+    {
         $id = intval($_POST['id'] ?? 0);
         if ($id <= 0) {
             echo json_encode(["status" => "error", "message" => "Invalid ID"]);
@@ -144,8 +150,8 @@ class CustomRequirementsController {
         }
     }
 
-    private function delete() {
-        // Accept ID from POST or GET for flexibility
+    private function delete()
+    {
         $id = 0;
         if (!empty($_POST['id'])) {
             $id = intval($_POST['id']);
@@ -166,7 +172,8 @@ class CustomRequirementsController {
         }
     }
 
-    private function updateStatus() {
+    private function updateStatus()
+    {
         $id = intval($_POST['id'] ?? 0);
         $status = $_POST['status'] ?? null;
         if ($id <= 0 || !$status) {

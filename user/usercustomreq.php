@@ -6,6 +6,12 @@ header('Expires: 0');
 include __DIR__ . '/auth.php';
 include '../config/database.php';
 // session_start();
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
+    header("Location: ../login.php");
+  exit();
+}
+
 $conn = (new Database())->connect();
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -103,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   </div>
 
   <!-- Footer Start -->
-
+<?php include '../admin/footer.php'; ?>
   <!-- Footer End -->
 
 

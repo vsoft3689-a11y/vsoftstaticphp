@@ -2,7 +2,7 @@
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     // header("Location: login.php");
-      header("Location: ../login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
@@ -74,7 +74,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         }
 
         #btn:hover {
-            background: #06BBCC;
+            background: #06A0B0;
         }
 
         #btn[type="submit"] {
@@ -101,9 +101,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
         th,
         td {
+            width: 10%;
             padding: 12px;
             border-bottom: 1px solid #eee;
             text-align: left;
+            vertical-align: top;
         }
 
         th {
@@ -121,6 +123,11 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
             margin-right: 6px;
             padding: 6px 12px;
             font-size: 13px;
+        }
+
+        iframe {
+            border: 0;
+            border-radius: 6px;
         }
     </style>
 </head>
@@ -156,61 +163,59 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         let res = await fetch(apiUrl + "?action=read");
         let data = await res.json();
 
+        const container = document.getElementById("siteConfig");
+        container.innerHTML = "";
+
         if (data.length > 0) {
-            document.getElementById("siteConfig").innerHTML = "";
             let table = document.createElement("table");
             let thead = document.createElement("thead");
             let tr1 = document.createElement("tr");
-            let th1 = document.createElement("th");
-            let th2 = document.createElement("th");
-            let th3 = document.createElement("th");
-            let th4 = document.createElement("th");
-            let th5 = document.createElement("th");
-            let th6 = document.createElement("th");
 
-            th1.innerHTML = "ID";
-            th2.innerHTML = "Key";
-            th3.innerHTML = "Value";
-            th4.innerHTML = "Created At";
-            th5.innerHTML = "Updated At";
-            th6.innerHTML = "Actions";
-
-
-            tr1.append(th1, th2, th3, th4, th5, th6);
+            tr1.innerHTML = `
+                <th>ID</th>
+                <th>Key</th>
+                <th>Value</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Actions</th>
+            `;
             thead.appendChild(tr1);
-
             table.appendChild(thead);
 
             let tbody = document.createElement("tbody");
-            tbody.innerHTML = "";
 
             data.forEach((c) => {
                 let tr = document.createElement("tr");
+
+                // Detect if it's a Google Maps link
+                let isMap = c.config_key.toLowerCase().includes("map") && c.config_value.includes("maps.google.com");
+                let displayValue = isMap ?
+                    `<iframe src="${c.config_value}" width="100%" height="200" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>` :
+                    c.config_value;
+
                 tr.innerHTML = `
-                                <tr>
-                                    <td>${c.id}</td>
-                                    <td>${c.config_key}</td>
-                                    <td>${c.config_value}</td>
-                                    <td>${c.created_at}</td>
-                                    <td>${c.updated_at}</td>
-                                <td>
-                                    <button id="btn" onclick="editConfig(${c.id}, '${c.config_key}', \`${c.config_value}\`)">Edit</button>
-                                    <button id="btn" onclick="deleteConfig(${c.id})">Delete</button>
-                                </td>
-                                </tr>
-                                `;
+                    <td>${c.id}</td>
+                    <td>${c.config_key}</td>
+                    <td>${displayValue}</td>
+                    <td>${c.created_at}</td>
+                    <td>${c.updated_at}</td>
+                    <td>
+                        <button id="btn" onclick="editConfig(${c.id}, '${c.config_key}', \`${c.config_value}\`)">Edit</button>
+                        <button id="btn" onclick="deleteConfig(${c.id})">Delete</button>
+                    </td>
+                `;
                 tbody.appendChild(tr);
             });
+
             table.appendChild(tbody);
-            document.getElementById("siteConfig").appendChild(table);
+            container.appendChild(table);
         } else {
-            document.getElementById("siteConfig").innerHTML = "";
             let para = document.createElement("p");
-            para.innerHTML = `No site configurations list found!`;
+            para.innerHTML = `No site configurations found!`;
             para.style.textAlign = "center";
             para.style.fontWeight = "bold";
-            para.style.paddingTop = "40px"
-            document.getElementById("siteConfig").appendChild(para);
+            para.style.paddingTop = "40px";
+            container.appendChild(para);
         }
     }
 
@@ -221,19 +226,15 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         let key = form.config_key.value.trim();
         let value = form.config_value.value.trim();
 
-        // Validate Config Key (min 3 characters)
         if (key.length < 3) {
             alert("Config Key must be at least 3 characters long.");
             form.config_key.focus();
-            e.preventDefault();
             return;
         }
 
-        // Validate Config Value (min 3 characters)
         if (value.length < 3) {
             alert("Config Value must be at least 3 characters long.");
             form.config_value.focus();
-            e.preventDefault();
             return;
         }
 
@@ -244,16 +245,14 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         });
         let result = await res.json();
         alert(result.message);
-        // Reset form after successful update
-        form.reset();
-        form.querySelector("[name='action']").value = "create"; // back to create
-        form.querySelector("button[type='submit']").innerText = "Add Config"; // reset button text
 
-        // remove hidden id field if exists
+        form.reset();
+        form.querySelector("[name='action']").value = "create";
+        form.querySelector("button[type='submit']").innerText = "Add Config";
+
         let hiddenId = form.querySelector("[name='id']");
         if (hiddenId) hiddenId.remove();
 
-        // remove cancel button if exists
         let cancelBtn = form.querySelector(".cancel-btn");
         if (cancelBtn) cancelBtn.remove();
 
@@ -277,30 +276,27 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     function editConfig(id, key, value) {
         const form = document.getElementById("configForm");
 
-        // fill fields
         form.querySelector("[name='action']").value = "update";
         form.querySelector("[name='config_key']").value = key;
         form.querySelector("[name='config_value']").value = value;
 
-        // create cancel button (only once)
         let button = form.querySelector(".cancel-btn");
         if (!button) {
             button = document.createElement("button");
             button.type = "button";
             button.className = "cancel-btn";
             button.innerHTML = "Cancel";
-            button.setAttribute("id", "btn")
+            button.setAttribute("id", "btn");
             form.appendChild(button);
 
             button.addEventListener("click", () => {
-                form.reset(); // clears all inputs
-                form.querySelector("[name='action']").value = "create"; // back to create
-                form.querySelector("button[type='submit']").innerText = "Add Config"; // reset button text
-                button.remove(); // hide cancel button
+                form.reset();
+                form.querySelector("[name='action']").value = "create";
+                form.querySelector("button[type='submit']").innerText = "Add Config";
+                button.remove();
             });
         }
 
-        // hidden id
         let hiddenId = form.querySelector("[name='id']");
         if (!hiddenId) {
             hiddenId = document.createElement("input");
@@ -310,12 +306,10 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         }
         hiddenId.value = id;
 
-        // change submit text
         form.querySelector("button[type='submit']").innerText = "Update Config";
     }
 
     loadConfigs();
 </script>
-</body>
 
 </html>

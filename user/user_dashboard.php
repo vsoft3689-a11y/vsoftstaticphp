@@ -107,7 +107,7 @@ if ($conn->connect_error) {
         </div>
 
         <!-- Footer Start -->
-
+<?php include '../admin/footer.php'; ?>
         <!-- Footer End -->
 
         <!-- Back to Top -->

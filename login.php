@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'admin') {
-    header("Location: ./admin/admin_dashboard");
+    header("Location: ./admin/admin_dashboard.php");
     exit();
 } else if (isset($_SESSION['user']) && $_SESSION['user']['role'] === 'user') {
-    header("Location: ./index.php");
+    header("Location: ./user/user_dashboard.php");
     exit();
 }
 ?>

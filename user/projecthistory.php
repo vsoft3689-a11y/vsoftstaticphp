@@ -1,121 +1,98 @@
 <?php
-session_start();
 include '../config/database.php';
+session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
+  $_SESSION['user_id'] = 1; // Temporary for testing
 }
 
 $conn = (new Database())->connect();
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+$userId = $_SESSION['user_id'];
+
+// Add Interested Project
+if (isset($_GET['project_id'])) {
+  $projectId = intval($_GET['project_id']);
+  $check = $conn->prepare("SELECT * FROM project_history WHERE user_id = ? AND project_id = ?");
+  $check->bind_param("ii", $userId, $projectId);
+  $check->execute();
+  $exists = $check->get_result();
+
+  if ($exists->num_rows == 0) {
+    $insert = $conn->prepare("INSERT INTO project_history (user_id, project_id) VALUES (?, ?)");
+    $insert->bind_param("ii", $userId, $projectId);
+    $insert->execute();
+  }
+
+  header("Location: userprojects.php");
+  exit;
 }
 
-$user_id = $_SESSION['user_id'];
+// Remove Project
+if (isset($_GET['remove_id'])) {
+  $removeId = intval($_GET['remove_id']);
+  $delete = $conn->prepare("DELETE FROM project_history WHERE user_id = ? AND project_id = ?");
+  $delete->bind_param("ii", $userId, $removeId);
+  $delete->execute();
+  header("Location: projecthistory.php");
+  exit;
+}
 
-$sql = "SELECT p.* FROM projects p
-        INNER JOIN user_interested_projects uip ON p.id = uip.project_id
-        WHERE uip.user_id = ? ORDER BY uip.created_at DESC";
-
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $user_id);
+// Fetch Interested Projects
+$query = "SELECT p.* FROM projects p JOIN project_history ph ON p.id = ph.project_id WHERE ph.user_id = ?";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("i", $userId);
 $stmt->execute();
-$result = $stmt->get_result();
-$projects = $result->fetch_all(MYSQLI_ASSOC);
-$stmt->close();
+$projects = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Interested Projects</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <style>
-        
-        .history-section {
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            border: 2px solid #06BBCC;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-        }
-        table th {
-            background-color: #06BBCC;
-            color: #fff;
-            text-transform: uppercase;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Interested Projects</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
 
 <?php include 'user_navbar.php'; ?>
 
-<div class="container history-section">
-    <h2 class="text-center mb-4">Your Interested Projects</h2>
+<div class="container mt-5">
+  <div class="container project-selection">
+  <h2 class="text-center mb-4 ">Interested Projects</h2>
 
-    <?php if(count($projects) > 0): ?>
-    <div class="table-responsive">
-        <table class="table table-bordered table-hover align-middle text-center">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Technologies</th>
-                    <th>Price</th>
-                    <th>Demo Video</th>
-                    <th>Abstract</th>
-                    <th>Base Paper</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach($projects as $row): ?>
-                <tr>
-                    <td><?= htmlspecialchars($row['title']) ?></td>
-                    <td><?= htmlspecialchars($row['description']) ?></td>
-                    <td><?= htmlspecialchars($row['technologies']) ?></td>
-                    <td>₹<?= htmlspecialchars($row['price']) ?></td>
-                    <td>
-                        <?php if(!empty($row['youtube_url'])): ?>
-                            <a href="<?= htmlspecialchars($row['youtube_url']) ?>" target="_blank" class="btn btn-sm btn-danger">
-                                <i class="fab fa-youtube"></i> Watch
-                            </a>
-                        <?php else: ?>
-                            N/A
-                        <?php endif; ?>
-                    </td>
-                    <td>
-                        <?php if(!empty($row['file_path_abstract'])): ?>
-                            <a href="<?= htmlspecialchars($row['file_path_abstract']) ?>" download class="btn btn-sm btn-info">Download</a>
-                        <?php else: ?>
-                            N/A
-                        <?php endif; ?>
-                    </td>
-                    <td>
-                        <?php if(!empty($row['file_path_basepaper'])): ?>
-                            <a href="<?= htmlspecialchars($row['file_path_basepaper']) ?>" download class="btn btn-sm btn-info">Download</a>
-                        <?php else: ?>
-                            N/A
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
-    <?php else: ?>
-        <p class="text-center">You have not marked any projects as interested yet.</p>
-    <?php endif; ?>
-
-    <div class="text-center mt-4">
-        <a href="userprojects.php" class="btn btn-secondary">Back to Projects</a>
-    </div>
+  <?php if (count($projects) > 0): ?>
+    <table class="table table-bordered table-striped">
+      <thead class="table-primary">
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Technologies</th>
+          <th>Price</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($projects as $p): ?>
+          <tr>
+            <td><?= htmlspecialchars($p['title']) ?></td>
+            <td><?= htmlspecialchars($p['description']) ?></td>
+            <td><?= htmlspecialchars($p['technologies']) ?></td>
+            <td>₹<?= htmlspecialchars($p['price']) ?></td>
+            <td><a href="projecthistory.php?remove_id=<?= $p['id'] ?>" class="btn btn-danger btn-sm bi bi-trash" title="Remove"></a></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+  <?php else: ?>
+    <p class="text-center">You have not marked any project as interested.</p>
+  <?php endif; ?>
+</div>
 </div>
 
-<?php include 'footer.php'; ?>
+  <!-- Footer Start -->
 
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<?php include '../admin/footer.php'; ?>
 </body>
 </html>

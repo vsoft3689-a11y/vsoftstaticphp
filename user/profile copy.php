@@ -1,108 +1,53 @@
 <?php
-include __DIR__ . '/auth.php';
 include '../config/database.php';
-// session_start();
+session_start();
 
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'user') {
-    header("Location: ../login.php");
-  exit();
+if (!isset($_SESSION['user_id'])) {
+  $_SESSION['user_id'] = 1; // Temporary for testing; replace with real login session later
 }
+
 $conn = (new Database())->connect();
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+  die(json_encode(["status" => "error", "message" => $conn->connect_error]));
 }
 
-// Initialize messages
-$success_msg = '';
-$error_msg = '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $degree = $_POST['degree'];
+  $branch = $_POST['branch'];
+  $domain = $_POST['domain'];
+  $projectType = $_POST['project_type'] ?? '';
 
-$user_id = $_SESSION['user']['id'];
+  $sql = "SELECT * FROM projects WHERE degree = ? AND branch = ? AND domain = ?";
+  $params = [$degree, $branch, $domain];
 
-// Fetch current user details
-$stmt = $conn->prepare("SELECT name, email, phone, college, branch, year FROM users WHERE id = ?");
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$user = $result->fetch_assoc();
-$stmt->close();
-
-// Handle profile update
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $name = $_POST['name'] ?? '';
-  $email = $_POST['email'] ?? '';
-  $phone = $_POST['phone'] ?? '';
-  $college = $_POST['college'] ?? '';
-  $branch = $_POST['branch'] ?? '';
-  $year = $_POST['year'] ?? '';
-
-  $stmt = $conn->prepare("UPDATE users SET name = ?, email = ?, phone = ?, college = ?, branch = ?, year = ? WHERE id = ?");
-  $stmt->bind_param("ssssssi", $name, $email, $phone, $college, $branch, $year, $user_id);
-
-  if ($stmt->execute()) {
-    $success_msg = "Profile updated successfully!";
-    // Refresh user data
-    $user = [
-      'name' => $name,
-      'email' => $email,
-      'phone' => $phone,
-      'college' => $college,
-      'branch' => $branch,
-      'year' => $year
-    ];
-  } else {
-    $error_msg = "Error updating profile. Please try again.";
+  if (!empty($projectType)) {
+    $sql .= " AND type = ?";
+    $params[] = strtolower($projectType);
   }
-  $stmt->close();
+
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param(str_repeat("s", count($params)), ...$params);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  $_SESSION['project_results'] = $result->fetch_all(MYSQLI_ASSOC);
+
+  header("Location: userprojects.php");
+  exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile | VSoft</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #06bbcc;
-    }
-
-    .profile-pic {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 3px solid var(--primary);
-    }
-
-    .card-header {
-      background-color: var(--primary) !important;
-    }
-
-    .form-control:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 10px rgba(6, 187, 204, 0.25);
-    }
-
-    .form-label {
-      color: var(--primary);
-      font-weight: 500;
-    }
-
-    .btn-success {
-      background-color: var(--primary);
-      border-color: var(--primary);
-    }
-
-    .btn-success:hover {
-      background-color: #05a4b3;
-      border-color: #05a4b3;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Project Selection</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  <link href="../css/projects.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-
 <body class="bg-light">
   <!-- Navbar Start -->
   <?php include 'user_navbar.php'; ?>
