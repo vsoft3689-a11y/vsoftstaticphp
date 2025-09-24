@@ -44,6 +44,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>vsofts solutions</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    th {
+      background: #06BBCC;
+      color: #fff;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+  </style>
 
   <!-- Favicon -->
   <link href="img/favicon.ico" rel="icon">
@@ -128,8 +155,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       echo "<div class='mt-4'>";
       if (count($results) > 0) {
-        echo "<table class='table table-bordered table-hover'>
-            <thead class='table-dark'>
+        echo "<table>
+            <thead>
               <tr>
                 <th>Title</th>
                 <th>Description</th>
@@ -154,12 +181,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                   </a>
                 </td>
                 <td>
-                  <a href='{$row['file_path_abstract']}' fa fa-download class='btn btn-sm btn-primary'>
+                  <a href='./vsoftstaticphp/{$row['file_path_abstract']}' target='_blank' fa fa-download class='btn btn-sm btn-primary'>
                     Download
                   </a>
                 </td>
                 <td>
-                  <a href='{$row['file_path_basepaper']}' fa fa-download class='btn btn-sm btn-primary'>
+                  <a href='./vsoftstaticphp/{$row['file_path_basepaper']}' target='_blank' fa fa-download class='btn btn-sm btn-primary'>
                    Download
                   </a>
                 </td>
