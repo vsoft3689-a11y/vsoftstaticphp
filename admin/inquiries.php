@@ -1,13 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    // header("Location: login.php");
-      header("Location: ../login.php");
+    header("Location: ../login.php");
     exit();
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,6 +14,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     .main {
@@ -97,157 +96,171 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
     .alert {
       width: 80%;
+      max-width: 900px;
       margin: 10px auto;
       padding: 12px;
       border-radius: 6px;
       text-align: center;
+      font-weight: bold;
     }
 
     .alert-success {
       background-color: #d4edda;
       color: #155724;
+      border: 1px solid #c3e6cb;
     }
 
     .alert-error {
       background-color: #f8d7da;
       color: #721c24;
+      border: 1px solid #f5c6cb;
     }
   </style>
 </head>
 <body>
-    <?php include "./adminnavbar.php"; ?>
 
-  <div class="main">
-    <h2 id="inquiryHeading">All User Inquiries</h2>
-  </div>
+<?php include "./adminnavbar.php"; ?>
 
-  <section class="load-inquiry">
-    <table id="inquiries-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Subject</th>
-          <th>Type</th>
-          <th>Message</th>
-          <th>Status</th>
-          <th>Update</th>
-          <th>Delete</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </section>
+<div class="main">
+  <h2 id="inquiryHeading">All User Inquiries</h2>
+</div>
 
-  <div id="alert-container"></div>
+<div id="alert-container"></div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const API_URL = '../controller/InquiryController.php';
+<section class="load-inquiry">
+  <table id="inquiries-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Subject</th>
+        <th>Type</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</section>
 
-      function showAlert(type, message) {
-        const alertContainer = document.getElementById("alert-container");
-        alertContainer.innerHTML = `
-          <div class="alert alert-${type}">
-            ${message}
-          </div>
-        `;
-        setTimeout(() => alertContainer.innerHTML = '', 3000);
-      }
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const API_URL = '../controller/InquiryController.php';
 
-      function fetchInquiries() {
-        fetch(`${API_URL}?action=read`)
-          .then(res => res.json())
-          .then(data => {
-            const tbody = document.querySelector("#inquiries-table tbody");
-            tbody.innerHTML = "";
+    function showAlert(type, message) {
+      const alertContainer = document.getElementById("alert-container");
+      alertContainer.innerHTML = `
+        <div class="alert alert-${type}">
+          ${message}
+        </div>
+      `;
+      setTimeout(() => {
+        alertContainer.innerHTML = '';
+      }, 3000);
+    }
 
-            data.forEach(inq => {
-              const tr = document.createElement("tr");
-              tr.innerHTML = `
-                <td>${inq.name}</td>
-                <td>${inq.email}</td>
-                <td>${inq.phone || '-'}</td>
-                <td>${inq.subject}</td>
-                <td>${inq.type}</td>
-                <td>${inq.message}</td>
-                <td>
-                  <span class="status-badge ${inq.status === 'resolved' ? 'badge-resolved' : 'badge-pending'}">
-                    ${inq.status}
-                  </span>
-                </td>
-                <td>
-                  <form onsubmit="return updateStatus(event, ${inq.id})">
-                    <select name="status" class="status-select">
-                      <option value="pending" ${inq.status === 'pending' ? 'selected' : ''}>Pending</option>
-                      <option value="resolved" ${inq.status === 'resolved' ? 'selected' : ''}>Resolved</option>
-                    </select>
-                    <button type="submit" class="status-btn">Update</button>
-                  </form>
-                </td>
-                <td>
-                  <form onsubmit="return deleteInquiry(event, ${inq.id})">
-                    <button type="submit" class="delete-btn">Delete</button>
-                  </form>
-                </td>
-              `;
-              tbody.appendChild(tr);
-            });
-          })
-          .catch(err => {
-            console.error(err);
-            showAlert("error", "Failed to fetch data.");
+    function fetchInquiries() {
+      fetch(`${API_URL}?action=read`)
+        .then(res => res.json())
+        .then(data => {
+          const tbody = document.querySelector("#inquiries-table tbody");
+          tbody.innerHTML = "";
+
+          data.forEach(inq => {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+              <td>${inq.name}</td>
+              <td>${inq.email}</td>
+              <td>${inq.phone || '-'}</td>
+              <td>${inq.subject}</td>
+              <td>${inq.type}</td>
+              <td>${inq.message}</td>
+              <td>
+                <span class="status-badge ${inq.status === 'resolved' ? 'badge-resolved' : 'badge-pending'}">
+                  ${inq.status}
+                </span>
+              </td>
+              <td>
+                <form onsubmit="return updateStatus(event, ${inq.id})">
+                  <select name="status" class="status-select">
+                    <option value="pending" ${inq.status === 'pending' ? 'selected' : ''}>Pending</option>
+                    <option value="resolved" ${inq.status === 'resolved' ? 'selected' : ''}>Resolved</option>
+                  </select>
+                  <button type="submit" class="status-btn">Update</button>
+                </form>
+              </td>
+              <td>
+                <form onsubmit="return deleteInquiry(event, ${inq.id})">
+                  <button type="submit" class="delete-btn">Delete</button>
+                </form>
+              </td>
+            `;
+            tbody.appendChild(tr);
           });
-      }
-
-      window.updateStatus = function (event, id) {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        formData.append("id", id);
-        formData.append("action", "updateStatus");
-
-        fetch(API_URL, {
-          method: "POST",
-          body: formData
-        })
-        .then(res => res.json())
-        .then(response => {
-          showAlert("success", "Status updated successfully.");
-          fetchInquiries();
         })
         .catch(err => {
           console.error(err);
-          showAlert("error", "Update failed.");
+          showAlert("error", "Failed to fetch inquiries.");
         });
-      };
+    }
 
-      window.deleteInquiry = function (event, id) {
-        event.preventDefault();
-        if (!confirm("Are you sure you want to delete this inquiry?")) return;
+    window.updateStatus = function (event, id) {
+      event.preventDefault();
+      const form = event.target;
+      const formData = new FormData(form);
+      const selectedStatus = formData.get("status");
 
-        const formData = new FormData();
-        formData.append("id", id);
-        formData.append("action", "delete");
+      formData.append("id", id);
+      formData.append("action", "updateStatus");
 
-        fetch(API_URL, {
-          method: "POST",
-          body: formData
-        })
-        .then(res => res.json())
-        .then(response => {
-          showAlert("success", "Inquiry deleted successfully.");
-          fetchInquiries();
-        })
-        .catch(err => {
-          console.error(err);
-          showAlert("error", "Delete failed.");
-        });
-      };
+      fetch(API_URL, {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.json())
+      .then(response => {
+        const msg = selectedStatus === 'resolved'
+          ? "✅ Status updated to Resolved"
+          : "⏳ Status updated to Pending";
+        showAlert("success", msg);
+        fetchInquiries();
+      })
+      .catch(err => {
+        console.error(err);
+        showAlert("error", "Update failed.");
+      });
+    };
 
-      fetchInquiries(); // Initial load
-    });
-  </script>
-  <?php include "./footer.php"; ?>
+    window.deleteInquiry = function (event, id) {
+      event.preventDefault();
+      if (!confirm("Are you sure you want to delete this inquiry?")) return;
+
+      const formData = new FormData();
+      formData.append("id", id);
+      formData.append("action", "delete");
+
+      fetch(API_URL, {
+        method: "POST",
+        body: formData
+      })
+      .then(res => res.json())
+      .then(response => {
+        showAlert("success", "🗑️ Inquiry deleted successfully.");
+        fetchInquiries();
+      })
+      .catch(err => {
+        console.error(err);
+        showAlert("error", "Delete failed.");
+      });
+    };
+
+    fetchInquiries(); // Load data initially
+  });
+</script>
+
+<?php include "./footer.php"; ?>
 </body>
 </html>

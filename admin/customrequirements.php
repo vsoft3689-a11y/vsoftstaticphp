@@ -1,8 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-  // header("Location: login.php");
-    header("Location: ../login.php");
+  header("Location: ../login.php");
   exit();
 }
 ?>
@@ -132,10 +131,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     }
 
     #alert-container {
-      width: 80%;
+      width: 90%;
       max-width: 1200px;
-      margin: 10px auto;
+      margin: 10px auto 20px auto;
       text-align: center;
+      position: relative;
+      z-index: 9999;
     }
 
     .alert {
@@ -144,6 +145,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       font-weight: bold;
       font-size: 15px;
       margin-bottom: 10px;
+      animation: fadeIn 0.3s ease-in-out;
     }
 
     .alert-success {
@@ -157,6 +159,18 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
       color: #721c24;
       border: 1px solid #f5c6cb;
     }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 
@@ -168,32 +182,33 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     <h2 id="heading">Custom Requirements</h2>
   </div>
 
-<section class="load-custom">
-  <table id="custom-req-table" aria-label="Custom Requirements Table">
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>User ID</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Technologies</th>
-        <th>Status</th>
-        <th>Change Status</th>
-        <th>Update</th>
-        <th>Download</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
-</section>
-
+  <!-- ALERT POPUP CONTAINER -->
   <div id="alert-container"></div>
+
+  <section class="load-custom">
+    <table id="custom-req-table" aria-label="Custom Requirements Table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>User ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Technologies</th>
+          <th>Status</th>
+          <th>Change Status</th>
+          <th>Update</th>
+          <th>Download</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
 
   <?php include "./footer.php"; ?>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       fetchRequirements();
 
       function fetchRequirements() {
@@ -215,29 +230,29 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
 
               const tr = document.createElement("tr");
               tr.innerHTML = `
-            <td>${item.id}</td>
-            <td>${item.user_id}</td>
-            <td>${escapeHtml(item.title || '')}</td>
-            <td>${escapeHtml(item.description || '')}</td>
-            <td>${escapeHtml(item.technologies || '')}</td>
-            <td>
-              <span id="status-badge-${item.id}" class="status-badge ${statusClass}">${item.status}</span>
-            </td>
-            <td>
-              <select id="status-${item.id}" class="status-select">
-                <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
-                <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Approved</option>
-                <option value="done" ${item.status === 'done' ? 'selected' : ''}>Done</option>
-              </select>
-            </td>
-            <td>
-              <button class="update-btn" onclick="updateStatus(${item.id})">Update</button>
-            </td>
-            <td>${documentInfo}</td>
-            <td>
-              <button class="delete-btn" onclick="deleteReq(${item.id})">Delete</button>
-            </td>
-          `;
+                <td>${item.id}</td>
+                <td>${item.user_id}</td>
+                <td>${escapeHtml(item.title || '')}</td>
+                <td>${escapeHtml(item.description || '')}</td>
+                <td>${escapeHtml(item.technologies || '')}</td>
+                <td>
+                  <span id="status-badge-${item.id}" class="status-badge ${statusClass}">${item.status}</span>
+                </td>
+                <td>
+                  <select id="status-${item.id}" class="status-select">
+                    <option value="pending" ${item.status === 'pending' ? 'selected' : ''}>Pending</option>
+                    <option value="approved" ${item.status === 'approved' ? 'selected' : ''}>Approved</option>
+                    <option value="done" ${item.status === 'done' ? 'selected' : ''}>Done</option>
+                  </select>
+                </td>
+                <td>
+                  <button class="update-btn" onclick="updateStatus(${item.id})">Update</button>
+                </td>
+                <td>${documentInfo}</td>
+                <td>
+                  <button class="delete-btn" onclick="deleteReq(${item.id})">Delete</button>
+                </td>
+              `;
               tbody.appendChild(tr);
             });
           })
@@ -247,7 +262,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           });
       }
 
-      window.updateStatus = function(id) {
+      // ✅ Update Status Function with Custom Message
+      window.updateStatus = function (id) {
         const status = document.getElementById(`status-${id}`).value;
 
         const formData = new FormData();
@@ -256,16 +272,15 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         formData.append("status", status);
 
         fetch('../controller/CustomRequirementsController.php', {
-            method: "POST",
-            body: formData
-          })
+          method: "POST",
+          body: formData
+        })
           .then(res => res.json())
           .then(resp => {
             if (!resp) {
               showAlert("error", "Empty response from server.");
               return;
             }
-            showAlert(resp.status, resp.message);
 
             if (resp.status === "success") {
               const badge = document.querySelector(`#status-badge-${id}`);
@@ -274,6 +289,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
               if (status === 'pending') badge.classList.add("status-pending");
               else if (status === 'approved') badge.classList.add("status-approved");
               else if (status === 'done') badge.classList.add("status-done");
+
+              // ✅ Custom alert based on status
+              const statusMsg = status.charAt(0).toUpperCase() + status.slice(1);
+              showAlert("success", `Status updated to ${statusMsg}`);
+            } else {
+              showAlert("error", resp.message);
             }
           })
           .catch(err => {
@@ -282,12 +303,12 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
           });
       }
 
-      window.deleteReq = function(id) {
+      window.deleteReq = function (id) {
         if (!confirm("Are you sure you want to delete this requirement?")) return;
 
         fetch(`../controller/CustomRequirementsController.php?action=delete&id=${id}`, {
-            method: "GET"
-          })
+          method: "GET"
+        })
           .then(res => res.json())
           .then(resp => {
             showAlert(resp.status, resp.message);
@@ -306,6 +327,7 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
         const alert = document.createElement("div");
         alert.className = `alert alert-${type}`;
         alert.textContent = message;
+        container.innerHTML = "";
         container.appendChild(alert);
 
         setTimeout(() => {
